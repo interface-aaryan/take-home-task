@@ -21,6 +21,14 @@ DOCUMENT_DB_PATH = os.path.join(DATA_DIR, "document_db")
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPENAI_API_KEY:
+    # Try alternative environment variable names
+    OPENAI_API_KEY = os.getenv("OPENAI_KEY")
+
+if not OPENAI_API_KEY:
+    # Print warning if API key is not found
+    print("WARNING: OpenAI API key not found in environment variables.")
+    # You could set a default here for testing or raise an exception
 GPT_MODEL = os.getenv("GPT_MODEL", "gpt-4o")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
 
