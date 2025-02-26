@@ -1,17 +1,25 @@
 # knowledge_base/embeddings.py
-import openai
 import logging
 import time
 from typing import List, Dict, Any
 import numpy as np
 
-from ..config import OPENAI_API_KEY, EMBEDDING_MODEL
+from ..config import EMBEDDING_MODEL, openai_client
 
-# Configure OpenAI
-openai.api_key = OPENAI_API_KEY
+# Use centralized OpenAI client from config
+client = openai_client
 
 logger = logging.getLogger(__name__)
-logger.info(f"OpenAI API key found: {'Yes' if openai.api_key else 'No'}")
+if client:
+    logger.info("EmbeddingGenerator using OpenAI client from config")
+    # Test if client is a dummy client or a real one
+    try:
+        client_type = client.__class__.__name__
+        logger.info(f"OpenAI client type in EmbeddingGenerator: {client_type}")
+    except Exception as e:
+        logger.error(f"Error checking client type: {str(e)}")
+else:
+    logger.error("OpenAI client not initialized in config, embedding generation will fail")
 
 class EmbeddingGenerator:
     """Generate embeddings for text using OpenAI API"""
@@ -41,7 +49,7 @@ class EmbeddingGenerator:
             batch_texts = texts[i:i + batch_size]
             
             try:
-                response = openai.embeddings.create(
+                response = client.embeddings.create(
                     model=self.model,
                     input=batch_texts,
                     encoding_format="float"

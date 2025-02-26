@@ -1,15 +1,12 @@
 # analysis/compliance_analyzer.py
-import openai
 import logging
 import json
 import time
+import gc
 from typing import List, Dict, Any
 
-from ..config import GPT_MODEL, OPENAI_API_KEY, RELEVANCE_THRESHOLD, MAX_RELEVANT_CLAUSES
+from ..config import GPT_MODEL, openai_client, RELEVANCE_THRESHOLD, MAX_RELEVANT_CLAUSES
 from ..knowledge_base.vector_store import VectorStore
-
-# Configure OpenAI
-openai.api_key = OPENAI_API_KEY
 
 logger = logging.getLogger(__name__)
 

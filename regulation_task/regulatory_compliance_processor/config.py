@@ -21,16 +21,48 @@ DOCUMENT_DB_PATH = os.path.join(DATA_DIR, "document_db")
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    # Try alternative environment variable names
-    OPENAI_API_KEY = os.getenv("OPENAI_KEY")
 
 if not OPENAI_API_KEY:
     # Print warning if API key is not found
     print("WARNING: OpenAI API key not found in environment variables.")
-    # You could set a default here for testing or raise an exception
+    print("Using environment variable OPENAI_API_KEY only")
 GPT_MODEL = os.getenv("GPT_MODEL", "gpt-4o")
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
+
+# Initialize logging
+import logging
+config_logger = logging.getLogger(__name__)
+config_logger.info("Configuring OpenAI client...")
+
+# Initialize OpenAI client with version 1.64.0
+try:
+    # Import directly - should work with openai 1.64.0
+    from openai import OpenAI
+    
+    # Set environment variable for API key if provided
+    if OPENAI_API_KEY:
+        os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+    
+    # Create client with no parameters to use env vars
+    openai_client = OpenAI()
+    
+    # Log successful initialization
+    config_logger.info(f"OpenAI client initialized. Client type: {openai_client.__class__.__name__}")
+    config_logger.info(f"API key present: {'Yes' if OPENAI_API_KEY else 'No'}")
+    
+except Exception as e:
+    config_logger.error(f"Error initializing OpenAI client: {str(e)}")
+    
+    # Create a dummy client as fallback
+    class DummyClient:
+        def __getattr__(self, name):
+            def method(*args, **kwargs):
+                error_msg = "OpenAI client not properly initialized. Check your API key and environment."
+                config_logger.error(error_msg)
+                raise RuntimeError(error_msg)
+            return method
+    
+    openai_client = DummyClient()
 
 # Extraction settings
 MIN_CLAUSE_LENGTH = 50

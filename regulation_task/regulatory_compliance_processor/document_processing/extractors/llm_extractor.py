@@ -1,19 +1,28 @@
 # document_processing/extractors/llm_extractor.py
-import openai
 import logging
 import json
 import time
 from typing import List, Dict, Any
 import re
+import os
 
-from ...config import GPT_MODEL, OPENAI_API_KEY
-
-# Configure OpenAI
-openai.api_key = OPENAI_API_KEY
+from ...config import GPT_MODEL, openai_client
 
 logger = logging.getLogger(__name__)
 
-logger.info(f"OpenAI API key found: {'Yes' if openai.api_key else 'No'}")
+# Use the client from config
+client = openai_client
+
+if client:
+    logger.info("LLMClauseExtractor using OpenAI client from config")
+    # Test if client is a dummy client or a real one
+    try:
+        client_type = client.__class__.__name__
+        logger.info(f"OpenAI client type: {client_type}")
+    except:
+        pass
+else:
+    logger.error("OpenAI client not initialized in config, extraction will fail")
 
 class LLMClauseExtractor:
     """Extract regulatory clauses using LLM"""
@@ -34,8 +43,9 @@ class LLMClauseExtractor:
         text = document_content.get("text", "")
         file_name = document_content.get("file_name", "")
         
-        # Split text into chunks to handle context length limitations
-        chunks = self._split_text_into_chunks(text, max_chunk_size=10000)
+        # Split text into smaller chunks to handle context length limitations
+        # Smaller chunks = faster processing
+        chunks = self._split_text_into_chunks(text, max_chunk_size=5000)
         
         all_clauses = []
         for i, chunk in enumerate(chunks):
@@ -63,14 +73,17 @@ class LLMClauseExtractor:
         prompt = self._create_extraction_prompt(text_chunk)
         
         try:
-            response = openai.chat.completions.create(
+            # Use the client that was initialized with the environment API key
+            response = client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {"role": "system", "content": "You are a regulatory compliance expert that specializes in identifying regulatory clauses and requirements from documents. Extract all regulatory clauses with their section numbers and titles."},
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.1
+                temperature=0.1,
+                max_tokens=2000,  # Limit the response size
+                timeout=30  # 30-second timeout to prevent hanging
             )
             
             # Extract and parse the response

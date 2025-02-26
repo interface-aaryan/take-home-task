@@ -103,21 +103,45 @@ def upload_regulatory():
                     )
                     
                     # Extract regulatory clauses
-                    # NOTE: This is the part that might be failing - let's add a try-except here
+                    # This is the part that might be failing, but we've improved the extractor
                     try:
+                        logger.info(f"Starting clause extraction for {filename}")
                         clauses = clause_extractor.extract_clauses(doc_content)
                         
-                        # Add clauses to document store
-                        document_store.add_regulatory_clauses(document_id, version_number, clauses)
-                        
-                        # Add to vector store for semantic search
-                        for clause in clauses:
-                            clause["document_id"] = document_id
-                            clause["document_version"] = version_number
-                        
-                        vector_store.add_clauses(clauses)
-                        
-                        flash(f'Document uploaded successfully. {len(clauses)} regulatory clauses extracted.')
+                        if clauses and len(clauses) > 0:
+                            # Add clauses to document store
+                            document_store.add_regulatory_clauses(document_id, version_number, clauses)
+                            
+                            # Add to vector store for semantic search
+                            for clause in clauses:
+                                clause["document_id"] = document_id
+                                clause["document_version"] = version_number
+                            
+                            vector_store.add_clauses(clauses)
+                            
+                            flash(f'Document uploaded successfully. {len(clauses)} regulatory clauses extracted.')
+                        else:
+                            # Fallback if no clauses were extracted
+                            logger.warning(f"No clauses extracted from {filename}, using fallback")
+                            
+                            # Create a simple fallback clause
+                            fallback_clauses = [{
+                                "id": f"{document_id}-{version_number}-fallback",
+                                "section": "0",
+                                "title": f"Document: {filename}",
+                                "text": doc_content["text"][:2000] + "...",
+                                "requirement_type": "document",
+                                "source_document": filename,
+                                "page_number": "1",
+                                "document_id": document_id,
+                                "document_version": version_number
+                            }]
+                            
+                            # Add fallback clause
+                            document_store.add_regulatory_clauses(document_id, version_number, fallback_clauses)
+                            vector_store.add_clauses(fallback_clauses)
+                            
+                            flash(f'Document uploaded successfully. Using fallback processing.')
                     except Exception as e:
                         logger.error(f"Error extracting clauses from {filename}: {str(e)}")
                         flash(f'Document uploaded but clause extraction failed: {str(e)}')
