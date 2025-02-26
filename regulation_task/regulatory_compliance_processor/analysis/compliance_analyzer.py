@@ -79,7 +79,7 @@ Here's the SOP text:
 """
         
         try:
-            response = openai.chat.completions.create(
+            response = openai_client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {"role": "system", "content": "You are a regulatory compliance expert that specializes in analyzing Standard Operating Procedures (SOPs) and extracting key sections."},
@@ -108,7 +108,7 @@ Continue extracting key sections from this SOP. Here's the next part:
 Respond with a JSON object with the same structure as before.
 """
                         
-                        chunk_response = openai.chat.completions.create(
+                        chunk_response = openai_client.chat.completions.create(
                             model=self.model,
                             messages=[
                                 {"role": "system", "content": "You are a regulatory compliance expert that specializes in analyzing Standard Operating Procedures (SOPs) and extracting key sections."},
@@ -250,7 +250,7 @@ Respond with a JSON object with this structure:
 """
             
             try:
-                response = openai.chat.completions.create(
+                response = openai_client.chat.completions.create(
                     model=self.model,
                     messages=[
                         {"role": "system", "content": "You are a regulatory compliance expert that specializes in analyzing whether SOPs comply with regulatory requirements."},
@@ -354,7 +354,7 @@ Respond with a JSON object with this structure:
 """
         
         try:
-            response = openai.chat.completions.create(
+            response = openai_client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {"role": "system", "content": "You are a regulatory compliance expert that specializes in developing recommendations to improve SOPs to ensure regulatory compliance."},

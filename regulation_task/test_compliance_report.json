@@ -1,0 +1,33 @@
+{
+  "sop": {
+    "file_name": "sop.docx",
+    "sections": []
+  },
+  "relevant_clauses": [],
+  "compliance_analysis": [],
+  "recommendations": {
+    "summary": "No recommendations available due to lack of compliance analyses",
+    "improvements": []
+  },
+  "summary": {
+    "status": "Significantly Non-Compliant",
+    "compliance_percentage": 0,
+    "clause_counts": {
+      "total": 0,
+      "compliant": 0,
+      "partially_compliant": 0,
+      "non_compliant": 0
+    },
+    "severity_counts": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "improvement_counts": {
+      "total": 0,
+      "high_priority": 0,
+      "medium_priority": 0,
+      "low_priority": 0
+    }
+  }
+}

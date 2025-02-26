@@ -163,7 +163,8 @@ class VectorStore:
             for i, idx in enumerate(indices[0]):
                 if idx != -1:  # Valid index
                     # Convert distance to similarity score (1 - normalized distance)
-                    similarity = 1.0 - min(distances[0][i] / 100.0, 1.0)
+                    # Convert numpy float32 to Python native float for JSON serialization
+                    similarity = float(1.0 - min(distances[0][i] / 100.0, 1.0))
                     
                     result = self.metadata[idx].copy()
                     result["similarity"] = similarity
@@ -206,7 +207,8 @@ class VectorStore:
                 for i, idx in enumerate(indices[q_idx]):
                     if idx != -1:  # Valid index
                         # Convert distance to similarity score (1 - normalized distance)
-                        similarity = 1.0 - min(distances[q_idx][i] / 100.0, 1.0)
+                        # Convert numpy float32 to Python native float for JSON serialization
+                        similarity = float(1.0 - min(distances[q_idx][i] / 100.0, 1.0))
                         
                         result = self.metadata[idx].copy()
                         result["similarity"] = similarity

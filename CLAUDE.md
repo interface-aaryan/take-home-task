@@ -1,10 +1,10 @@
 # CLAUDE.md - Project Guidelines
 
 ## Build Commands
-- Run application: `python regulation_task/main.py`
-- Run web app: `python -m regulatory_compliance_processor.web.app`
-- Run test imports: `python regulation_task/test_import.py`
-- Run Flask test: `python regulation_task/test_flask.py`
+- Run application: `uv run regulation_task/main.py`
+- Run web app: `uv run -m regulatory_compliance_processor.web.app`
+- Run test imports: `uv run regulation_task/test_import.py`
+- Run Flask test: `uv run regulation_task/test_flask.py`
 
 ## Code Style
 - **Imports**: Standard lib → Third-party → Local modules (alphabetical within groups)
@@ -15,7 +15,7 @@
 - **Formatting**: 4-space indentation, ~100 max line length, blank lines between sections
 
 ## Development
-- Use `.env` for environment variables
+- Use os env for environment variables
 - Organize code by functionality in appropriate subdirectories
 - Add `__init__.py` to make directories packages
 - When adding modules, follow existing patterns in similar files

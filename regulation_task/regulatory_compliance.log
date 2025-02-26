@@ -1,0 +1,44 @@
+2025-02-26 14:32:10,900 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 14:32:11,199 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 14:32:11,199 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 14:32:11,231 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 14:32:11,231 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 14:32:26,921 - faiss.loader - INFO - Loading faiss.
+2025-02-26 14:32:26,942 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 14:32:26,945 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 14:32:26,946 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 14:32:26,946 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 14:33:07,637 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 14:33:07,677 - __main__ - INFO - Starting with clean memory state
+2025-02-26 14:33:38,022 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 185 entries
+2025-02-26 14:33:38,022 - __main__ - INFO - Using existing knowledge base with 185 clauses
+2025-02-26 14:33:38,055 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.txt
+2025-02-26 14:33:38,056 - __main__ - INFO - Processing SOP: sop.txt
+2025-02-26 14:33:38,056 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.txt: No parser available for file: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.txt
+2025-02-26 14:33:38,056 - __main__ - ERROR - Error processing SOP /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.txt: No parser available for file: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.txt
+2025-02-26 14:33:38,056 - __main__ - INFO - Saved compliance report to test_compliance_report.json
+2025-02-26 14:33:38,056 - __main__ - INFO - Saved compliance report to test_compliance_report.json
+2025-02-26 14:33:38,056 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 14:36:12,579 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 14:36:12,899 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 14:36:12,899 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 14:36:12,931 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 14:36:12,931 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 14:36:12,961 - faiss.loader - INFO - Loading faiss.
+2025-02-26 14:36:12,970 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 14:36:12,972 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 14:36:12,973 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 14:36:12,973 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 14:36:12,974 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 14:36:12,985 - __main__ - INFO - Starting with clean memory state
+2025-02-26 14:36:12,987 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 185 entries
+2025-02-26 14:36:12,987 - __main__ - INFO - Using existing knowledge base with 185 clauses
+2025-02-26 14:36:12,996 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/sop.docx
+2025-02-26 14:36:12,996 - __main__ - INFO - Processing SOP: sop.docx
+2025-02-26 14:36:13,005 - regulatory_compliance_processor.analysis.compliance_analyzer - ERROR - Error extracting SOP sections: name 'openai' is not defined
+2025-02-26 14:36:13,005 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No SOP sections provided for finding relevant clauses
+2025-02-26 14:36:13,005 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No relevant clauses provided for compliance analysis
+2025-02-26 14:36:13,005 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No compliance analyses provided for generating recommendations
+2025-02-26 14:36:13,006 - __main__ - INFO - Saved compliance report to test_compliance_report.json
+2025-02-26 14:36:13,006 - __main__ - INFO - Saved compliance report to test_compliance_report.json
+2025-02-26 14:36:13,006 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
