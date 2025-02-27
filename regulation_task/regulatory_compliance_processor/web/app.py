@@ -134,12 +134,40 @@ def analyze_sop_async(analysis_id, sop_content, filename, temp_file_path=None):
         if analysis_id in analysis_processing_tasks:
             del analysis_processing_tasks[analysis_id]
 
-def remove_regulation_async(document_id):
+def refresh_vector_store_stats():
+    """
+    Force refresh the vector store stats after database operations 
+    by triggering a recount of documents and clauses
+    """
+    try:
+        # Check if we're using LangChain vector store
+        if hasattr(vector_store, 'vector_store') and hasattr(vector_store.vector_store, '_collection'):
+            # Force a refresh of collection metadata
+            chroma_collection = vector_store.vector_store._collection
+            
+            # Get the latest count directly from Chroma - this is the most accurate
+            # method to refresh stats after deletion
+            if hasattr(chroma_collection, 'count') and callable(chroma_collection.count):
+                updated_count = chroma_collection.count()
+                logger.info(f"Updated vector store count: {updated_count} clauses")
+                
+                # Update the collection stats
+                if hasattr(vector_store, '_collection_stats'):
+                    vector_store._collection_stats = {"total_clauses": updated_count}
+                
+                return updated_count
+    except Exception as e:
+        logger.error(f"Error refreshing vector store stats: {str(e)}")
+    
+    return None
+
+def remove_regulation_async(document_id, complete_deletion=False):
     """
     Remove a regulation asynchronously in a background thread
     
     Args:
         document_id: ID of the document to remove
+        complete_deletion: Whether to completely delete the document and its history
     """
     try:
         logger.info(f"Starting background removal process for document {document_id}")
@@ -159,50 +187,62 @@ def remove_regulation_async(document_id):
         
         logger.info(f"Found {len(clause_ids)} clauses to remove from vector store for document {document_id}")
         
-        # Create a new empty version to preserve history
-        with document_store.conn:
-            # Get the latest version number
-            cursor = document_store.conn.execute(
-                "SELECT MAX(version_number) FROM document_versions WHERE document_id = ?", 
-                (document_id,)
-            )
-            latest_version = cursor.fetchone()[0] or 0
-            
-            # Create a new version with empty content
-            new_version = latest_version + 1
-            timestamp = datetime.now().isoformat()
-            content_hash = hashlib.sha256("".encode('utf-8')).hexdigest()
-            
-            # Add new empty version
-            try:
-                document_store.conn.execute(
-                    """
-                    INSERT INTO document_versions 
-                    (document_id, version_number, content_hash, content, added_date, comment) 
-                    VALUES (?, ?, ?, ?, ?, ?)
-                    """, 
-                    (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+        if complete_deletion:
+            # Completely delete the document and all versions
+            success, clauses_deleted = document_store.completely_delete_document(document_id)
+            if not success:
+                logger.error(f"Failed to completely delete document {document_id}")
+                return
+                
+            logger.info(f"Completely deleted document {document_id} with {clauses_deleted} clauses")
+        else:
+            # Create a new empty version to preserve history
+            with document_store.conn:
+                # Get the latest version number
+                cursor = document_store.conn.execute(
+                    "SELECT MAX(version_number) FROM document_versions WHERE document_id = ?", 
+                    (document_id,)
                 )
-            except sqlite3.OperationalError:
-                # If column names don't match, try alternative column names
-                document_store.conn.execute(
-                    """
-                    INSERT INTO document_versions 
-                    (document_id, version, content_hash, content, created_at, comment) 
-                    VALUES (?, ?, ?, ?, ?, ?)
-                    """, 
-                    (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+                latest_version = cursor.fetchone()[0] or 0
+                
+                # Create a new version with empty content
+                new_version = latest_version + 1
+                timestamp = datetime.now().isoformat()
+                content_hash = hashlib.sha256("".encode('utf-8')).hexdigest()
+                
+                # Add new empty version
+                try:
+                    document_store.conn.execute(
+                        """
+                        INSERT INTO document_versions 
+                        (document_id, version_number, content_hash, content, added_date, comment) 
+                        VALUES (?, ?, ?, ?, ?, ?)
+                        """, 
+                        (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+                    )
+                except sqlite3.OperationalError:
+                    # If column names don't match, try alternative column names
+                    document_store.conn.execute(
+                        """
+                        INSERT INTO document_versions 
+                        (document_id, version, content_hash, content, created_at, comment) 
+                        VALUES (?, ?, ?, ?, ?, ?)
+                        """, 
+                        (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+                    )
+                
+                logger.info(f"Created new empty version {new_version} for document {document_id}")
+                
+                # Delete clauses for this document from the database
+                cursor = document_store.conn.execute(
+                    "DELETE FROM regulatory_clauses WHERE document_id = ?", 
+                    (document_id,)
                 )
-            
-            logger.info(f"Created new empty version {new_version} for document {document_id}")
-            
-            # Delete clauses for this document from the database
-            cursor = document_store.conn.execute(
-                "DELETE FROM regulatory_clauses WHERE document_id = ?", 
-                (document_id,)
-            )
-            clauses_deleted = cursor.rowcount
-            logger.info(f"Deleted {clauses_deleted} regulatory clauses for document {document_id} from database")
+                clauses_deleted = cursor.rowcount
+                logger.info(f"Deleted {clauses_deleted} regulatory clauses for document {document_id} from database")
+                
+                # Update document status to completed when done
+                document_store.update_document_status(document_id, "completed")
         
         # Remove just the relevant entries from the vector store (not rebuilding everything)
         if hasattr(vector_store, 'vector_store') and hasattr(vector_store.vector_store, '_collection') and clause_ids:
@@ -217,17 +257,23 @@ def remove_regulation_async(document_id):
                 # Persist changes
                 vector_store.vector_store.persist()
                 
+                # Force update stats after change
+                refresh_vector_store_stats()
+                
                 logger.info(f"Successfully removed clauses for document {document_id} from vector store")
             except Exception as e:
                 logger.error(f"Error removing clauses from vector store: {str(e)}")
         
-        # Update document status to completed when done
-        document_store.update_document_status(document_id, "completed")
-        logger.info(f"Successfully removed regulation '{regulation_filename}' from the knowledge base")
+        # Log completion message
+        if complete_deletion:
+            logger.info(f"Successfully completely deleted regulation '{regulation_filename}' from the knowledge base")
+        else:
+            logger.info(f"Successfully removed regulation '{regulation_filename}' from the knowledge base")
         
     except Exception as e:
         logger.error(f"Error in background removal process for document {document_id}: {str(e)}")
-        document_store.update_document_status(document_id, "failed")
+        if not complete_deletion:
+            document_store.update_document_status(document_id, "failed")
     finally:
         # Remove task from tracking dictionary
         if document_id in removal_processing_tasks:
@@ -931,14 +977,18 @@ def remove_regulation(document_id):
         flash('Documents are currently being processed. Please try again later when all processing is complete.')
         return redirect(url_for('document_details', document_id=document_id))
     
-    # Set document status to removing
-    document_store.update_document_status(document_id, "removing")
+    # Check for complete deletion mode
+    complete_deletion = request.form.get('complete_deletion') == 'true'
+    
+    if not complete_deletion:
+        # Set document status to removing
+        document_store.update_document_status(document_id, "removing")
     
     # Start background removal process
-    logger.info(f"Starting background removal process for document {document_id}")
+    logger.info(f"Starting background {'complete deletion' if complete_deletion else 'removal'} process for document {document_id}")
     removal_thread = threading.Thread(
         target=remove_regulation_async,
-        args=(document_id,)
+        args=(document_id, complete_deletion)
     )
     removal_thread.daemon = True
     removal_thread.start()
@@ -946,9 +996,19 @@ def remove_regulation(document_id):
     # Store thread in tracking dictionary
     removal_processing_tasks[document_id] = removal_thread
     
-    # Show a message and redirect to document details page
-    flash(f'Regulation removal process started. The regulation will be removed from both the database and vector store.')
-    return redirect(url_for('document_details', document_id=document_id))
+    # Show a message
+    if complete_deletion:
+        flash(f'Regulation complete deletion process started. The regulation and all its history will be removed from the system.')
+        return redirect(url_for('all_documents'))
+    else:
+        flash(f'Regulation removal process started. The regulation will be removed from both the database and vector store.')
+        return redirect(url_for('document_details', document_id=document_id))
+        
+@app.route('/delete_regulation/<int:document_id>', methods=['POST'])
+def delete_regulation(document_id):
+    """Completely delete a regulation including its history"""
+    # This is a shortcut route that sets the complete_deletion flag to true
+    return remove_regulation(document_id)
 
 @app.route('/api/search', methods=['GET'])
 def api_search():

@@ -238,7 +238,13 @@ class LangChainVectorStore:
         """Get statistics about the vector store"""
         try:
             collection = self.vector_store._collection
+            
+            # Force a fresh count from the database every time
+            # to ensure we get accurate counts after deletions
             count = collection.count()
+            
+            # Cache the stats for quick access
+            self._collection_stats = {"total_clauses": count}
             
             # Get embeddings stats if available
             embedding_stats = {}

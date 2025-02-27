@@ -768,6 +768,50 @@ class DocumentStore:
             logger.error(f"Error searching regulatory clauses for '{search_text}': {str(e)}")
             raise
     
+    def completely_delete_document(self, document_id):
+        """
+        Completely delete a document and all its versions and related data
+        
+        Args:
+            document_id: ID of the document to completely delete
+            
+        Returns:
+            Tuple (success, num_clauses_deleted)
+        """
+        try:
+            with self.conn:
+                # First count how many clauses we're deleting for reporting
+                cursor = self.conn.execute(
+                    "SELECT COUNT(*) FROM regulatory_clauses WHERE document_id = ?",
+                    (document_id,)
+                )
+                clauses_count = cursor.fetchone()[0] or 0
+                
+                # Delete all clauses for this document
+                cursor = self.conn.execute(
+                    "DELETE FROM regulatory_clauses WHERE document_id = ?",
+                    (document_id,)
+                )
+                
+                # Delete all versions for this document
+                cursor = self.conn.execute(
+                    "DELETE FROM document_versions WHERE document_id = ?",
+                    (document_id,)
+                )
+                
+                # Finally delete the document itself
+                cursor = self.conn.execute(
+                    "DELETE FROM documents WHERE id = ?",
+                    (document_id,)
+                )
+                
+                logger.info(f"Completely deleted document ID {document_id} with {clauses_count} clauses")
+                return True, clauses_count
+                
+        except Exception as e:
+            logger.error(f"Error completely deleting document {document_id}: {str(e)}")
+            return False, 0
+    
     def _generate_content_hash(self, content):
         """Generate a hash of the document content"""
         return hashlib.sha256(content.encode('utf-8')).hexdigest()
