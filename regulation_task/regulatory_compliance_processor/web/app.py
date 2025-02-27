@@ -7,6 +7,8 @@ import json
 import threading
 import time
 import glob
+import hashlib
+import sqlite3
 from werkzeug.utils import secure_filename
 import uuid
 from datetime import datetime
@@ -63,6 +65,7 @@ version_tracker = VersionTracker(document_store)
 # Dictionaries to track background processing tasks
 document_processing_tasks = {}
 analysis_processing_tasks = {}
+removal_processing_tasks = {}
 
 # Helper function to check allowed file extensions
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'doc', 'txt'}
@@ -130,6 +133,105 @@ def analyze_sop_async(analysis_id, sop_content, filename, temp_file_path=None):
         # Remove task from tracking dictionary
         if analysis_id in analysis_processing_tasks:
             del analysis_processing_tasks[analysis_id]
+
+def remove_regulation_async(document_id):
+    """
+    Remove a regulation asynchronously in a background thread
+    
+    Args:
+        document_id: ID of the document to remove
+    """
+    try:
+        logger.info(f"Starting background removal process for document {document_id}")
+        
+        # Get the document to access its filename
+        document = document_store.get_document(document_id)
+        if not document:
+            logger.error(f"Document {document_id} not found for removal")
+            document_store.update_document_status(document_id, "failed")
+            return
+            
+        regulation_filename = document["file_name"]
+        
+        # Get the regulatory clauses for this document to get their IDs for vector store removal
+        clauses_to_remove = document_store.get_regulatory_clauses(document_id)
+        clause_ids = [str(clause["id"]) for clause in clauses_to_remove]
+        
+        logger.info(f"Found {len(clause_ids)} clauses to remove from vector store for document {document_id}")
+        
+        # Create a new empty version to preserve history
+        with document_store.conn:
+            # Get the latest version number
+            cursor = document_store.conn.execute(
+                "SELECT MAX(version_number) FROM document_versions WHERE document_id = ?", 
+                (document_id,)
+            )
+            latest_version = cursor.fetchone()[0] or 0
+            
+            # Create a new version with empty content
+            new_version = latest_version + 1
+            timestamp = datetime.now().isoformat()
+            content_hash = hashlib.sha256("".encode('utf-8')).hexdigest()
+            
+            # Add new empty version
+            try:
+                document_store.conn.execute(
+                    """
+                    INSERT INTO document_versions 
+                    (document_id, version_number, content_hash, content, added_date, comment) 
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    """, 
+                    (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+                )
+            except sqlite3.OperationalError:
+                # If column names don't match, try alternative column names
+                document_store.conn.execute(
+                    """
+                    INSERT INTO document_versions 
+                    (document_id, version, content_hash, content, created_at, comment) 
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    """, 
+                    (document_id, new_version, content_hash, "", timestamp, "Removed via web interface - preserving history")
+                )
+            
+            logger.info(f"Created new empty version {new_version} for document {document_id}")
+            
+            # Delete clauses for this document from the database
+            cursor = document_store.conn.execute(
+                "DELETE FROM regulatory_clauses WHERE document_id = ?", 
+                (document_id,)
+            )
+            clauses_deleted = cursor.rowcount
+            logger.info(f"Deleted {clauses_deleted} regulatory clauses for document {document_id} from database")
+        
+        # Remove just the relevant entries from the vector store (not rebuilding everything)
+        if hasattr(vector_store, 'vector_store') and hasattr(vector_store.vector_store, '_collection') and clause_ids:
+            # LangChain's ChromaDB implementation - targeted deletion
+            try:
+                chroma_collection = vector_store.vector_store._collection
+                logger.info(f"Removing {len(clause_ids)} clauses from vector store")
+                
+                # Delete just the clauses for this document
+                chroma_collection.delete(ids=clause_ids)
+                
+                # Persist changes
+                vector_store.vector_store.persist()
+                
+                logger.info(f"Successfully removed clauses for document {document_id} from vector store")
+            except Exception as e:
+                logger.error(f"Error removing clauses from vector store: {str(e)}")
+        
+        # Update document status to completed when done
+        document_store.update_document_status(document_id, "completed")
+        logger.info(f"Successfully removed regulation '{regulation_filename}' from the knowledge base")
+        
+    except Exception as e:
+        logger.error(f"Error in background removal process for document {document_id}: {str(e)}")
+        document_store.update_document_status(document_id, "failed")
+    finally:
+        # Remove task from tracking dictionary
+        if document_id in removal_processing_tasks:
+            del removal_processing_tasks[document_id]
 
 def process_document_async(document_id, doc_content, filename, temp_file_path=None):
     """
@@ -349,6 +451,11 @@ def upload_regulatory():
 def analyze_sop():
     """Analyze SOP compliance with async processing"""
     if request.method == 'POST':
+        # Check if any regulation is being removed
+        if removal_processing_tasks:
+            flash('A regulation is currently being removed from the knowledge base. Please try again when the process is complete.')
+            return redirect(request.url)
+            
         # Check if file part exists
         if 'file' not in request.files:
             flash('No file part')
@@ -425,6 +532,10 @@ def analyze_sop():
             flash(f'Invalid file type. Allowed types: {", ".join(ALLOWED_EXTENSIONS)}')
             return redirect(request.url)
     
+    # Add warning if regulation removal is in progress
+    if removal_processing_tasks:
+        flash('A regulation is currently being removed from the knowledge base. Analysis functionality is temporarily unavailable.', 'warning')
+        
     return render_template('analyze_sop.html')
 
 @app.route('/document/<int:document_id>')
@@ -498,16 +609,37 @@ def view_analysis(analysis_id):
             # Analysis is still processing
             try:
                 analysis_data = json.loads(analysis_record.get('result_json', '{}'))
+                # Check if task is actually in progress (still in our tracking dict)
+                in_progress = analysis_id in analysis_processing_tasks
                 return render_template('analysis_processing.html', 
                                       analysis_id=analysis_id, 
                                       filename=analysis_record.get('filename', 'SOP document'),
-                                      message=analysis_data.get('message', 'Processing in progress'))
+                                      message=analysis_data.get('message', 'Processing in progress'),
+                                      in_progress=in_progress)  # Flag to show stop button
             except:
                 # If we can't parse the JSON, just show generic processing
+                # Check if task is actually in progress (still in our tracking dict)
+                in_progress = analysis_id in analysis_processing_tasks
                 return render_template('analysis_processing.html', 
                                       analysis_id=analysis_id, 
                                       filename=analysis_record.get('filename', 'SOP document'),
-                                      message='Processing in progress')
+                                      message='Processing in progress',
+                                      in_progress=in_progress)  # Flag to show stop button
+        
+        elif status == 'cancelled':
+            # Analysis was cancelled by user
+            try:
+                analysis_data = json.loads(analysis_record.get('result_json', '{}'))
+                return render_template('analysis_failed.html',
+                                      analysis_id=analysis_id,
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      error=analysis_data.get('error', 'Analysis was cancelled by user'))
+            except:
+                # If we can't parse the JSON, show generic cancellation message
+                return render_template('analysis_failed.html',
+                                      analysis_id=analysis_id,
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      error='Analysis was cancelled by user')
         
         elif status == 'failed':
             # Analysis failed
@@ -547,10 +679,19 @@ def view_analysis(analysis_id):
         
         # Check if analysis is still processing
         if isinstance(analysis, dict) and analysis.get('status') == 'processing':
+            # Check if task is in progress (still in our tracking dict)
+            in_progress = analysis_id in analysis_processing_tasks
             return render_template('analysis_processing.html', 
                                   analysis_id=analysis_id, 
                                   filename=analysis.get('filename', 'SOP document'),
-                                  message=analysis.get('message', 'Processing in progress'))
+                                  message=analysis.get('message', 'Processing in progress'),
+                                  in_progress=in_progress)  # Flag to show stop button
+        # Check if analysis was cancelled
+        elif isinstance(analysis, dict) and analysis.get('status') == 'cancelled':
+            return render_template('analysis_failed.html',
+                                  analysis_id=analysis_id,
+                                  filename=analysis.get('filename', 'SOP document'),
+                                  error=analysis.get('error', 'Analysis was cancelled by user'))
         # Check if analysis failed
         elif isinstance(analysis, dict) and analysis.get('status') == 'failed':
             return render_template('analysis_failed.html',
@@ -656,6 +797,80 @@ def download_report(analysis_id):
         as_attachment=True,
         download_name="compliance_analysis_report.json"
     )
+    
+@app.route('/stop_analysis/<analysis_id>', methods=['POST'])
+def stop_analysis(analysis_id):
+    """Stop a running analysis task"""
+    # Check if the analysis is in our tracking dictionary
+    if analysis_id in analysis_processing_tasks:
+        logger.info(f"User requested to stop analysis {analysis_id}")
+        
+        # We can't directly stop a thread in Python, but we can mark it as cancelled
+        # in the database so it won't be shown as "processing" anymore
+        error_report = {
+            "error": "Analysis cancelled by user",
+            "status": "cancelled",
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        # Update database status
+        document_store.add_sop_analysis(analysis_id, 
+            document_store.get_sop_analysis(analysis_id).get('filename', 'Unknown'), 
+            "cancelled", 
+            json.dumps(error_report)
+        )
+        
+        # Remove from tracking dictionary
+        del analysis_processing_tasks[analysis_id]
+        
+        flash('Analysis has been stopped.')
+        return redirect(url_for('all_analyses'))
+    else:
+        flash('Analysis is not currently running or could not be stopped.')
+        return redirect(url_for('view_analysis', analysis_id=analysis_id))
+        
+@app.route('/remove_analysis/<analysis_id>', methods=['POST'])
+def remove_analysis(analysis_id):
+    """Remove an analysis from the system"""
+    # Check if the analysis exists
+    analysis_record = document_store.get_sop_analysis(analysis_id)
+    analysis_file = os.path.join(app.config['UPLOAD_FOLDER'], f"analysis_{analysis_id}.json")
+    
+    # Stop it first if it's running
+    if analysis_id in analysis_processing_tasks:
+        # Mark as cancelled
+        error_report = {
+            "error": "Analysis cancelled and removed by user",
+            "status": "cancelled",
+            "timestamp": datetime.now().isoformat()
+        }
+        document_store.add_sop_analysis(analysis_id, 
+            analysis_record.get('filename', 'Unknown'), 
+            "cancelled", 
+            json.dumps(error_report)
+        )
+        # Remove from tracking
+        del analysis_processing_tasks[analysis_id]
+    
+    # Now delete from database and file system
+    try:
+        # Delete from database if it exists
+        if analysis_record:
+            with document_store.conn:
+                document_store.conn.execute("DELETE FROM sop_analyses WHERE id = ?", (analysis_id,))
+                logger.info(f"Deleted analysis {analysis_id} from database")
+        
+        # Delete file if it exists
+        if os.path.exists(analysis_file):
+            os.remove(analysis_file)
+            logger.info(f"Deleted analysis file for {analysis_id}")
+            
+        flash('Analysis has been removed from the system.')
+    except Exception as e:
+        logger.error(f"Error removing analysis {analysis_id}: {str(e)}")
+        flash(f'Error removing analysis: {str(e)}')
+        
+    return redirect(url_for('all_analyses'))
 
 @app.route('/api/documents', methods=['GET'])
 def api_documents():
@@ -696,6 +911,44 @@ def api_document(document_id):
         "clauses": clauses,
         "status": status
     })
+
+@app.route('/remove_regulation/<int:document_id>', methods=['POST'])
+def remove_regulation(document_id):
+    """Remove a regulation from the knowledge base"""
+    # Get the document to check if it exists and for display
+    document = document_store.get_document(document_id)
+    if not document:
+        flash('Document not found')
+        return redirect(url_for('index'))
+    
+    # Check if any removal tasks are already running
+    if removal_processing_tasks:
+        flash('Another regulation is currently being removed. Please try again later when the vector store rebuild is complete.')
+        return redirect(url_for('document_details', document_id=document_id))
+    
+    # Also check for any document processing tasks
+    if document_processing_tasks:
+        flash('Documents are currently being processed. Please try again later when all processing is complete.')
+        return redirect(url_for('document_details', document_id=document_id))
+    
+    # Set document status to removing
+    document_store.update_document_status(document_id, "removing")
+    
+    # Start background removal process
+    logger.info(f"Starting background removal process for document {document_id}")
+    removal_thread = threading.Thread(
+        target=remove_regulation_async,
+        args=(document_id,)
+    )
+    removal_thread.daemon = True
+    removal_thread.start()
+    
+    # Store thread in tracking dictionary
+    removal_processing_tasks[document_id] = removal_thread
+    
+    # Show a message and redirect to document details page
+    flash(f'Regulation removal process started. The regulation will be removed from both the database and vector store.')
+    return redirect(url_for('document_details', document_id=document_id))
 
 @app.route('/api/search', methods=['GET'])
 def api_search():

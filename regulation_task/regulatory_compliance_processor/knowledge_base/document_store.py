@@ -106,6 +106,24 @@ class DocumentStore:
         
         return conn
     
+    def _normalize_filename(self, file_name):
+        """
+        Normalize a filename to ensure consistent matching regardless of special characters
+        
+        Args:
+            file_name: Name of the file to normalize
+            
+        Returns:
+            Normalized filename for matching purposes
+        """
+        # Remove special characters that might cause inconsistent matching
+        import re
+        # Replace underscores, spaces, and hyphens with a single space, then remove other special chars
+        normalized = re.sub(r'[_\-\s]+', ' ', file_name)
+        # Further normalize by removing any remaining non-alphanumeric chars and converting to lowercase
+        normalized = re.sub(r'[^a-zA-Z0-9\s]', '', normalized).strip().lower()
+        return normalized
+        
     def add_document(self, file_name, content, title=None, source=None, document_type=None, metadata=None, comment=None, status="completed"):
         """
         Add a new document or a new version of an existing document
@@ -124,46 +142,65 @@ class DocumentStore:
             Tuple (document_id, version_number)
         """
         try:
-            # Check if document already exists
+            # Normalize the filename for consistent matching
+            normalized_filename = self._normalize_filename(file_name)
+            
+            # Check if document already exists by normalized filename
             with self.conn:
                 cursor = self.conn.execute(
-                    "SELECT id FROM documents WHERE file_name = ?",
-                    (file_name,)
+                    "SELECT id, file_name FROM documents WHERE file_name = ? OR file_name LIKE ?", 
+                    (file_name, f"%{normalized_filename}%")
                 )
-                result = cursor.fetchone()
+                results = cursor.fetchall()
                 
-                # Generate content hash
+                # Check content hash for exact matches
                 content_hash = self._generate_content_hash(content)
                 current_time = datetime.now().isoformat()
                 
-                if result:
-                    # Document exists, check if content changed
-                    document_id = result[0]
-                    
-                    # Get the latest version hash
-                    cursor = self.conn.execute(
-                        "SELECT content_hash FROM document_versions WHERE document_id = ? ORDER BY version_number DESC LIMIT 1",
-                        (document_id,)
-                    )
-                    latest_hash_result = cursor.fetchone()
-                    
-                    if latest_hash_result and latest_hash_result[0] == content_hash:
-                        # Content is the same, no new version needed
-                        logger.info(f"Document {file_name} already exists with the same content")
+                # If we found possible matches by filename
+                if results:
+                    # Check through potential document matches
+                    for result in results:
+                        document_id = result[0]
+                        existing_filename = result[1]
                         
-                        # Get the current version number
+                        # Get the latest version hash
                         cursor = self.conn.execute(
-                            "SELECT version_number FROM document_versions WHERE document_id = ? ORDER BY version_number DESC LIMIT 1",
+                            "SELECT content_hash FROM document_versions WHERE document_id = ? ORDER BY version_number DESC LIMIT 1",
                             (document_id,)
                         )
-                        version_result = cursor.fetchone()
+                        latest_hash_result = cursor.fetchone()
                         
-                        return document_id, version_result[0]
+                        if latest_hash_result and latest_hash_result[0] == content_hash:
+                            # Content is the same, no new version needed
+                            logger.info(f"Document {file_name} matches existing document {existing_filename} with the same content")
+                            
+                            # Get the current version number
+                            cursor = self.conn.execute(
+                                "SELECT version_number FROM document_versions WHERE document_id = ? ORDER BY version_number DESC LIMIT 1",
+                                (document_id,)
+                            )
+                            version_result = cursor.fetchone()
+                            
+                            # Update filename if it's different to keep the record clean
+                            if existing_filename != file_name:
+                                self.conn.execute(
+                                    "UPDATE documents SET file_name = ?, last_updated = ? WHERE id = ?",
+                                    (file_name, current_time, document_id)
+                                )
+                                logger.info(f"Updated filename from {existing_filename} to {file_name}")
+                            
+                            return document_id, version_result[0]
                     
-                    # Update the document metadata and status
+                    # If we reach here, no content match was found
+                    # Use the first match as our document ID to update with new version
+                    document_id = results[0][0]
+                    logger.info(f"Document similar to {file_name} exists but content differs - creating new version")
+                
+                    # Update the document metadata, filename and status
                     self.conn.execute(
-                        "UPDATE documents SET last_updated = ?, metadata = ?, status = ? WHERE id = ?",
-                        (current_time, json.dumps(metadata or {}), status, document_id)
+                        "UPDATE documents SET file_name = ?, last_updated = ?, metadata = ?, status = ? WHERE id = ?",
+                        (file_name, current_time, json.dumps(metadata or {}), status, document_id)
                     )
                     
                     # Add new version

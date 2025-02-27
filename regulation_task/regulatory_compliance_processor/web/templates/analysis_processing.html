@@ -71,7 +71,24 @@
                     </div>
                     <p>This page will automatically refresh every 5 seconds until processing is complete.</p>
                     <p class="text-muted small">Analysis ID: {{ analysis_id }}</p>
-                    <a href="/" class="btn btn-outline-secondary mt-3">Return to Home</a>
+                    
+                    <div class="d-flex justify-content-center gap-2 mt-3">
+                        <a href="/" class="btn btn-outline-secondary">Return to Home</a>
+                        
+                        {% if in_progress %}
+                        <form action="/stop_analysis/{{ analysis_id }}" method="post" onsubmit="return confirm('Are you sure you want to stop this analysis?');">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-stop-circle"></i> Stop Analysis
+                            </button>
+                        </form>
+                        {% endif %}
+                        
+                        <form action="/remove_analysis/{{ analysis_id }}" method="post" onsubmit="return confirm('Are you sure you want to remove this analysis? This action cannot be undone.');">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Remove
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

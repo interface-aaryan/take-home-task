@@ -106,17 +106,38 @@
                                                         <span class="badge bg-warning text-dark">Processing</span>
                                                     {% elif analysis.status == 'failed' %}
                                                         <span class="badge bg-danger">Failed</span>
+                                                    {% elif analysis.status == 'cancelled' %}
+                                                        <span class="badge bg-secondary">Cancelled</span>
                                                     {% else %}
                                                         <span class="badge bg-success">Completed</span>
                                                     {% endif %}
                                                 </td>
                                                 <td>
-                                                    <a href="/view_analysis/{{ analysis.id }}" class="btn btn-sm btn-outline-primary">
-                                                        <i class="bi bi-eye"></i> View
-                                                    </a>
-                                                    <a href="/download_report/{{ analysis.id }}" class="btn btn-sm btn-outline-secondary">
-                                                        <i class="bi bi-download"></i> Download
-                                                    </a>
+                                                    <div class="btn-group" role="group">
+                                                        <a href="/view_analysis/{{ analysis.id }}" class="btn btn-sm btn-outline-primary">
+                                                            <i class="bi bi-eye"></i> View
+                                                        </a>
+                                                        
+                                                        {% if analysis.status != 'processing' %}
+                                                        <a href="/download_report/{{ analysis.id }}" class="btn btn-sm btn-outline-secondary">
+                                                            <i class="bi bi-download"></i> Download
+                                                        </a>
+                                                        {% endif %}
+                                                        
+                                                        {% if analysis.status == 'processing' %}
+                                                        <form action="/stop_analysis/{{ analysis.id }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to stop this analysis?');">
+                                                            <button type="submit" class="btn btn-sm btn-warning">
+                                                                <i class="bi bi-stop-circle"></i> Stop
+                                                            </button>
+                                                        </form>
+                                                        {% endif %}
+                                                        
+                                                        <form action="/remove_analysis/{{ analysis.id }}" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to remove this analysis? This cannot be undone.');">
+                                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                                <i class="bi bi-trash"></i> Remove
+                                                            </button>
+                                                        </form>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         {% endfor %}
