@@ -8,7 +8,7 @@ In this assignment, you will build a system that leverages computer vision techn
 
 - **Input:**  
   - A P&ID document at `data/pid/diagram.pdf`.
-  - An SOP document at `data/sop/original.docx`.
+  - An SOP document at `data/sop/sop.docx`.
 
 - **Functionality:**
   - **P&ID to Graph Conversion:**  
