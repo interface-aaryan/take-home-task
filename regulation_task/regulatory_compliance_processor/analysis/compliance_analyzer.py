@@ -3,19 +3,23 @@ import logging
 import json
 import time
 import gc
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
-from ..config import GPT_MODEL, openai_client, RELEVANCE_THRESHOLD, MAX_RELEVANT_CLAUSES
-from ..knowledge_base.vector_store import VectorStore
+from ..config import GPT_MODEL, openai_client, RELEVANCE_THRESHOLD, MAX_RELEVANT_CLAUSES, USE_LANGCHAIN
+from ..knowledge_base.vector_store_factory import VectorStoreFactory
 
 logger = logging.getLogger(__name__)
 
 class ComplianceAnalyzer:
     """Analyze SOP compliance against regulatory clauses"""
     
-    def __init__(self, vector_store=None, model=GPT_MODEL):
+    def __init__(self, vector_store=None, model=GPT_MODEL, use_langchain=None):
         self.model = model
-        self.vector_store = vector_store or VectorStore()
+        # If no vector store is provided, create one using the factory
+        if vector_store is None:
+            self.vector_store = VectorStoreFactory.create_vector_store(use_langchain)
+        else:
+            self.vector_store = vector_store
     
     def analyze_sop_compliance(self, sop_content: Dict[str, Any]) -> Dict[str, Any]:
         """

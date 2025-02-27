@@ -17,18 +17,18 @@ class RuleBasedClauseExtractor:
     def __init__(self):
         # Common section number patterns in regulatory documents
         self.section_patterns = [
-            # Section numbers like "1.2.3" or "Section 1.2.3"
-            r'(?:Section|�)\s*(\d+(?:\.\d+)*)',
+            # Section numbers like "1.2.3" or "Section 1.2.3" or "§ 1.2.3" (section symbol)
+            r'(?:Section|\§)\s*(\d+(?:\.\d+)*)',
             # Section numbers like "1.2.3." without the word "Section"
             r'(?<!\w)(\d+(?:\.\d+)+)(?:\.\s|\s)',
             # Section numbers with letters like "1.2(a)" or "Section 1.2(a)"
-            r'(?:Section|�)?\s*(\d+(?:\.\d+)*\s*\([a-z]\))',
+            r'(?:Section|\§)?\s*(\d+(?:\.\d+)*\s*\([a-z]\))',
             # Roman numerals like "IV." or "IV)"
             r'(?<!\w)([IVXivx]+)(?:\.|\))\s',
             # Numbers with parentheses like "(1)" at beginning of line
             r'^\s*\((\d+)\)',
             # Bullets or numbered lists at beginning of lines
-            r'^\s*(?:"|\*|\-|\d+\.)\s*(.+)'
+            r'^\s*(?:•|\*|\-|\d+\.)\s*(.+)'
         ]
         
         # Common regulatory requirement indicators

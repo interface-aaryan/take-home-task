@@ -34,7 +34,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from regulatory_compliance_processor.config import (
     REGULATORY_DOCS_DIR, SOP_DIR, MAX_WORKERS, PROCESSING_TIMEOUT,
     USE_RULE_BASED_EXTRACTION, USE_HYBRID_EXTRACTION, USE_PARALLEL_PROCESSING,
-    COMPRESS_LARGE_TEXTS, EMBEDDING_BATCH_SIZE, PROCESSING_BATCH_SIZE
+    COMPRESS_LARGE_TEXTS, EMBEDDING_BATCH_SIZE, PROCESSING_BATCH_SIZE,
+    USE_LANGCHAIN, USE_TEXT_PREPROCESSING
 )
 from regulatory_compliance_processor.document_processing.parsers import DocumentParserFactory
 from regulatory_compliance_processor.document_processing.parsers.pdf_parser import PDFParser
@@ -42,12 +43,12 @@ from regulatory_compliance_processor.document_processing.extractors.llm_extracto
 from regulatory_compliance_processor.document_processing.extractors.rule_extractor import RuleBasedClauseExtractor
 from regulatory_compliance_processor.document_processing.extractors.hybrid_extractor import HybridClauseExtractor
 from regulatory_compliance_processor.knowledge_base.document_store import DocumentStore
-from regulatory_compliance_processor.knowledge_base.vector_store import VectorStore
+from regulatory_compliance_processor.knowledge_base.vector_store_factory import VectorStoreFactory
 from regulatory_compliance_processor.analysis.compliance_analyzer import ComplianceAnalyzer
 
 def process_single_document(doc_file: str, 
                             document_store: DocumentStore, 
-                            vector_store: VectorStore,
+                            vector_store: Any,
                             processed_docs: Dict,
                             checkpoint_file: str) -> Dict[str, Any]:
     """Process a single regulatory document and return results"""
@@ -198,7 +199,7 @@ def process_single_document(doc_file: str,
         
         return {"file_name": file_name, "status": "failed", "error": str(e)}
 
-def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, vector_store: VectorStore) -> None:
+def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, vector_store: Any) -> None:
     """Process regulatory documents with optimized parallel processing and memory management"""
     # Get all PDF and DOCX files in the directory
     doc_files = []
@@ -307,7 +308,7 @@ def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, v
         failures = [name for name, info in processed_docs.items() if info.get("status") == "failed"]
         logger.warning(f"Failed documents: {', '.join(failures)}")
 
-def process_sop(sop_file: str, document_store: DocumentStore, vector_store: VectorStore) -> Dict[str, Any]:
+def process_sop(sop_file: str, document_store: DocumentStore, vector_store: Any) -> Dict[str, Any]:
     """Process SOP and analyze compliance with optimized methods"""
     parser_factory = DocumentParserFactory()
     analyzer = ComplianceAnalyzer(vector_store=vector_store)
@@ -378,6 +379,8 @@ def main():
     parser.add_argument("--rebuild-kb", action="store_true", help="Rebuild knowledge base from scratch")
     parser.add_argument("--build-only", action="store_true", help="Only build knowledge base, don't process SOP")
     parser.add_argument("--optimize", action="store_true", help="Use optimized processing methods")
+    parser.add_argument("--use-langchain", action="store_true", help="Use LangChain with ChromaDB instead of FAISS")
+    parser.add_argument("--use-smaller-models", action="store_true", help="Use smaller embedding models for faster processing")
     args = parser.parse_args()
     
     logger.info("Starting Regulatory Compliance Document Processor")
@@ -390,9 +393,12 @@ def main():
         gc.collect()
         logger.info(f"Starting with clean memory state")
         
+        # Override config settings with command line arguments
+        use_langchain = args.use_langchain if args.use_langchain else USE_LANGCHAIN
+        
         # Initialize document store and vector store
         document_store = DocumentStore()
-        vector_store = VectorStore()
+        vector_store = VectorStoreFactory.create_vector_store(use_langchain=use_langchain)
         
         # Process regulatory documents if needed
         kb_updated = False
@@ -404,12 +410,12 @@ def main():
         else:
             # Check if knowledge base already has documents
             stats = vector_store.get_stats()
-            if stats["total_clauses"] == 0:
+            if stats.get("total_clauses", 0) == 0:
                 logger.info("Knowledge base is empty, processing regulatory documents")
                 process_regulatory_documents(args.reg_docs, document_store, vector_store)
                 kb_updated = True
             else:
-                logger.info(f"Using existing knowledge base with {stats['total_clauses']} clauses")
+                logger.info(f"Using existing knowledge base with {stats.get('total_clauses', 0)} clauses")
         
         # Clean up memory after building knowledge base
         gc.collect()

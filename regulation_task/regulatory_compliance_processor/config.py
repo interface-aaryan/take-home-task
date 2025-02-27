@@ -88,11 +88,13 @@ RELEVANCE_THRESHOLD = 0.75
 MAX_RELEVANT_CLAUSES = 50
 
 # Feature flags for optimizations
-USE_RULE_BASED_EXTRACTION = True  # Use rule-based extraction
-USE_HYBRID_EXTRACTION = True  # Use hybrid extraction (rule-based + LLM)
-USE_EMBEDDING_CACHE = True  # Cache embeddings to reduce API calls
-COMPRESS_LARGE_TEXTS = True  # Compress large texts to save memory
-USE_PARALLEL_PROCESSING = True  # Process documents in parallel
+USE_RULE_BASED_EXTRACTION = True     # Use rule-based extraction
+USE_HYBRID_EXTRACTION = True         # Use hybrid extraction (rule-based + LLM)
+USE_EMBEDDING_CACHE = True           # Cache embeddings to reduce API calls
+COMPRESS_LARGE_TEXTS = True          # Compress large texts to save memory
+USE_PARALLEL_PROCESSING = True       # Process documents in parallel
+USE_LANGCHAIN = True                 # Use LangChain with ChromaDB instead of FAISS
+USE_TEXT_PREPROCESSING = True        # Use text preprocessing to improve embeddings
 
 # Add a function to get the optimal batch size based on system memory
 def get_optimal_batch_size():
