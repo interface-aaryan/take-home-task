@@ -267,6 +267,24 @@ diff_result = version_tracker.compare_with_previous_version(document_id, current
 - LangChain and ChromaDB for vector storage
 - Flask for web interface
 
+### Installing with uv
+
+[uv](https://github.com/astral-sh/uv) is a fast Python package installer and resolver. To set up this project with uv:
+
+1. Install uv:
+```bash
+pip install uv
+```
+
+2. Clone the repository and navigate to the project directory.
+
+3. Sync dependencies from pyproject.toml:
+```bash
+uv sync
+```
+
+This will install all project dependencies from pyproject.toml in a virtual environment.
+
 ### Environment Configuration
 - Configuration via `config.py`
 - Adjustable settings for embedding models, batch sizes, processing options
