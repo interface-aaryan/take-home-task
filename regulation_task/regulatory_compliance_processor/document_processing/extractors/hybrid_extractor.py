@@ -122,7 +122,7 @@ class HybridClauseExtractor:
         
         for i, line in enumerate(lines):
             # Look for section-like patterns not already extracted
-            if any(pattern in line.lower() for pattern in ["section", "requirement", "clause", "ง"]):
+            if any(pattern in line.lower() for pattern in ["section", "requirement", "clause", "ยง"]):
                 # Get context around this line
                 start = max(0, i - 2)
                 end = min(len(lines), i + 15)

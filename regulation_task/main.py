@@ -177,11 +177,12 @@ def process_single_document(doc_file: str,
         
         logger.info(f"Successfully processed {file_name} and extracted {len(clauses)} clauses in {elapsed_time:.2f} seconds")
         
-        # Final cleanup
+        # Final cleanup - store clauses length before setting to None
+        clauses_length = len(clauses) if clauses is not None else 0
         clauses = None
         gc.collect()
         
-        return {"file_name": file_name, "status": "completed", "document_id": document_id, "clauses": len(clauses)}
+        return {"file_name": file_name, "status": "completed", "document_id": document_id, "clauses": clauses_length}
         
     except Exception as e:
         logger.error(f"Error processing document {file_name}: {str(e)}")

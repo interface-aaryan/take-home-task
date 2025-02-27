@@ -84,7 +84,7 @@ CLAUSE_OVERLAP_THRESHOLD = 0.7
 
 # Analysis settings
 COMPLIANCE_THRESHOLD = 0.8
-RELEVANCE_THRESHOLD = 0.75
+RELEVANCE_THRESHOLD = 0.6  # Lowered from 0.75 to capture more matches
 MAX_RELEVANT_CLAUSES = 50
 
 # Feature flags for optimizations

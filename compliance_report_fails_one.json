@@ -1,0 +1,256 @@
+{
+  "sop": {
+    "file_name": "fails_one.docx",
+    "sections": [
+      {
+        "title": "Purpose",
+        "content": "This SOP ensures compliance with national safety, inspection, and operational standards for regulated equipment.",
+        "requirements": []
+      },
+      {
+        "title": "Scope",
+        "content": "Applies to all personnel operating and maintaining regulated equipment under ASTM, CFR, IEEE, API, ANSI, NFPA, SASO, and other governing regulations.",
+        "requirements": []
+      },
+      {
+        "title": "Procedure",
+        "content": "",
+        "requirements": []
+      },
+      {
+        "title": "Pre-Operation Inspection",
+        "content": "Verify equipment logbooks are updated with the last maintenance record. Ensure all safety guards and emergency shutoffs are functional. Check for visible wear, damage, or signs of material fatigue. Inspect environmental conditions to ensure operational safety.",
+        "requirements": [
+          "Verify equipment logbooks are updated with the last maintenance record.",
+          "Ensure all safety guards and emergency shutoffs are functional.",
+          "Check for visible wear, damage, or signs of material fatigue.",
+          "Inspect environmental conditions to ensure operational safety."
+        ]
+      },
+      {
+        "title": "Operational Guidelines",
+        "content": "Operators must be trained and certified under OSHA (29 CFR 1910.119) and follow manufacturer safety guidelines. Only authorized personnel may operate, inspect, or maintain equipment. Equipment should not exceed its designated load, speed, or operational limits. Proper PPE (Personal Protective Equipment) must be worn at all times.",
+        "requirements": [
+          "Operators must be trained and certified under OSHA (29 CFR 1910.119) and follow manufacturer safety guidelines.",
+          "Only authorized personnel may operate, inspect, or maintain equipment.",
+          "Equipment should not exceed its designated load, speed, or operational limits.",
+          "Proper PPE (Personal Protective Equipment) must be worn at all times."
+        ]
+      },
+      {
+        "title": "Emergency Procedures",
+        "content": "In case of a failure, shut down the equipment immediately and notify the supervisor. Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines. Maintain an accessible emergency evacuation plan.",
+        "requirements": [
+          "In case of a failure, shut down the equipment immediately and notify the supervisor.",
+          "Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines.",
+          "Maintain an accessible emergency evacuation plan."
+        ]
+      },
+      {
+        "title": "Maintenance & Recordkeeping",
+        "content": "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards. Logs of all maintenance, repairs, and inspections must be maintained and made available upon request. Calibration and testing should be documented in accordance with SASO IEC 60051-1.",
+        "requirements": [
+          "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards.",
+          "Logs of all maintenance, repairs, and inspections must be maintained and made available upon request.",
+          "Calibration and testing should be documented in accordance with SASO IEC 60051-1."
+        ]
+      }
+    ]
+  },
+  "relevant_clauses": [
+    {
+      "text": "Purpose",
+      "document_id": 9,
+      "document_version": 1,
+      "section": "1.2",
+      "title": "Purpose",
+      "requirement_type": "informative",
+      "source_document": "REG-ANSI A92.2.pdf",
+      "similarity": 1.0
+    },
+    {
+      "text": "Except as specified in paragraphs (c), (d), and (f) of this section, each owner or operator of a facility subject to this subpart shall maintain the records specified in paragraphs (b)(1) through (11) of this section.",
+      "document_id": 5,
+      "document_version": 1,
+      "section": "63.774(b)",
+      "title": "",
+      "requirement_type": "mandatory",
+      "source_document": "REG-40 CFR Part 63 Subpart HH.pdf",
+      "similarity": 0.9226605246025275
+    },
+    {
+      "text": "7.3.6\nOperating procedures shall be directly applicable to\nthe equipment involved and shall be consistent with safety re-\nquirements and the manufacturer\u2019s recommendations.",
+      "document_id": "",
+      "document_version": "",
+      "section": "3.6",
+      "title": "Operating procedures shall be directly applicable to",
+      "requirement_type": "mandatory",
+      "source_document": "REG-NFPA 86.pdf",
+      "similarity": 0.9027348643927358
+    },
+    {
+      "text": "General",
+      "document_id": 6,
+      "document_version": 1,
+      "section": "6.1",
+      "title": "General",
+      "requirement_type": "mandatory",
+      "source_document": "REG-API 510 2022.pdf",
+      "similarity": 0.8931693188033445
+    },
+    {
+      "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+      "document_id": 7,
+      "document_version": 1,
+      "section": "1910.119(d)",
+      "title": "Process Safety Information",
+      "requirement_type": "mandatory",
+      "source_document": "REG-29 CFR 1910 119.pdf",
+      "similarity": 0.8528929572818388
+    }
+  ],
+  "compliance_analysis": [
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "Purpose: This SOP ensures compliance with national safety, inspection, and operational standards for regulated equipment.",
+      "missing_requirements": [
+        "Specific reference to REG-ANSI A92.2.pdf Section 1.2 is not mentioned."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP's purpose section generally aligns with the intent of ensuring compliance with safety standards, but it does not specifically reference the REG-ANSI A92.2.pdf Section 1.2, which may be required for full compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 9,
+        "section": "1.2",
+        "title": "Purpose",
+        "text": "Purpose",
+        "source_document": "REG-ANSI A92.2.pdf"
+      }
+    },
+    {
+      "clause_index": 2,
+      "compliance_status": "Partial",
+      "addressed_by": "Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines.",
+      "missing_requirements": [
+        "Specific record-keeping requirements from 40 CFR Part 63 Subpart HH Section 63.774(b)(1) through (11) are not detailed."
+      ],
+      "severity": "Medium",
+      "explanation": "While the SOP mentions compliance with 40 CFR Part 63, it lacks detailed procedures for maintaining the specific records required by Section 63.774(b). This could lead to incomplete record-keeping.",
+      "clause": {
+        "id": null,
+        "document_id": 5,
+        "section": "63.774(b)",
+        "title": "",
+        "text": "Except as specified in paragraphs (c), (d), and (f) of this section, each owner or operator of a facility subject to this subpart shall maintain the records specified in paragraphs (b)(1) through (11) of this section.",
+        "source_document": "REG-40 CFR Part 63 Subpart HH.pdf"
+      }
+    },
+    {
+      "clause_index": 3,
+      "compliance_status": "Yes",
+      "addressed_by": "Operators must be trained and certified under OSHA (29 CFR 1910.119) and follow manufacturer safety guidelines.",
+      "missing_requirements": [],
+      "severity": "Low",
+      "explanation": "The SOP ensures that operating procedures are consistent with safety requirements and manufacturer\u2019s recommendations, aligning with NFPA 86 Section 3.6.",
+      "clause": {
+        "id": null,
+        "document_id": "",
+        "section": "3.6",
+        "title": "Operating procedures shall be directly applicable to",
+        "text": "7.3.6\nOperating procedures shall be directly applicable to\nthe equipment involved and shall be consistent with safety re-\nquirements and the manufacturer\u2019s recommendations.",
+        "source_document": "REG-NFPA 86.pdf"
+      }
+    },
+    {
+      "clause_index": 4,
+      "compliance_status": "Partial",
+      "addressed_by": "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards.",
+      "missing_requirements": [
+        "Specific general requirements from API 510 Section 6.1 are not detailed."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP references API 510 for maintenance but does not provide detailed general requirements as outlined in Section 6.1, which may be necessary for comprehensive compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 6,
+        "section": "6.1",
+        "title": "General",
+        "text": "General",
+        "source_document": "REG-API 510 2022.pdf"
+      }
+    },
+    {
+      "clause_index": 5,
+      "compliance_status": "Partial",
+      "addressed_by": "Operators must be trained and certified under OSHA (29 CFR 1910.119).",
+      "missing_requirements": [
+        "The SOP does not detail the compilation of written process safety information on process chemicals, process technology, and process equipment."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP mentions training under OSHA 29 CFR 1910.119 but lacks specific procedures for compiling process safety information, which is essential for process hazard analyses as required by Section 1910.119(d).",
+      "clause": {
+        "id": null,
+        "document_id": 7,
+        "section": "1910.119(d)",
+        "title": "Process Safety Information",
+        "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+        "source_document": "REG-29 CFR 1910 119.pdf"
+      }
+    }
+  ],
+  "recommendations": {
+    "summary": "The SOP requires enhancements to ensure full compliance with regulatory standards. Key improvements include adding specific references and detailed requirements from relevant regulations to address partial compliance issues. Prioritization is based on the severity and impact of each issue.",
+    "improvements": [
+      {
+        "change": "Include a specific reference to REG-ANSI A92.2.pdf Section 1.2 in the SOP.",
+        "rationale": "To ensure that the SOP explicitly acknowledges and aligns with the purpose outlined in the referenced section, thereby achieving full compliance.",
+        "priority": "Low",
+        "reference_clause": "REG-ANSI A92.2.pdf Section 1.2",
+        "implementation_guidance": "Review the current SOP and insert a section that explicitly references and summarizes the purpose as stated in REG-ANSI A92.2.pdf Section 1.2."
+      },
+      {
+        "change": "Detail the specific record-keeping requirements from 40 CFR Part 63 Subpart HH Section 63.774(b)(1) through (11) in the SOP.",
+        "rationale": "To ensure comprehensive compliance with record-keeping requirements, which is crucial for regulatory adherence and operational transparency.",
+        "priority": "Medium",
+        "reference_clause": "40 CFR Part 63 Subpart HH Section 63.774(b)",
+        "implementation_guidance": "Conduct a thorough review of the specified paragraphs and incorporate detailed descriptions of each record-keeping requirement into the SOP, ensuring clarity and completeness."
+      },
+      {
+        "change": "Incorporate specific general requirements from API 510 Section 6.1 into the SOP.",
+        "rationale": "To ensure that the SOP fully aligns with the general requirements of API 510, thereby enhancing compliance and operational consistency.",
+        "priority": "Low",
+        "reference_clause": "API 510 2022 Section 6.1",
+        "implementation_guidance": "Analyze the general requirements outlined in API 510 Section 6.1 and integrate them into the SOP, ensuring that all relevant aspects are covered."
+      },
+      {
+        "change": "Detail the process for compiling written process safety information on process chemicals, process technology, and process equipment in the SOP.",
+        "rationale": "To ensure that the SOP supports an effective process safety management program by providing complete and accurate information necessary for process hazard analyses.",
+        "priority": "Medium",
+        "reference_clause": "29 CFR 1910.119(d)",
+        "implementation_guidance": "Develop a section in the SOP that outlines the steps and responsibilities for compiling process safety information, referencing the schedule in paragraph (e)(1) for timely compliance."
+      }
+    ]
+  },
+  "summary": {
+    "status": "Partially Compliant",
+    "compliance_percentage": 60.0,
+    "clause_counts": {
+      "total": 5,
+      "compliant": 1,
+      "partially_compliant": 4,
+      "non_compliant": 0
+    },
+    "severity_counts": {
+      "high": 0,
+      "medium": 2,
+      "low": 2
+    },
+    "improvement_counts": {
+      "total": 4,
+      "high_priority": 0,
+      "medium_priority": 2,
+      "low_priority": 2
+    }
+  }
+}

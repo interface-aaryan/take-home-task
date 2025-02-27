@@ -1,0 +1,467 @@
+2025-02-26 19:00:39,823 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:00:39,966 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:00:39,967 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:00:39,967 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:00:39,967 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:00:39,967 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:00:39,967 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:00:39,968 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:00:39,977 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:00:39,979 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:00:39,979 - migrate_to_langchain - INFO - Starting migration from FAISS to LangChain
+2025-02-26 19:00:39,979 - migrate_to_langchain - INFO - Backing up existing LangChain DB to /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/vector_db_backup_20250226_190039
+2025-02-26 19:00:40,010 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:00:40,011 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4023 hits, 2137 misses
+2025-02-26 19:00:40,021 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 3645 entries
+2025-02-26 19:00:40,022 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:00:40,022 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4023 hits, 2137 misses
+2025-02-26 19:00:40,175 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:00:40,266 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 0 documents
+2025-02-26 19:00:40,266 - migrate_to_langchain - INFO - Loading metadata from FAISS store with 3645 entries
+2025-02-26 19:00:40,266 - migrate_to_langchain - INFO - Processing batch 1/37 (entries 0-100)
+2025-02-26 19:00:41,298 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:00:42,758 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected IDs to be unique, found duplicates of: clause_5, clause_77_57, clause_2, clause_4, clause_3, clause_1, clause_6 in upsert.
+2025-02-26 19:01:27,934 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:01:28,070 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:01:28,071 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:01:28,071 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:01:28,071 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:01:28,071 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:01:28,071 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:01:28,071 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:01:28,079 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:01:28,081 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:01:28,081 - migrate_to_langchain - INFO - Starting migration from FAISS to LangChain
+2025-02-26 19:01:28,081 - migrate_to_langchain - INFO - Backing up existing LangChain DB to /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/vector_db_backup_20250226_190128
+2025-02-26 19:01:28,092 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:01:28,092 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4023 hits, 2237 misses
+2025-02-26 19:01:28,102 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 3645 entries
+2025-02-26 19:01:28,103 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:01:28,103 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4023 hits, 2237 misses
+2025-02-26 19:01:28,241 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:01:28,335 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 0 documents
+2025-02-26 19:01:28,335 - migrate_to_langchain - INFO - Loading metadata from FAISS store with 3645 entries
+2025-02-26 19:01:28,335 - migrate_to_langchain - INFO - Processing batch 1/37 (entries 0-100)
+2025-02-26 19:01:28,401 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:28,401 - migrate_to_langchain - ERROR - Error processing batch 1: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:28,401 - migrate_to_langchain - INFO - Processing batch 2/37 (entries 100-200)
+2025-02-26 19:01:29,096 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:30,892 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:30,892 - migrate_to_langchain - ERROR - Error processing batch 2: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:30,892 - migrate_to_langchain - INFO - Processing batch 3/37 (entries 200-300)
+2025-02-26 19:01:31,501 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:33,030 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:33,030 - migrate_to_langchain - ERROR - Error processing batch 3: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:33,030 - migrate_to_langchain - INFO - Processing batch 4/37 (entries 300-400)
+2025-02-26 19:01:33,778 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:35,336 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:35,336 - migrate_to_langchain - ERROR - Error processing batch 4: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:35,336 - migrate_to_langchain - INFO - Processing batch 5/37 (entries 400-500)
+2025-02-26 19:01:36,485 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:38,155 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:38,155 - migrate_to_langchain - ERROR - Error processing batch 5: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:38,155 - migrate_to_langchain - INFO - Processing batch 6/37 (entries 500-600)
+2025-02-26 19:01:38,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:40,362 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:40,362 - migrate_to_langchain - ERROR - Error processing batch 6: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:40,362 - migrate_to_langchain - INFO - Processing batch 7/37 (entries 600-700)
+2025-02-26 19:01:41,190 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:42,708 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:42,708 - migrate_to_langchain - ERROR - Error processing batch 7: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:42,708 - migrate_to_langchain - INFO - Processing batch 8/37 (entries 700-800)
+2025-02-26 19:01:43,235 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:44,975 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:01:44,975 - migrate_to_langchain - INFO - Successfully added batch 8 (100 clauses)
+2025-02-26 19:01:44,975 - migrate_to_langchain - INFO - Processing batch 9/37 (entries 800-900)
+2025-02-26 19:01:45,923 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:47,453 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:47,453 - migrate_to_langchain - ERROR - Error processing batch 9: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:47,453 - migrate_to_langchain - INFO - Processing batch 10/37 (entries 900-1000)
+2025-02-26 19:01:48,058 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:49,690 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:49,690 - migrate_to_langchain - ERROR - Error processing batch 10: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:49,690 - migrate_to_langchain - INFO - Processing batch 11/37 (entries 1000-1100)
+2025-02-26 19:01:50,376 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:52,138 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:52,138 - migrate_to_langchain - ERROR - Error processing batch 11: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:52,138 - migrate_to_langchain - INFO - Processing batch 12/37 (entries 1100-1200)
+2025-02-26 19:01:52,918 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:54,687 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:54,687 - migrate_to_langchain - ERROR - Error processing batch 12: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:54,687 - migrate_to_langchain - INFO - Processing batch 13/37 (entries 1200-1300)
+2025-02-26 19:01:55,359 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:56,869 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:56,870 - migrate_to_langchain - ERROR - Error processing batch 13: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:56,870 - migrate_to_langchain - INFO - Processing batch 14/37 (entries 1300-1400)
+2025-02-26 19:01:57,975 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:01:59,584 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:59,584 - migrate_to_langchain - ERROR - Error processing batch 14: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:01:59,584 - migrate_to_langchain - INFO - Processing batch 15/37 (entries 1400-1500)
+2025-02-26 19:02:00,277 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:02:02,063 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:02,064 - migrate_to_langchain - ERROR - Error processing batch 15: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:02,064 - migrate_to_langchain - INFO - Processing batch 16/37 (entries 1500-1600)
+2025-02-26 19:02:02,927 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:02:04,480 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:04,481 - migrate_to_langchain - ERROR - Error processing batch 16: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:04,481 - migrate_to_langchain - INFO - Processing batch 17/37 (entries 1600-1700)
+2025-02-26 19:02:05,123 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:02:06,644 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:06,644 - migrate_to_langchain - ERROR - Error processing batch 17: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:06,644 - migrate_to_langchain - INFO - Processing batch 18/37 (entries 1700-1800)
+2025-02-26 19:02:07,364 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:02:09,294 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:09,294 - migrate_to_langchain - ERROR - Error processing batch 18: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:09,294 - migrate_to_langchain - INFO - Processing batch 19/37 (entries 1800-1900)
+2025-02-26 19:02:09,713 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:02:10,597 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,597 - migrate_to_langchain - ERROR - Error processing batch 19: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,597 - migrate_to_langchain - INFO - Processing batch 20/37 (entries 1900-2000)
+2025-02-26 19:02:10,655 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,655 - migrate_to_langchain - ERROR - Error processing batch 20: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,656 - migrate_to_langchain - INFO - Processing batch 21/37 (entries 2000-2100)
+2025-02-26 19:02:10,712 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,713 - migrate_to_langchain - ERROR - Error processing batch 21: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,713 - migrate_to_langchain - INFO - Processing batch 22/37 (entries 2100-2200)
+2025-02-26 19:02:10,772 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,772 - migrate_to_langchain - ERROR - Error processing batch 22: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,772 - migrate_to_langchain - INFO - Processing batch 23/37 (entries 2200-2300)
+2025-02-26 19:02:10,836 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,836 - migrate_to_langchain - ERROR - Error processing batch 23: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,837 - migrate_to_langchain - INFO - Processing batch 24/37 (entries 2300-2400)
+2025-02-26 19:02:10,900 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,900 - migrate_to_langchain - ERROR - Error processing batch 24: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,900 - migrate_to_langchain - INFO - Processing batch 25/37 (entries 2400-2500)
+2025-02-26 19:02:10,962 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,962 - migrate_to_langchain - ERROR - Error processing batch 25: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:10,962 - migrate_to_langchain - INFO - Processing batch 26/37 (entries 2500-2600)
+2025-02-26 19:02:11,026 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,026 - migrate_to_langchain - ERROR - Error processing batch 26: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,026 - migrate_to_langchain - INFO - Processing batch 27/37 (entries 2600-2700)
+2025-02-26 19:02:11,093 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,093 - migrate_to_langchain - ERROR - Error processing batch 27: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,093 - migrate_to_langchain - INFO - Processing batch 28/37 (entries 2700-2800)
+2025-02-26 19:02:11,156 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,156 - migrate_to_langchain - ERROR - Error processing batch 28: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,156 - migrate_to_langchain - INFO - Processing batch 29/37 (entries 2800-2900)
+2025-02-26 19:02:11,219 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,219 - migrate_to_langchain - ERROR - Error processing batch 29: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,219 - migrate_to_langchain - INFO - Processing batch 30/37 (entries 2900-3000)
+2025-02-26 19:02:11,283 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,283 - migrate_to_langchain - ERROR - Error processing batch 30: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,283 - migrate_to_langchain - INFO - Processing batch 31/37 (entries 3000-3100)
+2025-02-26 19:02:11,349 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,349 - migrate_to_langchain - ERROR - Error processing batch 31: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,349 - migrate_to_langchain - INFO - Processing batch 32/37 (entries 3100-3200)
+2025-02-26 19:02:11,412 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,412 - migrate_to_langchain - ERROR - Error processing batch 32: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,412 - migrate_to_langchain - INFO - Processing batch 33/37 (entries 3200-3300)
+2025-02-26 19:02:11,480 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,480 - migrate_to_langchain - ERROR - Error processing batch 33: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,480 - migrate_to_langchain - INFO - Processing batch 34/37 (entries 3300-3400)
+2025-02-26 19:02:11,547 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,547 - migrate_to_langchain - ERROR - Error processing batch 34: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,547 - migrate_to_langchain - INFO - Processing batch 35/37 (entries 3400-3500)
+2025-02-26 19:02:11,612 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,612 - migrate_to_langchain - ERROR - Error processing batch 35: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,612 - migrate_to_langchain - INFO - Processing batch 36/37 (entries 3500-3600)
+2025-02-26 19:02:11,675 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,675 - migrate_to_langchain - ERROR - Error processing batch 36: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,676 - migrate_to_langchain - INFO - Processing batch 37/37 (entries 3600-3645)
+2025-02-26 19:02:11,705 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - ERROR - Error adding clauses to LangChain vector store: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,705 - migrate_to_langchain - ERROR - Error processing batch 37: Expected metadata value to be a str, int, float or bool, got None which is a NoneType in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2025-02-26 19:02:11,705 - migrate_to_langchain - INFO - Completed migration in 43.62 seconds
+2025-02-26 19:02:11,705 - migrate_to_langchain - INFO - Total processed: 100 out of 3645
+2025-02-26 19:02:11,706 - migrate_to_langchain - INFO - FAISS stats: {'total_clauses': 3645, 'dimension': 3072, 'index_type': 'IndexFlatL2'}
+2025-02-26 19:02:11,706 - migrate_to_langchain - INFO - LangChain stats: {'total_clauses': 100, 'embedding_dimension': 3072, 'embedding_model': 'optimized_openai_embeddings', 'embedding_stats': {'hits': 5937, 'misses': 3968, 'saved_api_calls': 7936}}
+2025-02-26 19:02:11,753 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:11,753 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 5900 hits, 3968 misses
+2025-02-26 19:02:11,776 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 3645 entries
+2025-02-26 19:02:11,777 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:11,777 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 5900 hits, 3968 misses
+2025-02-26 19:02:11,785 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 100 documents
+2025-02-26 19:02:48,561 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:02:48,727 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:02:48,727 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:02:48,727 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:02:48,727 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:02:48,728 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:02:48,728 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:02:48,729 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:02:48,738 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:02:48,740 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:02:48,741 - migrate_to_langchain - INFO - Starting migration from FAISS to LangChain
+2025-02-26 19:02:48,741 - migrate_to_langchain - INFO - Backing up existing LangChain DB to /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/vector_db_backup_20250226_190248
+2025-02-26 19:02:48,760 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:48,760 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 5900 hits, 3968 misses
+2025-02-26 19:02:48,770 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 3645 entries
+2025-02-26 19:02:48,770 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:48,770 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 5900 hits, 3968 misses
+2025-02-26 19:02:48,968 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:02:49,064 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 0 documents
+2025-02-26 19:02:49,064 - migrate_to_langchain - INFO - Loading metadata from FAISS store with 3645 entries
+2025-02-26 19:02:49,064 - migrate_to_langchain - INFO - Processing batch 1/37 (entries 0-100)
+2025-02-26 19:02:49,228 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:49,228 - migrate_to_langchain - INFO - Successfully added batch 1 (100 clauses)
+2025-02-26 19:02:49,228 - migrate_to_langchain - INFO - Processing batch 2/37 (entries 100-200)
+2025-02-26 19:02:49,388 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:49,388 - migrate_to_langchain - INFO - Successfully added batch 2 (100 clauses)
+2025-02-26 19:02:49,388 - migrate_to_langchain - INFO - Processing batch 3/37 (entries 200-300)
+2025-02-26 19:02:49,541 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:49,541 - migrate_to_langchain - INFO - Successfully added batch 3 (100 clauses)
+2025-02-26 19:02:49,541 - migrate_to_langchain - INFO - Processing batch 4/37 (entries 300-400)
+2025-02-26 19:02:49,678 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:49,678 - migrate_to_langchain - INFO - Successfully added batch 4 (100 clauses)
+2025-02-26 19:02:49,678 - migrate_to_langchain - INFO - Processing batch 5/37 (entries 400-500)
+2025-02-26 19:02:49,823 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:49,823 - migrate_to_langchain - INFO - Successfully added batch 5 (100 clauses)
+2025-02-26 19:02:49,823 - migrate_to_langchain - INFO - Processing batch 6/37 (entries 500-600)
+2025-02-26 19:02:50,002 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,002 - migrate_to_langchain - INFO - Successfully added batch 6 (100 clauses)
+2025-02-26 19:02:50,002 - migrate_to_langchain - INFO - Processing batch 7/37 (entries 600-700)
+2025-02-26 19:02:50,138 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,138 - migrate_to_langchain - INFO - Successfully added batch 7 (100 clauses)
+2025-02-26 19:02:50,138 - migrate_to_langchain - INFO - Processing batch 8/37 (entries 700-800)
+2025-02-26 19:02:50,294 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,294 - migrate_to_langchain - INFO - Successfully added batch 8 (100 clauses)
+2025-02-26 19:02:50,294 - migrate_to_langchain - INFO - Processing batch 9/37 (entries 800-900)
+2025-02-26 19:02:50,449 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,449 - migrate_to_langchain - INFO - Successfully added batch 9 (100 clauses)
+2025-02-26 19:02:50,449 - migrate_to_langchain - INFO - Processing batch 10/37 (entries 900-1000)
+2025-02-26 19:02:50,627 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,627 - migrate_to_langchain - INFO - Successfully added batch 10 (100 clauses)
+2025-02-26 19:02:50,627 - migrate_to_langchain - INFO - Processing batch 11/37 (entries 1000-1100)
+2025-02-26 19:02:50,789 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,789 - migrate_to_langchain - INFO - Successfully added batch 11 (100 clauses)
+2025-02-26 19:02:50,789 - migrate_to_langchain - INFO - Processing batch 12/37 (entries 1100-1200)
+2025-02-26 19:02:50,980 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:50,980 - migrate_to_langchain - INFO - Successfully added batch 12 (100 clauses)
+2025-02-26 19:02:50,980 - migrate_to_langchain - INFO - Processing batch 13/37 (entries 1200-1300)
+2025-02-26 19:02:51,127 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,127 - migrate_to_langchain - INFO - Successfully added batch 13 (100 clauses)
+2025-02-26 19:02:51,127 - migrate_to_langchain - INFO - Processing batch 14/37 (entries 1300-1400)
+2025-02-26 19:02:51,285 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,285 - migrate_to_langchain - INFO - Successfully added batch 14 (100 clauses)
+2025-02-26 19:02:51,285 - migrate_to_langchain - INFO - Processing batch 15/37 (entries 1400-1500)
+2025-02-26 19:02:51,462 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,462 - migrate_to_langchain - INFO - Successfully added batch 15 (100 clauses)
+2025-02-26 19:02:51,462 - migrate_to_langchain - INFO - Processing batch 16/37 (entries 1500-1600)
+2025-02-26 19:02:51,617 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,617 - migrate_to_langchain - INFO - Successfully added batch 16 (100 clauses)
+2025-02-26 19:02:51,617 - migrate_to_langchain - INFO - Processing batch 17/37 (entries 1600-1700)
+2025-02-26 19:02:51,763 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,764 - migrate_to_langchain - INFO - Successfully added batch 17 (100 clauses)
+2025-02-26 19:02:51,764 - migrate_to_langchain - INFO - Processing batch 18/37 (entries 1700-1800)
+2025-02-26 19:02:51,924 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:51,924 - migrate_to_langchain - INFO - Successfully added batch 18 (100 clauses)
+2025-02-26 19:02:51,924 - migrate_to_langchain - INFO - Processing batch 19/37 (entries 1800-1900)
+2025-02-26 19:02:52,080 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,080 - migrate_to_langchain - INFO - Successfully added batch 19 (100 clauses)
+2025-02-26 19:02:52,080 - migrate_to_langchain - INFO - Processing batch 20/37 (entries 1900-2000)
+2025-02-26 19:02:52,264 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,264 - migrate_to_langchain - INFO - Successfully added batch 20 (100 clauses)
+2025-02-26 19:02:52,264 - migrate_to_langchain - INFO - Processing batch 21/37 (entries 2000-2100)
+2025-02-26 19:02:52,419 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,419 - migrate_to_langchain - INFO - Successfully added batch 21 (100 clauses)
+2025-02-26 19:02:52,419 - migrate_to_langchain - INFO - Processing batch 22/37 (entries 2100-2200)
+2025-02-26 19:02:52,595 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,595 - migrate_to_langchain - INFO - Successfully added batch 22 (100 clauses)
+2025-02-26 19:02:52,595 - migrate_to_langchain - INFO - Processing batch 23/37 (entries 2200-2300)
+2025-02-26 19:02:52,743 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,743 - migrate_to_langchain - INFO - Successfully added batch 23 (100 clauses)
+2025-02-26 19:02:52,743 - migrate_to_langchain - INFO - Processing batch 24/37 (entries 2300-2400)
+2025-02-26 19:02:52,895 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:52,895 - migrate_to_langchain - INFO - Successfully added batch 24 (100 clauses)
+2025-02-26 19:02:52,895 - migrate_to_langchain - INFO - Processing batch 25/37 (entries 2400-2500)
+2025-02-26 19:02:53,058 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,058 - migrate_to_langchain - INFO - Successfully added batch 25 (100 clauses)
+2025-02-26 19:02:53,058 - migrate_to_langchain - INFO - Processing batch 26/37 (entries 2500-2600)
+2025-02-26 19:02:53,224 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,224 - migrate_to_langchain - INFO - Successfully added batch 26 (100 clauses)
+2025-02-26 19:02:53,224 - migrate_to_langchain - INFO - Processing batch 27/37 (entries 2600-2700)
+2025-02-26 19:02:53,383 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,383 - migrate_to_langchain - INFO - Successfully added batch 27 (100 clauses)
+2025-02-26 19:02:53,383 - migrate_to_langchain - INFO - Processing batch 28/37 (entries 2700-2800)
+2025-02-26 19:02:53,549 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,549 - migrate_to_langchain - INFO - Successfully added batch 28 (100 clauses)
+2025-02-26 19:02:53,549 - migrate_to_langchain - INFO - Processing batch 29/37 (entries 2800-2900)
+2025-02-26 19:02:53,713 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,713 - migrate_to_langchain - INFO - Successfully added batch 29 (100 clauses)
+2025-02-26 19:02:53,713 - migrate_to_langchain - INFO - Processing batch 30/37 (entries 2900-3000)
+2025-02-26 19:02:53,908 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:53,909 - migrate_to_langchain - INFO - Successfully added batch 30 (100 clauses)
+2025-02-26 19:02:53,909 - migrate_to_langchain - INFO - Processing batch 31/37 (entries 3000-3100)
+2025-02-26 19:02:54,078 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:54,078 - migrate_to_langchain - INFO - Successfully added batch 31 (100 clauses)
+2025-02-26 19:02:54,078 - migrate_to_langchain - INFO - Processing batch 32/37 (entries 3100-3200)
+2025-02-26 19:02:54,248 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:54,248 - migrate_to_langchain - INFO - Successfully added batch 32 (100 clauses)
+2025-02-26 19:02:54,249 - migrate_to_langchain - INFO - Processing batch 33/37 (entries 3200-3300)
+2025-02-26 19:02:54,427 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:54,428 - migrate_to_langchain - INFO - Successfully added batch 33 (100 clauses)
+2025-02-26 19:02:54,428 - migrate_to_langchain - INFO - Processing batch 34/37 (entries 3300-3400)
+2025-02-26 19:02:54,634 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:54,635 - migrate_to_langchain - INFO - Successfully added batch 34 (100 clauses)
+2025-02-26 19:02:54,635 - migrate_to_langchain - INFO - Processing batch 35/37 (entries 3400-3500)
+2025-02-26 19:02:54,852 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:54,852 - migrate_to_langchain - INFO - Successfully added batch 35 (100 clauses)
+2025-02-26 19:02:54,852 - migrate_to_langchain - INFO - Processing batch 36/37 (entries 3500-3600)
+2025-02-26 19:02:55,034 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 100 clauses to LangChain vector store
+2025-02-26 19:02:55,034 - migrate_to_langchain - INFO - Successfully added batch 36 (100 clauses)
+2025-02-26 19:02:55,034 - migrate_to_langchain - INFO - Processing batch 37/37 (entries 3600-3645)
+2025-02-26 19:02:55,100 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 45 clauses to LangChain vector store
+2025-02-26 19:02:55,100 - migrate_to_langchain - INFO - Successfully added batch 37 (45 clauses)
+2025-02-26 19:02:55,100 - migrate_to_langchain - INFO - Completed migration in 6.36 seconds
+2025-02-26 19:02:55,101 - migrate_to_langchain - INFO - Total processed: 3645 out of 3645
+2025-02-26 19:02:55,102 - migrate_to_langchain - INFO - FAISS stats: {'total_clauses': 3645, 'dimension': 3072, 'index_type': 'IndexFlatL2'}
+2025-02-26 19:02:55,102 - migrate_to_langchain - INFO - LangChain stats: {'total_clauses': 3645, 'embedding_dimension': 3072, 'embedding_model': 'optimized_openai_embeddings', 'embedding_stats': {'hits': 9545, 'misses': 3968, 'saved_api_calls': 7936}}
+2025-02-26 19:02:55,149 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:55,149 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9500 hits, 3968 misses
+2025-02-26 19:02:55,158 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 3645 entries
+2025-02-26 19:02:55,159 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:02:55,159 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9500 hits, 3968 misses
+2025-02-26 19:02:55,301 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 3645 documents

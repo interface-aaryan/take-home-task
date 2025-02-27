@@ -2836,3 +2836,922 @@
 2025-02-26 18:23:21,934 - __main__ - INFO - Processing chunk 102/246 from REG-NFPA 86.pdf
 2025-02-26 18:23:21,934 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
 2025-02-26 18:23:52,037 - openai._base_client - INFO - Retrying request to /chat/completions in 0.460526 seconds
+2025-02-26 18:44:26,249 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:44:26,484 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:44:26,484 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:44:26,484 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:44:26,484 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:44:26,519 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:44:26,519 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:45:08,165 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:45:08,388 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:45:08,388 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:45:08,388 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:45:08,388 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:45:08,421 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:45:08,422 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:45:08,459 - faiss.loader - INFO - Loading faiss.
+2025-02-26 18:45:08,484 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 18:45:08,486 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 18:45:08,487 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 18:45:08,487 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 18:45:08,679 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 18:45:08,680 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 18:45:08,702 - __main__ - INFO - Starting with clean memory state
+2025-02-26 18:45:08,702 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 18:45:08,702 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 18:45:08,702 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 202 hits, 1810 misses
+2025-02-26 18:45:08,843 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 18:45:08,965 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 1811 documents
+2025-02-26 18:45:08,965 - __main__ - INFO - Rebuilding knowledge base from regulatory documents
+2025-02-26 18:45:08,966 - __main__ - INFO - Found 10 regulatory documents to process
+2025-02-26 18:45:08,966 - __main__ - INFO - Loaded checkpoint with 9 processed documents
+2025-02-26 18:45:08,966 - __main__ - INFO - Using parallel processing with 4 workers
+2025-02-26 18:45:08,966 - __main__ - INFO - Processing batch 1/3 of 4 documents
+2025-02-26 18:45:08,966 - __main__ - INFO - Skipping already processed document: REG-ASTM D6400.pdf
+2025-02-26 18:45:08,966 - __main__ - INFO - Skipping already processed document: REG-14 CFR Part 77.pdf
+2025-02-26 18:45:08,966 - __main__ - INFO - Skipping already processed document: REG-IEEE 802.11.pdf
+2025-02-26 18:45:08,966 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
+2025-02-26 18:45:08,988 - __main__ - INFO - Progress: 8/10 documents processed (80.0%)
+2025-02-26 18:45:08,988 - __main__ - INFO - Processing batch 2/3 of 4 documents
+2025-02-26 18:45:08,988 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
+2025-02-26 18:45:08,988 - __main__ - INFO - Skipping already processed document: REG-29 CFR 1910 119.pdf
+2025-02-26 18:45:08,988 - __main__ - INFO - Skipping already processed document: REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 18:45:08,988 - __main__ - INFO - Skipping already processed document: REG-ANSI A92.2.pdf
+2025-02-26 18:45:09,006 - __main__ - INFO - Progress: 8/10 documents processed (80.0%)
+2025-02-26 18:45:09,006 - __main__ - INFO - Processing batch 3/3 of 2 documents
+2025-02-26 18:45:09,007 - __main__ - INFO - Processing regulatory document: REG-NFPA 86.pdf (Size: 3.58 MB)
+2025-02-26 18:45:09,023 - __main__ - INFO - Processing regulatory document: REG-PA DEP of AIR QUALITY.pdf (Size: 4.27 MB)
+2025-02-26 18:45:09,023 - __main__ - INFO - Parsing document: REG-NFPA 86.pdf
+2025-02-26 18:45:09,040 - __main__ - INFO - Parsing document: REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,040 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF REG-NFPA 86.pdf (3.58 MB)
+2025-02-26 18:45:09,040 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF REG-PA DEP of AIR QUALITY.pdf (4.27 MB)
+2025-02-26 18:45:09,070 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - PDF has 98 pages
+2025-02-26 18:45:09,130 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 10/98 pages (2 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,158 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 20/98 pages (7 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,210 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 30/98 pages (16 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,216 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 40/98 pages (25 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,216 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 50/98 pages (31 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,221 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 60/98 pages (41 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,221 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 70/98 pages (49 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,222 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 80/98 pages (55 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,222 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 90/98 pages (59 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,222 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 98/98 pages (66 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,223 - __main__ - INFO - Successfully parsed document: REG-PA DEP of AIR QUALITY.pdf - Text length: 179985 chars
+2025-02-26 18:45:09,225 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added new document REG-PA DEP of AIR QUALITY.pdf with id 10
+2025-02-26 18:45:09,226 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - PDF has 150 pages
+2025-02-26 18:45:09,328 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 10/150 pages (10 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,342 - __main__ - INFO - Extracting clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,371 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 20/150 pages (20 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,418 - __main__ - INFO - Using hybrid extractor for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,426 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 30/150 pages (30 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,429 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 40/150 pages (40 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,429 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 50/150 pages (47 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,429 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Extracting clauses using hybrid approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,429 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 60/150 pages (57 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,429 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 70/150 pages (67 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,430 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 80/150 pages (77 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,430 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 90/150 pages (87 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,430 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracting clauses using rule-based approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,430 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 100/150 pages (97 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,443 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 110/150 pages (107 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,449 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 120/150 pages (117 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,456 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 130/150 pages (125 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,461 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracted 255 clauses using rule-based approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,461 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 140/150 pages (135 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,461 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 150/150 pages (141 with content) from REG-NFPA 86.pdf
+2025-02-26 18:45:09,463 - __main__ - INFO - Successfully parsed document: REG-NFPA 86.pdf - Text length: 690565 chars
+2025-02-26 18:45:09,465 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added version 2 for document REG-NFPA 86.pdf
+2025-02-26 18:45:09,466 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction found 255 clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,466 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction confidence: 1.00 for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,467 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Hybrid extraction found 254 unique clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,467 - __main__ - INFO - Extracting clauses from REG-NFPA 86.pdf
+2025-02-26 18:45:09,467 - __main__ - INFO - Using hybrid extractor for REG-NFPA 86.pdf
+2025-02-26 18:45:09,467 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Extracting clauses using hybrid approach from REG-NFPA 86.pdf
+2025-02-26 18:45:09,468 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracting clauses using rule-based approach from REG-NFPA 86.pdf
+2025-02-26 18:45:09,635 - __main__ - INFO - Extracted 254 clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,670 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracted 1809 clauses using rule-based approach from REG-NFPA 86.pdf
+2025-02-26 18:45:09,670 - __main__ - INFO - Adding clauses to document store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,683 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction found 1809 clauses from REG-NFPA 86.pdf
+2025-02-26 18:45:09,683 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction confidence: 1.00 for REG-NFPA 86.pdf
+2025-02-26 18:45:09,687 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Hybrid extraction found 1791 unique clauses from REG-NFPA 86.pdf
+2025-02-26 18:45:09,688 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 254 regulatory clauses for document 10 version 1
+2025-02-26 18:45:09,688 - __main__ - INFO - Adding clauses to vector store in batches for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:09,707 - __main__ - INFO - Extracted 1791 clauses from REG-NFPA 86.pdf
+2025-02-26 18:45:09,734 - __main__ - INFO - Adding clauses to document store for REG-NFPA 86.pdf
+2025-02-26 18:45:09,743 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 1791 regulatory clauses for document 1 version 2
+2025-02-26 18:45:09,745 - __main__ - INFO - Adding clauses to vector store in batches for REG-NFPA 86.pdf
+2025-02-26 18:45:10,079 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,079 - __main__ - INFO - Added batch 1/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,131 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,132 - __main__ - INFO - Added batch 2/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,182 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,182 - __main__ - INFO - Added batch 3/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,241 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,241 - __main__ - INFO - Added batch 4/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,262 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:10,455 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,456 - __main__ - INFO - Added batch 5/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,510 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,511 - __main__ - INFO - Added batch 6/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,562 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,562 - __main__ - INFO - Added batch 7/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,624 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,624 - __main__ - INFO - Added batch 8/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:10,832 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:10,832 - __main__ - INFO - Added batch 9/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:11,081 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:11,081 - __main__ - INFO - Added batch 1/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:11,123 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:11,123 - __main__ - INFO - Added batch 10/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:11,176 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:11,176 - __main__ - INFO - Added batch 11/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:11,491 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:11,872 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:11,872 - __main__ - INFO - Added batch 2/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:12,541 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:12,974 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:12,974 - __main__ - INFO - Added batch 3/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:13,936 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:14,437 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:14,437 - __main__ - INFO - Added batch 4/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:14,786 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:15,419 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:15,419 - __main__ - INFO - Added batch 5/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:15,528 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:15,676 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:15,676 - __main__ - INFO - Added batch 12/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:15,743 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:15,743 - __main__ - INFO - Added batch 13/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:15,778 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:15,797 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:15,797 - __main__ - INFO - Added batch 14/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,041 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,053 - __main__ - INFO - Added batch 15/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,168 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,168 - __main__ - INFO - Added batch 16/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,216 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,216 - __main__ - INFO - Added batch 6/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:16,255 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,255 - __main__ - INFO - Added batch 17/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,321 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,321 - __main__ - INFO - Added batch 18/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,499 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,499 - __main__ - INFO - Added batch 19/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,553 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,554 - __main__ - INFO - Added batch 20/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,606 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,606 - __main__ - INFO - Added batch 21/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,630 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:16,662 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,662 - __main__ - INFO - Added batch 22/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:16,870 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:16,870 - __main__ - INFO - Added batch 23/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,041 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,041 - __main__ - INFO - Added batch 7/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:17,086 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,086 - __main__ - INFO - Added batch 24/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,144 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,145 - __main__ - INFO - Added batch 25/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,208 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,208 - __main__ - INFO - Added batch 26/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,263 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,263 - __main__ - INFO - Added batch 27/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,449 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,449 - __main__ - INFO - Added batch 28/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,508 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,508 - __main__ - INFO - Added batch 29/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,568 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,568 - __main__ - INFO - Added batch 30/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,626 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,626 - __main__ - INFO - Added batch 31/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,686 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:17,686 - __main__ - INFO - Added batch 32/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:17,761 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:17,996 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,009 - __main__ - INFO - Added batch 33/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:18,130 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,130 - __main__ - INFO - Added batch 34/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:18,184 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,184 - __main__ - INFO - Added batch 8/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:18,234 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,235 - __main__ - INFO - Added batch 35/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:18,295 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,295 - __main__ - INFO - Added batch 36/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:18,544 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:18,914 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:18,914 - __main__ - INFO - Added batch 37/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:18,969 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:19,003 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,003 - __main__ - INFO - Added batch 38/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,059 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,059 - __main__ - INFO - Added batch 39/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,276 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,276 - __main__ - INFO - Added batch 40/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,330 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,330 - __main__ - INFO - Added batch 9/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:19,458 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,458 - __main__ - INFO - Added batch 41/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,519 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,519 - __main__ - INFO - Added batch 42/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,580 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,580 - __main__ - INFO - Added batch 43/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,637 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:19,637 - __main__ - INFO - Added batch 44/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:19,679 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:20,007 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:20,043 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,043 - __main__ - INFO - Added batch 10/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:20,272 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,272 - __main__ - INFO - Added batch 45/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,333 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,333 - __main__ - INFO - Added batch 46/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,392 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,392 - __main__ - INFO - Added batch 47/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,457 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,457 - __main__ - INFO - Added batch 48/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,525 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,525 - __main__ - INFO - Added batch 49/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,809 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,809 - __main__ - INFO - Added batch 50/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,870 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,870 - __main__ - INFO - Added batch 51/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:20,942 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:20,942 - __main__ - INFO - Added batch 52/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,001 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,001 - __main__ - INFO - Added batch 53/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,064 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,064 - __main__ - INFO - Added batch 54/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,300 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,300 - __main__ - INFO - Added batch 55/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,363 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,363 - __main__ - INFO - Added batch 56/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,424 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,424 - __main__ - INFO - Added batch 57/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,755 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:21,826 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,827 - __main__ - INFO - Added batch 58/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:21,888 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:21,888 - __main__ - INFO - Added batch 59/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:22,113 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:22,113 - __main__ - INFO - Added batch 60/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:22,180 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:22,180 - __main__ - INFO - Added batch 61/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:22,242 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:22,242 - __main__ - INFO - Added batch 62/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:22,308 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:22,308 - __main__ - INFO - Added batch 63/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:22,857 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:23,031 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,031 - __main__ - INFO - Added batch 64/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,289 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,289 - __main__ - INFO - Added batch 65/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,354 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,354 - __main__ - INFO - Added batch 66/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,443 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,443 - __main__ - INFO - Added batch 67/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,504 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,504 - __main__ - INFO - Added batch 68/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,561 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,561 - __main__ - INFO - Added batch 69/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,727 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,727 - __main__ - INFO - Added batch 70/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,786 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,787 - __main__ - INFO - Added batch 71/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:23,854 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:23,854 - __main__ - INFO - Added batch 72/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:24,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:24,422 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:24,422 - __main__ - INFO - Added batch 73/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:24,496 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:24,496 - __main__ - INFO - Added batch 74/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:24,688 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:24,688 - __main__ - INFO - Added batch 75/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:25,244 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:25,325 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:25,325 - __main__ - INFO - Added batch 76/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:25,399 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:25,399 - __main__ - INFO - Added batch 77/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:25,467 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:25,467 - __main__ - INFO - Added batch 78/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:25,533 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:25,533 - __main__ - INFO - Added batch 79/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:25,712 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:25,712 - __main__ - INFO - Added batch 80/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:26,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:26,492 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:26,492 - __main__ - INFO - Added batch 81/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:26,557 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:26,557 - __main__ - INFO - Added batch 82/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:26,875 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:26,944 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:26,944 - __main__ - INFO - Added batch 83/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,019 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,020 - __main__ - INFO - Added batch 84/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,172 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,172 - __main__ - INFO - Added batch 85/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,240 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,240 - __main__ - INFO - Added batch 86/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,304 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,304 - __main__ - INFO - Added batch 87/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,553 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:27,658 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,658 - __main__ - INFO - Added batch 88/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,730 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:27,730 - __main__ - INFO - Added batch 89/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,879 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 11 clauses to LangChain vector store
+2025-02-26 18:45:27,879 - __main__ - INFO - Added batch 90/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:45:27,917 - __main__ - INFO - Successfully processed REG-NFPA 86.pdf and extracted 1791 clauses in 18.91 seconds
+2025-02-26 18:45:27,951 - __main__ - ERROR - Error processing document REG-NFPA 86.pdf: object of type 'NoneType' has no len()
+2025-02-26 18:45:27,986 - __main__ - INFO - Completed processing REG-NFPA 86.pdf: failed
+2025-02-26 18:45:32,860 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:33,224 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:33,224 - __main__ - INFO - Added batch 11/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:33,548 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:33,916 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:45:33,917 - __main__ - INFO - Added batch 12/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:34,295 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:45:34,834 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 14 clauses to LangChain vector store
+2025-02-26 18:45:34,834 - __main__ - INFO - Added batch 13/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:34,873 - __main__ - INFO - Successfully processed REG-PA DEP of AIR QUALITY.pdf and extracted 254 clauses in 25.85 seconds
+2025-02-26 18:45:34,907 - __main__ - ERROR - Error processing document REG-PA DEP of AIR QUALITY.pdf: object of type 'NoneType' has no len()
+2025-02-26 18:45:34,943 - __main__ - INFO - Completed processing REG-PA DEP of AIR QUALITY.pdf: failed
+2025-02-26 18:45:34,979 - __main__ - INFO - Progress: 8/10 documents processed (80.0%)
+2025-02-26 18:45:34,979 - __main__ - INFO - Document processing completed: 8/10 documents processed, 1834 clauses extracted
+2025-02-26 18:45:34,979 - __main__ - WARNING - Failed documents: REG-NFPA 86.pdf, REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:45:35,014 - __main__ - INFO - Knowledge base build completed, skipping SOP processing (--build-only flag set)
+2025-02-26 18:47:11,003 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:47:11,235 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:47:11,235 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:47:11,235 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:47:11,235 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:47:11,270 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:47:11,270 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:47:11,304 - faiss.loader - INFO - Loading faiss.
+2025-02-26 18:47:11,324 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 18:47:11,326 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 18:47:11,327 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 18:47:11,327 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 18:47:11,497 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 18:47:11,497 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 18:47:11,518 - __main__ - INFO - Starting with clean memory state
+2025-02-26 18:47:11,519 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 18:47:11,519 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 18:47:11,519 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 1983 hits, 2074 misses
+2025-02-26 18:47:11,660 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 18:47:11,823 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 2660 documents
+2025-02-26 18:47:11,823 - __main__ - INFO - Rebuilding knowledge base from regulatory documents
+2025-02-26 18:47:11,823 - __main__ - INFO - Found 10 regulatory documents to process
+2025-02-26 18:47:11,823 - __main__ - INFO - Loaded checkpoint with 10 processed documents
+2025-02-26 18:47:11,823 - __main__ - INFO - Using parallel processing with 4 workers
+2025-02-26 18:47:11,823 - __main__ - INFO - Processing batch 1/3 of 4 documents
+2025-02-26 18:47:11,823 - __main__ - INFO - Skipping already processed document: REG-ASTM D6400.pdf
+2025-02-26 18:47:11,824 - __main__ - INFO - Skipping already processed document: REG-14 CFR Part 77.pdf
+2025-02-26 18:47:11,824 - __main__ - INFO - Skipping already processed document: REG-IEEE 802.11.pdf
+2025-02-26 18:47:11,824 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
+2025-02-26 18:47:11,846 - __main__ - INFO - Progress: 8/10 documents processed (80.0%)
+2025-02-26 18:47:11,847 - __main__ - INFO - Processing batch 2/3 of 4 documents
+2025-02-26 18:47:11,847 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
+2025-02-26 18:47:11,847 - __main__ - INFO - Skipping already processed document: REG-29 CFR 1910 119.pdf
+2025-02-26 18:47:11,847 - __main__ - INFO - Skipping already processed document: REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 18:47:11,847 - __main__ - INFO - Skipping already processed document: REG-ANSI A92.2.pdf
+2025-02-26 18:47:11,864 - __main__ - INFO - Progress: 8/10 documents processed (80.0%)
+2025-02-26 18:47:11,864 - __main__ - INFO - Processing batch 3/3 of 2 documents
+2025-02-26 18:47:11,864 - __main__ - INFO - Processing regulatory document: REG-NFPA 86.pdf (Size: 3.58 MB)
+2025-02-26 18:47:11,864 - __main__ - INFO - Processing regulatory document: REG-PA DEP of AIR QUALITY.pdf (Size: 4.27 MB)
+2025-02-26 18:47:11,881 - __main__ - INFO - Parsing document: REG-NFPA 86.pdf
+2025-02-26 18:47:11,897 - __main__ - INFO - Parsing document: REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:11,898 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF REG-NFPA 86.pdf (3.58 MB)
+2025-02-26 18:47:11,898 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF REG-PA DEP of AIR QUALITY.pdf (4.27 MB)
+2025-02-26 18:47:11,931 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - PDF has 98 pages
+2025-02-26 18:47:11,980 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 10/98 pages (2 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,019 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 20/98 pages (11 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,041 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 30/98 pages (20 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,070 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 40/98 pages (25 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,077 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 50/98 pages (31 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,079 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - PDF has 150 pages
+2025-02-26 18:47:12,079 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 60/98 pages (37 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,079 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 70/98 pages (44 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,081 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 80/98 pages (48 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,108 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 90/98 pages (58 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,125 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 98/98 pages (66 with content) from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,177 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 10/150 pages (7 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,196 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 20/150 pages (17 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,221 - __main__ - INFO - Successfully parsed document: REG-PA DEP of AIR QUALITY.pdf - Text length: 179985 chars
+2025-02-26 18:47:12,221 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 30/150 pages (27 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,282 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 40/150 pages (37 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,282 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 50/150 pages (47 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 60/150 pages (57 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 70/150 pages (67 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 80/150 pages (77 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 90/150 pages (87 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 100/150 pages (97 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,283 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 110/150 pages (107 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,284 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 120/150 pages (117 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,284 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 130/150 pages (125 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,284 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 140/150 pages (135 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,284 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed approximately 150/150 pages (141 with content) from REG-NFPA 86.pdf
+2025-02-26 18:47:12,284 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added version 2 for document REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,286 - __main__ - INFO - Successfully parsed document: REG-NFPA 86.pdf - Text length: 690565 chars
+2025-02-26 18:47:12,286 - __main__ - INFO - Extracting clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,286 - __main__ - INFO - Using hybrid extractor for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,286 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Extracting clauses using hybrid approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,287 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracting clauses using rule-based approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,306 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added version 3 for document REG-NFPA 86.pdf
+2025-02-26 18:47:12,318 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracted 256 clauses using rule-based approach from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,320 - __main__ - INFO - Extracting clauses from REG-NFPA 86.pdf
+2025-02-26 18:47:12,320 - __main__ - INFO - Using hybrid extractor for REG-NFPA 86.pdf
+2025-02-26 18:47:12,320 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Extracting clauses using hybrid approach from REG-NFPA 86.pdf
+2025-02-26 18:47:12,320 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracting clauses using rule-based approach from REG-NFPA 86.pdf
+2025-02-26 18:47:12,327 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction found 256 clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,339 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction confidence: 1.00 for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,353 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Hybrid extraction found 255 unique clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,500 - regulatory_compliance_processor.document_processing.extractors.rule_extractor - INFO - Extracted 1811 clauses using rule-based approach from REG-NFPA 86.pdf
+2025-02-26 18:47:12,502 - __main__ - INFO - Extracted 255 clauses from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,526 - __main__ - INFO - Adding clauses to document store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,537 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction found 1811 clauses from REG-NFPA 86.pdf
+2025-02-26 18:47:12,538 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Rule-based extraction confidence: 1.00 for REG-NFPA 86.pdf
+2025-02-26 18:47:12,542 - regulatory_compliance_processor.document_processing.extractors.hybrid_extractor - INFO - Hybrid extraction found 1793 unique clauses from REG-NFPA 86.pdf
+2025-02-26 18:47:12,543 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 255 regulatory clauses for document 10 version 2
+2025-02-26 18:47:12,544 - __main__ - INFO - Adding clauses to vector store in batches for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:12,576 - __main__ - INFO - Extracted 1793 clauses from REG-NFPA 86.pdf
+2025-02-26 18:47:12,598 - __main__ - INFO - Adding clauses to document store for REG-NFPA 86.pdf
+2025-02-26 18:47:12,616 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 1793 regulatory clauses for document 1 version 3
+2025-02-26 18:47:12,617 - __main__ - INFO - Adding clauses to vector store in batches for REG-NFPA 86.pdf
+2025-02-26 18:47:13,736 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:13,736 - __main__ - INFO - Added batch 1/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:13,796 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:13,796 - __main__ - INFO - Added batch 1/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:13,929 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:13,929 - __main__ - INFO - Added batch 2/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:13,983 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:13,983 - __main__ - INFO - Added batch 2/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,043 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,043 - __main__ - INFO - Added batch 3/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,131 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,131 - __main__ - INFO - Added batch 4/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,187 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,187 - __main__ - INFO - Added batch 5/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,301 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:14,480 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,480 - __main__ - INFO - Added batch 6/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,567 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,567 - __main__ - INFO - Added batch 3/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:14,622 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,622 - __main__ - INFO - Added batch 7/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,676 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,676 - __main__ - INFO - Added batch 4/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:14,720 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,720 - __main__ - INFO - Added batch 8/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:14,864 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:14,985 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:14,985 - __main__ - INFO - Added batch 9/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:15,060 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,060 - __main__ - INFO - Added batch 5/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:15,118 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,118 - __main__ - INFO - Added batch 10/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:15,173 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,173 - __main__ - INFO - Added batch 6/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:15,216 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,216 - __main__ - INFO - Added batch 11/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:15,422 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,422 - __main__ - INFO - Added batch 12/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:15,486 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:15,622 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,622 - __main__ - INFO - Added batch 7/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:15,763 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:15,958 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:15,991 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:15,991 - __main__ - INFO - Added batch 13/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,053 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,053 - __main__ - INFO - Added batch 14/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,150 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,150 - __main__ - INFO - Added batch 8/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:16,322 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,322 - __main__ - INFO - Added batch 15/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,385 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,385 - __main__ - INFO - Added batch 9/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:16,439 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,439 - __main__ - INFO - Added batch 16/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,501 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,501 - __main__ - INFO - Added batch 10/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:16,556 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,556 - __main__ - INFO - Added batch 17/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,711 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,711 - __main__ - INFO - Added batch 11/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:16,776 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,776 - __main__ - INFO - Added batch 18/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,840 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,840 - __main__ - INFO - Added batch 12/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:16,884 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,884 - __main__ - INFO - Added batch 19/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:16,943 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:16,943 - __main__ - INFO - Added batch 20/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,158 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,158 - __main__ - INFO - Added batch 21/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,222 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,222 - __main__ - INFO - Added batch 22/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,247 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:17,297 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,297 - __main__ - INFO - Added batch 23/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,361 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,361 - __main__ - INFO - Added batch 24/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,436 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 15 clauses to LangChain vector store
+2025-02-26 18:47:17,436 - __main__ - INFO - Added batch 13/13 of clauses to vector store for REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 18:47:17,460 - __main__ - INFO - Successfully processed REG-PA DEP of AIR QUALITY.pdf and extracted 255 clauses in 5.58 seconds
+2025-02-26 18:47:17,503 - __main__ - INFO - Completed processing REG-PA DEP of AIR QUALITY.pdf: completed
+2025-02-26 18:47:17,660 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,661 - __main__ - INFO - Added batch 25/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,722 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,722 - __main__ - INFO - Added batch 26/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,783 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,784 - __main__ - INFO - Added batch 27/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,849 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,849 - __main__ - INFO - Added batch 28/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:17,911 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:17,911 - __main__ - INFO - Added batch 29/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,203 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,203 - __main__ - INFO - Added batch 30/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,264 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,264 - __main__ - INFO - Added batch 31/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,323 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,323 - __main__ - INFO - Added batch 32/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,392 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,392 - __main__ - INFO - Added batch 33/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,460 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,460 - __main__ - INFO - Added batch 34/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,718 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,719 - __main__ - INFO - Added batch 35/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,781 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,782 - __main__ - INFO - Added batch 36/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,841 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,841 - __main__ - INFO - Added batch 37/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,900 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,900 - __main__ - INFO - Added batch 38/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:18,967 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:18,967 - __main__ - INFO - Added batch 39/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,183 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,183 - __main__ - INFO - Added batch 40/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,243 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,243 - __main__ - INFO - Added batch 41/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,302 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,302 - __main__ - INFO - Added batch 42/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,362 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,363 - __main__ - INFO - Added batch 43/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,420 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,420 - __main__ - INFO - Added batch 44/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,716 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,716 - __main__ - INFO - Added batch 45/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,820 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,820 - __main__ - INFO - Added batch 46/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,882 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,882 - __main__ - INFO - Added batch 47/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:19,947 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:19,947 - __main__ - INFO - Added batch 48/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:20,058 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:20,059 - __main__ - INFO - Added batch 49/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:20,345 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:20,676 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:20,676 - __main__ - INFO - Added batch 50/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:20,746 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:20,746 - __main__ - INFO - Added batch 51/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:20,874 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:20,874 - __main__ - INFO - Added batch 52/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:20,940 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:20,940 - __main__ - INFO - Added batch 53/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,000 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,000 - __main__ - INFO - Added batch 54/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,306 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,306 - __main__ - INFO - Added batch 55/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,367 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,367 - __main__ - INFO - Added batch 56/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,431 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,431 - __main__ - INFO - Added batch 57/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,667 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:21,876 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,876 - __main__ - INFO - Added batch 58/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:21,938 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:21,938 - __main__ - INFO - Added batch 59/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:22,226 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:22,226 - __main__ - INFO - Added batch 60/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:22,290 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:22,290 - __main__ - INFO - Added batch 61/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:22,348 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:22,348 - __main__ - INFO - Added batch 62/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:22,411 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:22,411 - __main__ - INFO - Added batch 63/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:22,669 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:22,873 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:22,873 - __main__ - INFO - Added batch 64/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,115 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,115 - __main__ - INFO - Added batch 65/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,186 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,186 - __main__ - INFO - Added batch 66/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,257 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,257 - __main__ - INFO - Added batch 67/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,319 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,320 - __main__ - INFO - Added batch 68/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,380 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,380 - __main__ - INFO - Added batch 69/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:23,665 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:23,963 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:23,963 - __main__ - INFO - Added batch 70/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,041 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,041 - __main__ - INFO - Added batch 71/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,113 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,113 - __main__ - INFO - Added batch 72/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,184 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,184 - __main__ - INFO - Added batch 73/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,255 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,255 - __main__ - INFO - Added batch 74/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,470 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,470 - __main__ - INFO - Added batch 75/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,532 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:24,532 - __main__ - INFO - Added batch 76/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:24,944 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:25,087 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:25,088 - __main__ - INFO - Added batch 77/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:25,169 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:25,169 - __main__ - INFO - Added batch 78/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:25,237 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:25,237 - __main__ - INFO - Added batch 79/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:25,456 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:25,456 - __main__ - INFO - Added batch 80/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:25,746 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:47:25,941 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:25,941 - __main__ - INFO - Added batch 81/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,021 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,021 - __main__ - INFO - Added batch 82/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,089 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,089 - __main__ - INFO - Added batch 83/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,154 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,154 - __main__ - INFO - Added batch 84/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,370 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,370 - __main__ - INFO - Added batch 85/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,435 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,435 - __main__ - INFO - Added batch 86/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,499 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,499 - __main__ - INFO - Added batch 87/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,593 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,593 - __main__ - INFO - Added batch 88/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,663 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 20 clauses to LangChain vector store
+2025-02-26 18:47:26,663 - __main__ - INFO - Added batch 89/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,885 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Added 13 clauses to LangChain vector store
+2025-02-26 18:47:26,885 - __main__ - INFO - Added batch 90/90 of clauses to vector store for REG-NFPA 86.pdf
+2025-02-26 18:47:26,922 - __main__ - INFO - Successfully processed REG-NFPA 86.pdf and extracted 1793 clauses in 15.06 seconds
+2025-02-26 18:47:26,956 - __main__ - INFO - Completed processing REG-NFPA 86.pdf: completed
+2025-02-26 18:47:26,991 - __main__ - INFO - Progress: 10/10 documents processed (100.0%)
+2025-02-26 18:47:26,991 - __main__ - INFO - Document processing completed: 10/10 documents processed, 3882 clauses extracted
+2025-02-26 18:47:27,023 - __main__ - INFO - Knowledge base build completed, skipping SOP processing (--build-only flag set)
+2025-02-26 18:47:56,360 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:47:56,601 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:47:56,601 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:47:56,601 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:47:56,602 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:47:56,646 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:47:56,646 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:47:56,696 - faiss.loader - INFO - Loading faiss.
+2025-02-26 18:47:56,725 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 18:47:56,727 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 18:47:56,727 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 18:47:56,727 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 18:47:56,901 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 18:47:56,901 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 18:47:56,924 - __main__ - INFO - Starting with clean memory state
+2025-02-26 18:47:56,925 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 18:47:56,925 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 18:47:56,925 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4000 hits, 2088 misses
+2025-02-26 18:47:57,065 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 18:47:57,236 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 2900 documents
+2025-02-26 18:47:57,237 - __main__ - INFO - Using existing knowledge base with 2900 clauses
+2025-02-26 18:47:57,259 - __main__ - INFO - Processing SOP: regulation_task/data/sop/sop.docx
+2025-02-26 18:47:57,259 - __main__ - INFO - Processing SOP: sop.docx
+2025-02-26 18:48:15,970 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:48:16,267 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:18,205 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:18,678 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:19,389 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:19,893 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:20,389 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:20,865 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:21,264 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:22,063 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:22,376 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:22,771 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:23,182 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:23,495 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:23,934 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:24,503 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:24,891 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:25,347 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:25,779 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:48:25,937 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No relevant clauses provided for compliance analysis
+2025-02-26 18:48:25,937 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No compliance analyses provided for generating recommendations
+2025-02-26 18:48:25,938 - __main__ - INFO - Saved compliance report to compliance_report.json
+2025-02-26 18:48:25,938 - __main__ - INFO - Saved compliance report to compliance_report.json
+2025-02-26 18:48:25,939 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 18:49:42,415 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:49:42,639 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:49:42,639 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:49:42,639 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:49:42,639 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:49:42,674 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:49:42,674 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:49:42,705 - faiss.loader - INFO - Loading faiss.
+2025-02-26 18:49:42,730 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 18:49:42,732 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 18:49:42,732 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 18:49:42,732 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 18:49:42,928 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 18:49:42,928 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 18:49:42,944 - __main__ - INFO - Starting with clean memory state
+2025-02-26 18:49:42,945 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 18:49:42,945 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 18:49:42,945 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4002 hits, 2106 misses
+2025-02-26 18:49:43,080 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 18:49:43,251 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 2900 documents
+2025-02-26 18:49:43,252 - __main__ - INFO - Using existing knowledge base with 2900 clauses
+2025-02-26 18:49:43,274 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/original.docx
+2025-02-26 18:49:43,274 - __main__ - INFO - Processing SOP: original.docx
+2025-02-26 18:51:24,568 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:51:26,407 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:26,787 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:27,246 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:27,658 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:28,060 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:28,660 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:29,075 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:29,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:29,969 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:30,367 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:30,842 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:31,211 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:31,700 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:31,992 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:32,373 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:32,810 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:51:32,991 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No relevant clauses provided for compliance analysis
+2025-02-26 18:51:32,991 - regulatory_compliance_processor.analysis.compliance_analyzer - WARNING - No compliance analyses provided for generating recommendations
+2025-02-26 18:51:32,992 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 18:51:32,992 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 18:51:32,992 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 18:55:10,166 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 18:55:10,405 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 18:55:10,406 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 18:55:10,406 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 18:55:10,406 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 18:55:10,441 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 18:55:10,441 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 18:55:10,478 - faiss.loader - INFO - Loading faiss.
+2025-02-26 18:55:10,504 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 18:55:10,506 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 18:55:10,506 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 18:55:10,506 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 18:55:10,702 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 18:55:10,703 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 18:55:10,718 - __main__ - INFO - Starting with clean memory state
+2025-02-26 18:55:10,719 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 18:55:10,719 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 18:55:10,719 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 4006 hits, 2134 misses
+2025-02-26 18:55:10,868 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 18:55:11,043 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 2900 documents
+2025-02-26 18:55:11,044 - __main__ - INFO - Using existing knowledge base with 2900 clauses
+2025-02-26 18:55:11,067 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/original.docx
+2025-02-26 18:55:11,067 - __main__ - INFO - Processing SOP: original.docx
+2025-02-26 18:56:20,620 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:56:22,450 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:56:22,984 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:56:23,393 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 18:56:33,307 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:56:43,765 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:56:43,769 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 18:56:43,769 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 18:56:43,769 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 19:03:01,503 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:03:01,784 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:03:01,784 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:03:01,784 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:03:01,784 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:03:01,852 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 19:03:01,852 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 19:03:01,902 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:03:01,928 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:03:01,931 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:03:01,931 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:03:01,931 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:03:02,105 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 19:03:02,105 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 19:03:02,132 - __main__ - INFO - Starting with clean memory state
+2025-02-26 19:03:02,132 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 19:03:02,133 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:03:02,133 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9500 hits, 3968 misses
+2025-02-26 19:03:02,269 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:03:02,463 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 3645 documents
+2025-02-26 19:03:02,464 - __main__ - INFO - Using existing knowledge base with 3645 clauses
+2025-02-26 19:03:02,486 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/sop/original.docx
+2025-02-26 19:03:02,486 - __main__ - INFO - Processing SOP: original.docx
+2025-02-26 19:04:58,540 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:05:47,496 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:05:47,794 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:05:47,795 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:05:47,795 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:05:47,795 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:05:47,845 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 19:05:47,845 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 19:05:47,898 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:05:47,925 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:05:47,928 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:05:47,928 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:05:47,929 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:05:48,117 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 19:05:48,117 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 19:05:48,132 - __main__ - INFO - Starting with clean memory state
+2025-02-26 19:05:48,133 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 19:05:48,133 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:05:48,133 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9500 hits, 3968 misses
+2025-02-26 19:05:48,323 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:05:48,533 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 3645 documents
+2025-02-26 19:05:48,534 - __main__ - INFO - Using existing knowledge base with 3645 clauses
+2025-02-26 19:05:48,555 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/original.docx
+2025-02-26 19:05:48,556 - __main__ - INFO - Processing SOP: original.docx
+2025-02-26 19:07:52,951 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:08:08,919 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:08:17,432 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:08:36,411 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:08:36,421 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 19:08:36,422 - __main__ - INFO - Saved compliance report to compliance_report_final.json
+2025-02-26 19:08:36,422 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 19:14:08,680 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:14:09,001 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:14:09,001 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:14:09,001 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:14:09,001 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:14:09,068 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 19:14:09,068 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 19:14:09,140 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:14:09,170 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:14:09,173 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:14:09,173 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:14:09,173 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:14:09,368 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 19:14:09,368 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 19:14:09,383 - __main__ - INFO - Starting with clean memory state
+2025-02-26 19:14:09,386 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 19:14:09,386 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:14:09,386 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9500 hits, 3968 misses
+2025-02-26 19:14:09,610 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:14:09,875 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 3645 documents
+2025-02-26 19:14:09,876 - __main__ - INFO - Using existing knowledge base with 3645 clauses
+2025-02-26 19:14:09,896 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/original.docx
+2025-02-26 19:14:09,896 - __main__ - INFO - Processing SOP: original.docx
+2025-02-26 19:16:26,645 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:16:27,346 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:16:41,222 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:16:52,068 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:17:08,053 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:17:08,063 - __main__ - INFO - Saved compliance report to compliance_report_final_v2.json
+2025-02-26 19:17:08,063 - __main__ - INFO - Saved compliance report to compliance_report_final_v2.json
+2025-02-26 19:17:08,063 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully
+2025-02-26 19:18:50,635 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 19:18:50,942 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 19:18:50,942 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-26 19:18:50,942 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-26 19:18:50,942 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 19:18:50,993 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 19:18:50,993 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 19:18:51,045 - faiss.loader - INFO - Loading faiss.
+2025-02-26 19:18:51,071 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 19:18:51,074 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 19:18:51,074 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 19:18:51,074 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 19:18:51,263 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 19:18:51,263 - __main__ - INFO - System information not available (psutil not installed)
+2025-02-26 19:18:51,278 - __main__ - INFO - Starting with clean memory state
+2025-02-26 19:18:51,279 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-26 19:18:51,279 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-26 19:18:51,279 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 9506 hits, 3969 misses
+2025-02-26 19:18:51,468 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-26 19:18:51,710 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 3645 documents
+2025-02-26 19:18:51,711 - __main__ - INFO - Using existing knowledge base with 3645 clauses
+2025-02-26 19:18:51,732 - __main__ - INFO - Processing SOP: /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/data/sop/fails_one.docx
+2025-02-26 19:18:51,732 - __main__ - INFO - Processing SOP: fails_one.docx
+2025-02-26 19:19:06,414 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:19:07,344 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:07,721 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:10,421 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:10,946 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:11,461 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:12,163 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:12,777 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:13,158 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:13,525 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:14,031 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:14,490 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:15,140 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:16,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:16,625 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 19:19:36,227 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:19:50,446 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 19:19:50,464 - __main__ - INFO - Saved compliance report to compliance_report_fails_one.json
+2025-02-26 19:19:50,464 - __main__ - INFO - Saved compliance report to compliance_report_fails_one.json
+2025-02-26 19:19:50,464 - __main__ - INFO - Regulatory Compliance Document Processor completed successfully

@@ -1,0 +1,450 @@
+{
+  "sop": {
+    "file_name": "original.docx",
+    "sections": [
+      {
+        "title": "Purpose",
+        "content": "Initial Purge of Condensate Skid: V-720, V-730, HE-735, V-740, E-742, V-745, V-750, V-785, H-080, V-730-130, HTR-750, E-735, E-751, V-750-110, V-750-115, ET-750-100, HE-750-140, V-774-100-200-300, P-782 and 783 and P-787 and 788. Purge gas used will be natural gas or nitrogen. If natural gas will be used, a suitable spot to source the system must be selected. Tie in natural gas or nitrogen at a low point drain between SDV-700 and PCV-705. The facility is based in Pennsylvania.",
+        "requirements": [
+          "Purge gas used will be natural gas or nitrogen.",
+          "Tie in natural gas or nitrogen at a low point drain between SDV-700 and PCV-705."
+        ]
+      },
+      {
+        "title": "References",
+        "content": "MJV-CGP-10-0297, 0298, 0300, 0301, 0301B, 0301C, 0301D, 0302A, 0302B, 0302C, 0303, 0304, 0306, 0305A, 314A, 315, 316 and 317. Majorsville Cause & Effect Matrix. Vendor Manuals. CNX SPCC Plan. MS-SWP-0222 and MS-SWP-0223 for start-up and shutdown of electric pumps. Due to the extensive amount of ancillary equipment involved in this process, not all limits are listed in the above tables. Please refer to P&ID\u2019s MJV-CGP-10-302A, 302B and 302C for any limits not included above.",
+        "requirements": [
+          "Refer to P&ID\u2019s MJV-CGP-10-302A, 302B and 302C for any limits not included above."
+        ]
+      },
+      {
+        "title": "Precautions",
+        "content": "Before starting the purge, confirm the pressure in the condensate treating area is at zero psig. Do not go above 125 psig. Due to the MAOP V-750, operator is unable to purge with pressures exceeding 125 psig.",
+        "requirements": [
+          "Confirm the pressure in the condensate treating area is at zero psig.",
+          "Do not go above 125 psig."
+        ]
+      },
+      {
+        "title": "Special Equipment",
+        "content": "CNX Resources Standard PPE Calibrated personal four-gas monitor",
+        "requirements": [
+          "Use CNX Resources Standard PPE.",
+          "Use a calibrated personal four-gas monitor."
+        ]
+      },
+      {
+        "title": "Operator Requirements",
+        "content": "CNX Resources Site Hazard Training Complete CNX Midstream Risk Assessment or JSA. File accordingly. Document the event in the shift logs.",
+        "requirements": [
+          "Complete CNX Resources Site Hazard Training.",
+          "Complete CNX Midstream Risk Assessment or JSA and file accordingly.",
+          "Document the event in the shift logs."
+        ]
+      },
+      {
+        "title": "Procedure",
+        "content": "Safe Work Practice Complete CNX Risk Assessment or JSA. File accordingly. Complete hot work permit, blowdown tracker, and non-conformance. Valve Line-Up All PSV\u2019s throughout the wet skid should be in the locked and open position. All instrumentation shall be lined up and functional including all manual site glasses and gauges. Operator close all high point vents and low point drains on all vessels throughout the wet skid. Operator close 6\u201d manual block valve on slug catcher condensate line located upstream of SDV-700 slug catcher condensate outlet valve. Operator place SDV-700 in HAND in the closed position from Scada. Operator to open PCV-705 to 100% from Scada. Operator to open 6\u201d ball valve downstream of PVC-705. Operator to open 6\u201d ball valve on the (1) inlet and (1) outlet of F-715 A and B. Operator close 2\u201d ball valve on recycle line inlet of V-720. Operator open 6\u201d ball valve on the (1) outlet of V-720. Operator close fuel gas line to V-720. Operator open 3\u201d ball valve upstream and downstream of PCV-724. Operator put PCV-724 in hand at 0% from Scada. Operator open SDV-725 from Scada. Operator verify LCV-720 is closed from Scada. Operator close 6\u201d bypass ball valve on V-720. Operator open 6\u201d inlet and outlet valves on V-730. Operator close 6\u201d bypass ball valve on V-730. Operator close XV-730 from Scada. Operator set TCV-735 to 100% in order to direct flow to inside tube side of E-735 from Scada. Operator open (2) 3\u201d ball valves inlet and outlet of E-735 shell side. Operator open (2) 2\u201d ball valves inlet and outlet of FCV-740 from Scada. Operator open FCV-740 to 100%. Operator close 2\u201d bypass ball valve FCV-740. Operator open air bypass SDV on SDV-740 to force open the valve. Operator open 1\u201d ball valve inlet and outlet of PCV-740B of V-740 flash drum. Operator close 1\u201d bypass ball valve on V-740 flash drum. Operator place PCV-740B in AUTO at desired pressure from Scada. Operator close LCV-740A from Scada. Operator open LCV-740B from Scada. Operator open (4) 3\u201d ball valves on the outlet of V-740. Operator open 3\u201d ball valve at Y connection feed to V-745 and V-750-100. Operator open (3) 3\u201d ball valves on inlet and outlet of TCV-742. Operator set TCV-742 to 50% from Scada. Operator close 2\u201d bypass valve around TCV-742. Operator open 3\u201d ball valve on inlet and outlet of E-742. Operator close 3\u201d bypass ball valve on E-742 shell side. Operator open 3\u201d ball valves (2) on inlet and outlet of AC-746. Operator close 3\u201d bypass ball valve on AC-746. Operator open 4\u201d inlet ball valve to V-745 cool feed. Operator open 4\u201d inlet ball valve to V-745 warm feed. Operator open 6\u201d inlet ball valve from E-745 vapor line. Operator open 4\u201d outlet ball valve from V-745 to E-745. Operator open 4\u201d vapor line ball valve from V-745 to VRU-785 A and B. Operator open 3\u201d ball valve on inlet and outlet of FCV-745-103. Operator open FCV-745-103 to 100%. Operator close 2\u201d bypass ball valve FCV-745-103. Operator open 3\u201d outlet ball valve from AC-746 to V-780 surge drum. Operator open 2\u201d ball valve at Y connection feed to V-745 and V-750-100. Operator open 2\u201d ball valves on inlet and outlet of FCV-750-140. Operator close 2\u201d bypass ball valve to FCV-750-140. Operator to open FCV-750-140 to 100% from Scada. NOTE: Fuel gas pressure is needed to regulate the following: SDV-740-140. LCV-750-130. SDV-750-120. Operator open all valves on the inlet and outlet of tube and shell side of HE-750-140. Operator close 2\u201d bypass ball valve on the tube side of HE-750-140. Operator open 2\u201d ball valve on inlet and outlet of V-750-130. Operator adjust PCV-750-150 to fully open. Operator open (2) 3\u201d ball valves on the outlet from V-750-110 to VRU-785 A and B. Operator open 2\u201d outlet ball valve on V-750-110 to V-750-115. Operator open (2) 2\u201d ball valves between V-750-115 and V-740. Operator open 1\u201d ball valve on inlet and the outlet of LCV-750-115. Operator open (3) 3\u201d ball valves on inlet and outlet of E-751. Operator open 3\u201d ball valve on inlet and outlet of V-780. Operator close 3\u201d bypass ball valve on V-780. Operator open 4\u201d ball valve on V-780 to P-787 and P-788. Operator close 3\u201d inlet ball valve of SDV-780. Operator to open 4\u201d inlet ball valves to P-787 and P-788. Operator to open 3\u201d outlet ball valves on P-787 and P-788. Operator to close 3\u201d recycle valve from P-787 and P-788 to V-780. Operator to close 3\u201d inlet ball valve to mole sieve dryer skid on outlet of P-787 and P-788. Operator open (3) 3\u201d ball valves at Y connection to bypass mole sieve dryers. NOTE: Refer to mole sieve dryer purge procedure MS-SWP-0173. Operator close 6\u201d ball valve on outlet of NGL dry product filters. Operator close 3\u201d ball valves on inlet and outlet of LCV-780. Operator close 2\u201d bypass ball valve of LCV-780. Operator place LCV-780 in hand at 0% from Scada. Operator open (2) 6\u201d ball valves on the inlet to the measurement skid. Operator open 3\u201d ball valve on inlet of V-720 and tank farm. Operator close 6\u201d ball valve inlet of MarkWest measurement line. Operator close 6\u201d bypass ball valve to MarkWest measurement line. Operator open 2\u201d inlet ball valve to SDV-797. Operator open 2\u201d choke valve on the outlet of PCV-797. Operator open 2\u201d ball valve outlet of PCV-797. Operator places SDV-797 in hand 100% open from Scada. Operator places PCV-797 in hand 100% open from Scada. Operator open 2\u201d inlet ball valve to SDV-798 Operator open 2\u201d choke valve on the outlet of PCV-798. Operator close 2\u201d ball valve outlet of PCV-798. Operator place SDV-798 in HAND 100% open from Scada. Operator place PCV-798 in HAND 100% open from Scada.",
+        "requirements": [
+          "Complete CNX Risk Assessment or JSA and file accordingly.",
+          "Complete hot work permit, blowdown tracker, and non-conformance.",
+          "All PSV\u2019s throughout the wet skid should be in the locked and open position.",
+          "All instrumentation shall be lined up and functional including all manual site glasses and gauges.",
+          "Operator close all high point vents and low point drains on all vessels throughout the wet skid.",
+          "Operator close 6\u201d manual block valve on slug catcher condensate line located upstream of SDV-700 slug catcher condensate outlet valve.",
+          "Operator place SDV-700 in HAND in the closed position from Scada.",
+          "Operator to open PCV-705 to 100% from Scada.",
+          "Operator to open 6\u201d ball valve downstream of PVC-705.",
+          "Operator to open 6\u201d ball valve on the (1) inlet and (1) outlet of F-715 A and B.",
+          "Operator close 2\u201d ball valve on recycle line inlet of V-720.",
+          "Operator open 6\u201d ball valve on the (1) outlet of V-720.",
+          "Operator close fuel gas line to V-720.",
+          "Operator open 3\u201d ball valve upstream and downstream of PCV-724.",
+          "Operator put PCV-724 in hand at 0% from Scada.",
+          "Operator open SDV-725 from Scada.",
+          "Operator verify LCV-720 is closed from Scada.",
+          "Operator close 6\u201d bypass ball valve on V-720.",
+          "Operator open 6\u201d inlet and outlet valves on V-730.",
+          "Operator close 6\u201d bypass ball valve on V-730.",
+          "Operator close XV-730 from Scada.",
+          "Operator set TCV-735 to 100% in order to direct flow to inside tube side of E-735 from Scada.",
+          "Operator open (2) 3\u201d ball valves inlet and outlet of E-735 shell side.",
+          "Operator open (2) 2\u201d ball valves inlet and outlet of FCV-740 from Scada.",
+          "Operator open FCV-740 to 100%.",
+          "Operator close 2\u201d bypass ball valve FCV-740.",
+          "Operator open air bypass SDV on SDV-740 to force open the valve.",
+          "Operator open 1\u201d ball valve inlet and outlet of PCV-740B of V-740 flash drum.",
+          "Operator close 1\u201d bypass ball valve on V-740 flash drum.",
+          "Operator place PCV-740B in AUTO at desired pressure from Scada.",
+          "Operator close LCV-740A from Scada.",
+          "Operator open LCV-740B from Scada.",
+          "Operator open (4) 3\u201d ball valves on the outlet of V-740.",
+          "Operator open 3\u201d ball valve at Y connection feed to V-745 and V-750-100.",
+          "Operator open (3) 3\u201d ball valves on inlet and outlet of TCV-742.",
+          "Operator set TCV-742 to 50% from Scada.",
+          "Operator close 2\u201d bypass valve around TCV-742.",
+          "Operator open 3\u201d ball valve on inlet and outlet of E-742.",
+          "Operator close 3\u201d bypass ball valve on E-742 shell side.",
+          "Operator open 3\u201d ball valves (2) on inlet and outlet of AC-746.",
+          "Operator close 3\u201d bypass ball valve on AC-746.",
+          "Operator open 4\u201d inlet ball valve to V-745 cool feed.",
+          "Operator open 4\u201d inlet ball valve to V-745 warm feed.",
+          "Operator open 6\u201d inlet ball valve from E-745 vapor line.",
+          "Operator open 4\u201d outlet ball valve from V-745 to E-745.",
+          "Operator open 4\u201d vapor line ball valve from V-745 to VRU-785 A and B.",
+          "Operator open 3\u201d ball valve on inlet and outlet of FCV-745-103.",
+          "Operator open FCV-745-103 to 100%.",
+          "Operator close 2\u201d bypass ball valve FCV-745-103.",
+          "Operator open 3\u201d outlet ball valve from AC-746 to V-780 surge drum.",
+          "Operator open 2\u201d ball valve at Y connection feed to V-745 and V-750-100.",
+          "Operator open 2\u201d ball valves on inlet and outlet of FCV-750-140.",
+          "Operator close 2\u201d bypass ball valve to FCV-750-140.",
+          "Operator to open FCV-750-140 to 100% from Scada.",
+          "Operator open all valves on the inlet and outlet of tube and shell side of HE-750-140.",
+          "Operator close 2\u201d bypass ball valve on the tube side of HE-750-140.",
+          "Operator open 2\u201d ball valve on inlet and outlet of V-750-130.",
+          "Operator adjust PCV-750-150 to fully open.",
+          "Operator open (2) 3\u201d ball valves on the outlet from V-750-110 to VRU-785 A and B.",
+          "Operator open 2\u201d outlet ball valve on V-750-110 to V-750-115.",
+          "Operator open (2) 2\u201d ball valves between V-750-115 and V-740.",
+          "Operator open 1\u201d ball valve on inlet and the outlet of LCV-750-115.",
+          "Operator open (3) 3\u201d ball valves on inlet and outlet of E-751.",
+          "Operator open 3\u201d ball valve on inlet and outlet of V-780.",
+          "Operator close 3\u201d bypass ball valve on V-780.",
+          "Operator open 4\u201d ball valve on V-780 to P-787 and P-788.",
+          "Operator close 3\u201d inlet ball valve of SDV-780.",
+          "Operator to open 4\u201d inlet ball valves to P-787 and P-788.",
+          "Operator to open 3\u201d outlet ball valves on P-787 and P-788.",
+          "Operator to close 3\u201d recycle valve from P-787 and P-788 to V-780.",
+          "Operator to close 3\u201d inlet ball valve to mole sieve dryer skid on outlet of P-787 and P-788.",
+          "Operator open (3) 3\u201d ball valves at Y connection to bypass mole sieve dryers.",
+          "Operator close 6\u201d ball valve on outlet of NGL dry product filters.",
+          "Operator close 3\u201d ball valves on inlet and outlet of LCV-780.",
+          "Operator close 2\u201d bypass ball valve of LCV-780.",
+          "Operator place LCV-780 in hand at 0% from Scada.",
+          "Operator open (2) 6\u201d ball valves on the inlet to the measurement skid.",
+          "Operator open 3\u201d ball valve on inlet of V-720 and tank farm.",
+          "Operator close 6\u201d ball valve inlet of MarkWest measurement line.",
+          "Operator close 6\u201d bypass ball valve to MarkWest measurement line.",
+          "Operator open 2\u201d inlet ball valve to SDV-797.",
+          "Operator open 2\u201d choke valve on the outlet of PCV-797.",
+          "Operator open 2\u201d ball valve outlet of PCV-797.",
+          "Operator places SDV-797 in hand 100% open from Scada.",
+          "Operator places PCV-797 in hand 100% open from Scada.",
+          "Operator open 2\u201d inlet ball valve to SDV-798",
+          "Operator open 2\u201d choke valve on the outlet of PCV-798.",
+          "Operator close 2\u201d ball valve outlet of PCV-798.",
+          "Operator place SDV-798 in HAND 100% open from Scada.",
+          "Operator place PCV-798 in HAND 100% open from Scada."
+        ]
+      },
+      {
+        "title": "Continuous Purging",
+        "content": "NOTE: If continuous purging is preferred or necessary, proceed with this section C. If step-up and stepdown purging is preferred or necessary, proceed with section D below. Slowly increase wet skid pressure to 100-120 psig by using low point drain between SDV-700 and PCV-705. Operator continue to check for leaks throughout the plant especially at the areas where piping may have been opened for maintenance. Operator should monitor gas detectors and fire eyes during this process. After pressure is verified to be 100-120 psig throughout the wet skid, operator will open (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare and leave open until any and all present oxygen has been purged from the system. Operator to maintain 100-120 psig during the continuous purge process by regulating purge gas at low point drain between SDV-700 and PCV-705. After all present oxygen has been purged from the wet skid, operator will close low point drain between SDV-700 and PCV-705. Operator to close (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare. NOTE: To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels.",
+        "requirements": [
+          "Slowly increase wet skid pressure to 100-120 psig by using low point drain between SDV-700 and PCV-705.",
+          "Operator continue to check for leaks throughout the plant especially at the areas where piping may have been opened for maintenance.",
+          "Operator should monitor gas detectors and fire eyes during this process.",
+          "After pressure is verified to be 100-120 psig throughout the wet skid, operator will open (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare and leave open until any and all present oxygen has been purged from the system.",
+          "Operator to maintain 100-120 psig during the continuous purge process by regulating purge gas at low point drain between SDV-700 and PCV-705.",
+          "After all present oxygen has been purged from the wet skid, operator will close low point drain between SDV-700 and PCV-705.",
+          "Operator to close (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare.",
+          "To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels."
+        ]
+      },
+      {
+        "title": "Step-Up and Stepdown Purging",
+        "content": "Slowly increase wet skid pressure to 50-120 psig by using low point drain between SDV-700 and PCV-705. After the gas pressure is verified to be 50 psig throughout the wet skid, operator to close low point drain between SDV-700 and PCV-705. Operator opens (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare. After pressure has been blow down, repeat all steps above for 100 psig purge test and 120 psig thereafter. NOTE: To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels.",
+        "requirements": [
+          "Slowly increase wet skid pressure to 50-120 psig by using low point drain between SDV-700 and PCV-705.",
+          "After the gas pressure is verified to be 50 psig throughout the wet skid, operator to close low point drain between SDV-700 and PCV-705.",
+          "Operator opens (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare.",
+          "After pressure has been blow down, repeat all steps above for 100 psig purge test and 120 psig thereafter.",
+          "To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels."
+        ]
+      },
+      {
+        "title": "Revisions",
+        "content": "Revision (3) Date May 27, 2016 Revision (4) Date October 14, 2020 Reformatted to match new standard format. Revision (5) Date August 1, 2022 Added section 7. Revised per approver review.",
+        "requirements": []
+      }
+    ]
+  },
+  "relevant_clauses": [
+    {
+      "text": "Purpose",
+      "document_id": 9,
+      "document_version": 1,
+      "section": "1.2",
+      "title": "Purpose",
+      "requirement_type": "informative",
+      "source_document": "REG-ANSI A92.2.pdf",
+      "similarity": 1.0
+    },
+    {
+      "text": "The detection instrument shall be calibrated before use on each day of its use by the procedures specified in Method 21, 40 CFR part 60, appendix A.",
+      "document_id": 5,
+      "document_version": 1,
+      "section": "(c)(3)",
+      "title": "",
+      "requirement_type": "mandatory",
+      "source_document": "REG-40 CFR Part 63 Subpart HH.pdf",
+      "similarity": 0.909806440873403
+    },
+    {
+      "text": "Reference conditions",
+      "document_id": 8,
+      "document_version": 1,
+      "section": "5.1",
+      "title": "Reference conditions",
+      "requirement_type": "mandatory",
+      "source_document": "REG-SASO-IEC-60051-1-2020-E.pdf",
+      "similarity": 0.8967215294174391
+    },
+    {
+      "text": "General",
+      "document_id": 6,
+      "document_version": 1,
+      "section": "6.1",
+      "title": "General",
+      "requirement_type": "mandatory",
+      "source_document": "REG-API 510 2022.pdf",
+      "similarity": 0.8931693188033445
+    },
+    {
+      "text": "The sponsor of any proposed construction or alteration covered by this part may revise his proposal at any time before or during the hearing. If he revises it, the presiding officer decides whether the revision affects the proposal to the extent that he should send it to the Administrator for a redetermination of the need for a hearing. If the presiding officer decides that it does not need to be resubmitted to the Administrator, he advises the parties of the revised proposal and takes the action necessary to allow all parties to effectively participate in the hearing on the revised proposal. Without limiting his discretion, the presiding officer may recess and reconvene the hearing, or hold another prehearing conference.",
+      "document_id": 3,
+      "document_version": 1,
+      "section": "\u00a7 77.61",
+      "title": "Revision of construction or alteration proposal",
+      "requirement_type": "mandatory",
+      "source_document": "REG-14 CFR Part 77.pdf",
+      "similarity": 0.8859708267095758
+    },
+    {
+      "text": "10.2.2\nPrecautions shall be taken to reduce fire hazards\nwhere the relative location of equipment or the type of fumes\ngenerated are such that combustible liquids can condense or\nsolids can be deposited between the generating process and\nthe afterburner.",
+      "document_id": "",
+      "document_version": "",
+      "section": "2.2",
+      "title": "Precautions shall be taken to reduce fire hazards",
+      "requirement_type": "mandatory",
+      "source_document": "REG-NFPA 86.pdf",
+      "similarity": 0.8845461220984827
+    },
+    {
+      "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+      "document_id": 7,
+      "document_version": 1,
+      "section": "1910.119(d)",
+      "title": "Process Safety Information",
+      "requirement_type": "mandatory",
+      "source_document": "REG-29 CFR 1910 119.pdf",
+      "similarity": 0.8528929572818388
+    }
+  ],
+  "compliance_analysis": [
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "The SOP includes a 'Purpose' section at the beginning.",
+      "missing_requirements": [
+        "The SOP does not explicitly state the purpose as defined in REG-ANSI A92.2.pdf Section 1.2."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP includes a 'Purpose' section, but it does not explicitly align with the purpose as defined in the referenced regulatory clause. The purpose should be clearly articulated to ensure full compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 9,
+        "section": "1.2",
+        "title": "Purpose",
+        "text": "Purpose",
+        "source_document": "REG-ANSI A92.2.pdf"
+      }
+    },
+    {
+      "clause_index": 2,
+      "compliance_status": "No",
+      "addressed_by": "The SOP mentions the use of a calibrated personal four-gas monitor.",
+      "missing_requirements": [
+        "The SOP does not specify that the detection instrument must be calibrated daily according to Method 21, 40 CFR part 60, appendix A."
+      ],
+      "severity": "High",
+      "explanation": "While the SOP mentions the use of a calibrated gas monitor, it fails to specify the daily calibration requirement as per Method 21, which is crucial for compliance with 40 CFR Part 63 Subpart HH.",
+      "clause": {
+        "id": null,
+        "document_id": 5,
+        "section": "(c)(3)",
+        "title": "",
+        "text": "The detection instrument shall be calibrated before use on each day of its use by the procedures specified in Method 21, 40 CFR part 60, appendix A.",
+        "source_document": "REG-40 CFR Part 63 Subpart HH.pdf"
+      }
+    },
+    {
+      "clause_index": 3,
+      "compliance_status": "No",
+      "addressed_by": "The SOP does not mention reference conditions.",
+      "missing_requirements": [
+        "The SOP does not specify reference conditions as required by REG-SASO-IEC-60051-1-2020-E Section 5.1."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP lacks any mention of reference conditions, which are necessary to ensure that measurements are accurate and consistent with regulatory standards.",
+      "clause": {
+        "id": null,
+        "document_id": 8,
+        "section": "5.1",
+        "title": "Reference conditions",
+        "text": "Reference conditions",
+        "source_document": "REG-SASO-IEC-60051-1-2020-E.pdf"
+      }
+    },
+    {
+      "clause_index": 4,
+      "compliance_status": "Partial",
+      "addressed_by": "The SOP includes general procedures for purging and safety precautions.",
+      "missing_requirements": [
+        "The SOP does not fully address all general requirements as outlined in REG-API 510 2022 Section 6.1."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP provides general procedures and safety precautions, but it does not comprehensively cover all aspects of general requirements as specified in the referenced API standard.",
+      "clause": {
+        "id": null,
+        "document_id": 6,
+        "section": "6.1",
+        "title": "General",
+        "text": "General",
+        "source_document": "REG-API 510 2022.pdf"
+      }
+    },
+    {
+      "clause_index": 5,
+      "compliance_status": "No",
+      "addressed_by": "The SOP includes a 'Revisions' section.",
+      "missing_requirements": [
+        "The SOP does not address the process for revising construction or alteration proposals as per 14 CFR Part 77 \u00a7 77.61."
+      ],
+      "severity": "Low",
+      "explanation": "While the SOP includes a section for revisions, it does not cover the specific requirements for revising construction or alteration proposals as outlined in the regulatory clause.",
+      "clause": {
+        "id": null,
+        "document_id": 3,
+        "section": "\u00a7 77.61",
+        "title": "Revision of construction or alteration proposal",
+        "text": "The sponsor of any proposed construction or alteration covered by this part may revise his proposal at any time before or during the hearing. If he revises it, the presiding officer decides whether the revision affects the proposal to the extent that he should send it to the Administrator for a redetermination of the need for a hearing. If the presiding officer decides that it does not need to be resubmitted to the Administrator, he advises the parties of the revised proposal and takes the action necessary to allow all parties to effectively participate in the hearing on the revised proposal. Without limiting his discretion, the presiding officer may recess and reconvene the hearing, or hold another prehearing conference.",
+        "source_document": "REG-14 CFR Part 77.pdf"
+      }
+    },
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "Precautions section mentions confirming pressure and not exceeding 125 psig, which indirectly relates to fire hazard reduction.",
+      "missing_requirements": [
+        "Specific precautions to reduce fire hazards related to the relative location of equipment or type of fumes are not explicitly mentioned.",
+        "No mention of handling combustible liquids or solids deposition between the generating process and afterburner."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP includes some general precautions regarding pressure limits, which can indirectly reduce fire hazards. However, it lacks explicit measures addressing the specific fire hazard concerns related to equipment location and fume types as required by the clause.",
+      "clause": {
+        "id": null,
+        "document_id": "",
+        "section": "2.2",
+        "title": "Precautions shall be taken to reduce fire hazards",
+        "text": "10.2.2\nPrecautions shall be taken to reduce fire hazards\nwhere the relative location of equipment or the type of fumes\ngenerated are such that combustible liquids can condense or\nsolids can be deposited between the generating process and\nthe afterburner.",
+        "source_document": "REG-NFPA 86.pdf"
+      }
+    },
+    {
+      "clause_index": 2,
+      "compliance_status": "Partial",
+      "addressed_by": "References section lists various documents and plans, including vendor manuals and P&IDs, which could contain process safety information.",
+      "missing_requirements": [
+        "The SOP does not explicitly compile or present complete and accurate process safety information on process chemicals, process technology, and process equipment.",
+        "No direct mention of conducting process hazard analyses using the compiled information."
+      ],
+      "severity": "High",
+      "explanation": "While the SOP references several documents that may contain relevant process safety information, it does not explicitly compile or present this information as required by the clause. The absence of a clear link to process hazard analyses indicates a significant gap in compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 7,
+        "section": "1910.119(d)",
+        "title": "Process Safety Information",
+        "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+        "source_document": "REG-29 CFR 1910 119.pdf"
+      }
+    }
+  ],
+  "recommendations": {
+    "summary": "The SOP requires comprehensive updates to ensure full compliance with various regulatory standards. Key areas of improvement include explicitly stating purposes, ensuring daily calibration of instruments, specifying reference conditions, addressing general requirements, detailing proposal revision processes, implementing fire hazard precautions, and compiling complete process safety information.",
+    "improvements": [
+      {
+        "change": "Add a section explicitly stating the purpose as defined in REG-ANSI A92.2.pdf Section 1.2.",
+        "rationale": "To ensure the SOP aligns with the defined purpose and meets regulatory expectations.",
+        "priority": "Low",
+        "reference_clause": "REG-ANSI A92.2.pdf Section 1.2",
+        "implementation_guidance": "Review the purpose section in the regulatory document and incorporate the exact language or a clear summary into the SOP."
+      },
+      {
+        "change": "Include a requirement for daily calibration of detection instruments according to Method 21, 40 CFR part 60, appendix A.",
+        "rationale": "To ensure accurate and reliable instrument readings, which are critical for compliance and safety.",
+        "priority": "High",
+        "reference_clause": "REG-40 CFR Part 63 Subpart HH Section (c)(3)",
+        "implementation_guidance": "Integrate a daily checklist for calibration procedures and provide training for personnel on Method 21 calibration techniques."
+      },
+      {
+        "change": "Specify reference conditions as required by REG-SASO-IEC-60051-1-2020-E Section 5.1.",
+        "rationale": "To ensure measurements are consistent and comparable under defined conditions.",
+        "priority": "Medium",
+        "reference_clause": "REG-SASO-IEC-60051-1-2020-E Section 5.1",
+        "implementation_guidance": "Consult the regulatory document for the specific reference conditions and include them in the SOP, ensuring all relevant equipment is calibrated accordingly."
+      },
+      {
+        "change": "Fully address all general requirements outlined in REG-API 510 2022 Section 6.1.",
+        "rationale": "To ensure comprehensive compliance with general requirements, which may impact safety and operational efficiency.",
+        "priority": "Medium",
+        "reference_clause": "REG-API 510 2022 Section 6.1",
+        "implementation_guidance": "Conduct a gap analysis between the current SOP and the general requirements, and update the SOP to fill any identified gaps."
+      },
+      {
+        "change": "Include a process for revising construction or alteration proposals as per 14 CFR Part 77 \u00a7 77.61.",
+        "rationale": "To ensure that proposal revisions are managed in compliance with regulatory requirements, facilitating effective participation in hearings.",
+        "priority": "Low",
+        "reference_clause": "REG-14 CFR Part 77 \u00a7 77.61",
+        "implementation_guidance": "Develop a clear procedure for proposal revisions, including steps for notifying parties and conducting hearings, and incorporate it into the SOP."
+      },
+      {
+        "change": "Explicitly mention precautions to reduce fire hazards related to equipment location and fume types, and handling of combustible liquids or solids deposition.",
+        "rationale": "To mitigate fire risks and ensure safety in operations involving combustible materials.",
+        "priority": "Medium",
+        "reference_clause": "REG-NFPA 86 Section 2.2 Requirement 10.2.2",
+        "implementation_guidance": "Identify potential fire hazards in the current setup and document specific precautions in the SOP, ensuring alignment with NFPA guidelines."
+      },
+      {
+        "change": "Compile and present complete and accurate process safety information on process chemicals, technology, and equipment before conducting process hazard analyses.",
+        "rationale": "To provide a foundation for effective process safety management and hazard analysis.",
+        "priority": "High",
+        "reference_clause": "REG-29 CFR 1910 119 Section 1910.119(d)",
+        "implementation_guidance": "Establish a process for gathering and documenting safety information, and ensure it is reviewed and updated regularly before hazard analyses."
+      }
+    ]
+  },
+  "summary": {
+    "status": "Significantly Non-Compliant",
+    "compliance_percentage": 28.57,
+    "clause_counts": {
+      "total": 7,
+      "compliant": 0,
+      "partially_compliant": 4,
+      "non_compliant": 3
+    },
+    "severity_counts": {
+      "high": 2,
+      "medium": 3,
+      "low": 2
+    },
+    "improvement_counts": {
+      "total": 7,
+      "high_priority": 2,
+      "medium_priority": 3,
+      "low_priority": 2
+    }
+  }
+}

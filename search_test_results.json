@@ -1,0 +1,526 @@
+{
+  "langchain_results": {
+    "purge procedure": [],
+    "pressure safety valve": [],
+    "natural gas": [],
+    "nitrogen purging": [],
+    "valve safety": [],
+    "pressure requirements": [],
+    "maximum allowable pressure": [],
+    "oxygen monitoring": [],
+    "gas leak detection": [],
+    "combustible gas": [],
+    "safety procedures": [],
+    "fire protection": []
+  },
+  "faiss_results": {
+    "purge procedure": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-137",
+        "document_id": null,
+        "similarity": 0.9905810391902924,
+        "title": "Purge",
+        "text_snippet": "3.3.59 Purge.\nThe replacement of a flammable, indetermi-\nnate, or high-oxygen-bearing atmosphere wit...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1634",
+        "document_id": null,
+        "similarity": 0.9905404496192932,
+        "title": "Purging",
+        "text_snippet": "14.5.3.3 Purging.\n(A) When purge is initiated, the flammable gas valve(s) shall\nbe closed.\n(B) Purgi...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1239",
+        "document_id": null,
+        "similarity": 0.99001216173172,
+        "title": "Written purge-out instructions shall be provided",
+        "text_snippet": "13.5.11.8.1\nWritten purge-out instructions shall be provided\nfor each furnace.\n(A)* Purge effectiven...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1324",
+        "document_id": null,
+        "similarity": 0.9896374416351318,
+        "title": "When the timed purge has been established with circulating",
+        "text_snippet": "13.5.12.1* Purging After Failure of Atmospheric Circulation.\nWhen the timed purge has been establish...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2571",
+        "document_id": null,
+        "similarity": 0.9894369649887085,
+        "title": "Purge not actually flowing into a furnace as intended",
+        "text_snippet": "(2) Purge not actually flowing into a furnace as intended\nTable A.13.5.11.11.10(A) Burnout, Purge-ou...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "pressure safety valve": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-128",
+        "document_id": null,
+        "similarity": 0.9911695891618728,
+        "title": "Pressure Relief Valve",
+        "text_snippet": "3.3.55 Pressure Relief Valve. A valve that automatically opens\nand closes a relief vent, depending o...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1115",
+        "document_id": null,
+        "similarity": 0.990932400226593,
+        "title": "Where the system is subject to abnormally high reaction",
+        "text_snippet": "(3) Where the system is subject to abnormally high reaction\ngas pressure, a high pressure switch sha...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-177",
+        "document_id": null,
+        "similarity": 0.9908574736118316,
+        "title": "A normally closed valve in-",
+        "text_snippet": "3.3.78.2* Safety Shutoff Valve.\nA normally closed valve in-\nstalled in the piping that closes automa...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1175",
+        "document_id": null,
+        "similarity": 0.9908561384677887,
+        "title": "Safety relief valves to prevent overpressurizing of",
+        "text_snippet": "13.5.8.8\nSafety relief valves to prevent overpressurizing of\nglass tube flowmeters and all other sys...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1719",
+        "document_id": null,
+        "similarity": 0.990851908326149,
+        "title": "Safety Shutoff Valve",
+        "text_snippet": "A.3.3.78.2 Safety Shutoff Valve. The valve can be opened\neither manually or automatically, but only ...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "natural gas": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-50",
+        "document_id": null,
+        "similarity": 0.9906712281703949,
+        "title": "Fuel Gas",
+        "text_snippet": "3.3.23 Fuel Gas. A gas used as a fuel source, including natu-\nral gas, manufactured gas, sludge gas,...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1027",
+        "document_id": null,
+        "similarity": 0.9895540857315064,
+        "title": "Furnace heating systems fired with fuel gases, including",
+        "text_snippet": "(1) Furnace heating systems fired with fuel gases, including\nthe following:\n(a) Natural gas\n(b) Mixe...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1585",
+        "document_id": null,
+        "similarity": 0.9893585419654847,
+        "title": "Allowable Leakage Rates of Various Gases",
+        "text_snippet": "Table A.6.2.6.4 Allowable Leakage Rates of Various Gases\nGas Type\ns.g.\n(based on air = 1.0)\nLeakage ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1580",
+        "document_id": null,
+        "similarity": 0.9891016983985901,
+        "title": "m3) of natural gas.",
+        "text_snippet": "fuel oil equals approximately 1 ft3 (0.03 m3) of natural gas.\nThere are additional considerations be...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2095",
+        "document_id": null,
+        "similarity": 0.9889234495162964,
+        "title": "",
+        "text_snippet": "0.8\n1\nNA\nNA\n3,4,5\n(continues)\n86\u2013105\nANNEX A\n2015 Edition\n\n\nPage 109:\nTable A.11.7.10(5)\nContinued\nG...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "nitrogen purging": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-1634",
+        "document_id": null,
+        "similarity": 0.9917358958721161,
+        "title": "Purging",
+        "text_snippet": "14.5.3.3 Purging.\n(A) When purge is initiated, the flammable gas valve(s) shall\nbe closed.\n(B) Purgi...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-865",
+        "document_id": null,
+        "similarity": 0.9916622984409332,
+        "title": "",
+        "text_snippet": "8.5.1.2* A timed pre-ignition purge shall be provided.\n(A) At least four system volumes of fresh air...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2574",
+        "document_id": null,
+        "similarity": 0.9916520935297012,
+        "title": "illustrates",
+        "text_snippet": "Determining Gas Purge Requirements. Figure A.13.5.12 illustrates\nhow the concentration of oxygen in ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1311",
+        "document_id": null,
+        "similarity": 0.9916010046005249,
+        "title": "Emergency Inert Gas Purge",
+        "text_snippet": "13.5.11.11.13 Emergency Inert Gas Purge.\n(A)\nWhere a furnace is designed for purge-out, the inert\npu...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-137",
+        "document_id": null,
+        "similarity": 0.9915993750095368,
+        "title": "Purge",
+        "text_snippet": "3.3.59 Purge.\nThe replacement of a flammable, indetermi-\nnate, or high-oxygen-bearing atmosphere wit...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "valve safety": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-1719",
+        "document_id": null,
+        "similarity": 0.9916795003414154,
+        "title": "Safety Shutoff Valve",
+        "text_snippet": "A.3.3.78.2 Safety Shutoff Valve. The valve can be opened\neither manually or automatically, but only ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-902",
+        "document_id": null,
+        "similarity": 0.9915916633605957,
+        "title": "Safety shutoff valves shall be a key safety control to",
+        "text_snippet": "8.8.1.1\nSafety shutoff valves shall be a key safety control to\nprotect against explosions and fires.",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-909",
+        "document_id": null,
+        "similarity": 0.991335437297821,
+        "title": "Safety shutoff valves shall not be used as modulating",
+        "text_snippet": "8.8.1.4\nSafety shutoff valves shall not be used as modulating\ncontrol valves unless they are designe...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1308",
+        "document_id": null,
+        "similarity": 0.9913188600540161,
+        "title": "Operator action opens the valve",
+        "text_snippet": "(3) Operator action opens the valve.\n(C)\nFor furnaces using burn-in or purge-in procedures for\nintro...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1601",
+        "document_id": null,
+        "similarity": 0.9913074094057083,
+        "title": "If a combustible heat transfer fluid is used, consid-",
+        "text_snippet": "A.6.7.1.3 If a combustible heat transfer fluid is used, consid-\neration should be given to the use o...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "pressure requirements": [
+      {
+        "id": "clause_5.8",
+        "document_id": 6,
+        "similarity": 0.9902548694610596,
+        "title": "Pressure Testing",
+        "text_snippet": "Pressure Testing",
+        "source": "REG-API 510 2022.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1584",
+        "document_id": null,
+        "similarity": 0.9897757792472839,
+        "title": "m) drop nets a gauge pressure of",
+        "text_snippet": "(689 kPa) with a 100 ft (30.5 m) drop nets a gauge pressure of\n137 psi (945 kPa). This also occurs w...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "clause_1",
+        "document_id": 6,
+        "similarity": 0.9896078670024872,
+        "title": "When to Perform a Pressure Test",
+        "text_snippet": "Pressure tests are not normally conducted as part of routine inspection. A pressure test is normally...",
+        "source": "REG-API 510 2022.pdf"
+      },
+      {
+        "id": "clause_4.9",
+        "document_id": 9,
+        "similarity": 0.9894013297557831,
+        "title": "Bursting Safety Factor",
+        "text_snippet": "All components of hydraulic or pneumatic systems shall have a minimum bursting strength of at least ...",
+        "source": "REG-ANSI A92.2.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1583",
+        "document_id": null,
+        "similarity": 0.9893625700473785,
+        "title": "m) lift nets",
+        "text_snippet": "pressure of 100 psi (689 kPa) with a 100 ft (30.5 m) lift nets\nonly a gauge pressure of 63 psi (434 ...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "maximum allowable pressure": [
+      {
+        "id": "clause_3",
+        "document_id": 6,
+        "similarity": 0.9916948318481446,
+        "title": "Maximum Allowable Working Pressure (MAWP) Determination",
+        "text_snippet": "The determination of the Maximum Allowable Working Pressure (MAWP) is a critical requirement to ensu...",
+        "source": "REG-API 510 2022.pdf"
+      },
+      {
+        "id": "clause_3.1.49",
+        "document_id": 6,
+        "similarity": 0.9913281059265137,
+        "title": "maximum allowable working pressure",
+        "text_snippet": "The maximum gauge pressure permitted at the top of a pressure vessel in its operating position for a...",
+        "source": "REG-API 510 2022.pdf"
+      },
+      {
+        "id": "clause_3",
+        "document_id": 6,
+        "similarity": 0.9905100548267365,
+        "title": "Test Pressure Determination",
+        "text_snippet": "When a code hydrostatic pressure test is required, the minimum test pressure should be in accordance...",
+        "source": "REG-API 510 2022.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1628",
+        "document_id": null,
+        "similarity": 0.9904222643375397,
+        "title": "A pressure switch shall be interlocked to close the flam-",
+        "text_snippet": "(1) A pressure switch shall be interlocked to close the flam-\nmable gas supply if the chamber pressu...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-900",
+        "document_id": null,
+        "similarity": 0.9902051568031311,
+        "title": "",
+        "text_snippet": "8.7.5* Where it is possible for combustion air pressure to exceed\nthe maximum safe operating pressur...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "oxygen monitoring": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-1606",
+        "document_id": null,
+        "similarity": 0.9906301772594452,
+        "title": "is helpful for determin-",
+        "text_snippet": "ments for an oxygen detector and 7.2.2.3 is helpful for determin-\ning an adequate inert (oxygen depl...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2013",
+        "document_id": null,
+        "similarity": 0.9904907935857773,
+        "title": "The core of the safety system is the reliable moni-",
+        "text_snippet": "A.11.7.9.1 The core of the safety system is the reliable moni-\ntoring of oxygen on a continuous basi...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-618",
+        "document_id": null,
+        "similarity": 0.9903688961267472,
+        "title": "",
+        "text_snippet": "11.7.2* An oxygen analyzer and controller shall be installed to\nlimit oxygen concentration to below ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "clause_5",
+        "document_id": 5,
+        "similarity": 0.990020580291748,
+        "title": "Environmental Protection Agency",
+        "text_snippet": "A continuous monitoring system that measures the concentration level of organic compounds in the exh...",
+        "source": "REG-40 CFR Part 63 Subpart HH.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1067",
+        "document_id": null,
+        "similarity": 0.9897997772693634,
+        "title": "",
+        "text_snippet": "11.7.9.1* The oven shall be analyzed continuously and con-\ntrolled for oxygen content by modulating ...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "gas leak detection": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-2144",
+        "document_id": null,
+        "similarity": 0.9910932040214538,
+        "title": "Example of a Gas Piping Diagram for",
+        "text_snippet": "FIGURE A.7.4.9(a)\nExample of a Gas Piping Diagram for\nLeak Test.\nN\nFlame\nsafeguard\nMomentary\nleak te...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "clause_63.769_c_2",
+        "document_id": 5,
+        "similarity": 0.9908390235900879,
+        "title": "Equipment leak standards",
+        "text_snippet": "For pressure relief devices, if an instrument reading of 10,000 parts per million or greater is meas...",
+        "source": "REG-40 CFR Part 63 Subpart HH.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2142",
+        "document_id": null,
+        "similarity": 0.9907022154331208,
+        "title": "through Figure A.7.4.9(c) show examples",
+        "text_snippet": "Figure A.7.4.9(a) through Figure A.7.4.9(c) show examples\nof gas piping and wiring diagrams for leak...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-658",
+        "document_id": null,
+        "similarity": 0.9904189044237137,
+        "title": "A regulator incorporating a leak limiting system, which",
+        "text_snippet": "(4) A regulator incorporating a leak limiting system, which\nprevents or restricts the escape of gas ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1559",
+        "document_id": null,
+        "similarity": 0.9903216427564621,
+        "title": "If the gas is flammable and lighter than air, the flammable",
+        "text_snippet": "(1) If the gas is flammable and lighter than air, the flammable\ngases should be vented to a location...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "combustible gas": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-1559",
+        "document_id": null,
+        "similarity": 0.9912822651863098,
+        "title": "If the gas is flammable and lighter than air, the flammable",
+        "text_snippet": "(1) If the gas is flammable and lighter than air, the flammable\ngases should be vented to a location...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1560",
+        "document_id": null,
+        "similarity": 0.9907932901382446,
+        "title": "If the gas is oxygen or air enriched with oxygen, the vent",
+        "text_snippet": "(2) If the gas is oxygen or air enriched with oxygen, the vent\ngas should be vented to a location wh...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-50",
+        "document_id": null,
+        "similarity": 0.9906068956851959,
+        "title": "Fuel Gas",
+        "text_snippet": "3.3.23 Fuel Gas. A gas used as a fuel source, including natu-\nral gas, manufactured gas, sludge gas,...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-653",
+        "document_id": null,
+        "similarity": 0.9905776488780975,
+        "title": "Heavier-than-air flammable gases shall be vented outside",
+        "text_snippet": "(1) Heavier-than-air flammable gases shall be vented outside\nthe building to a location where the ga...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-1153",
+        "document_id": null,
+        "similarity": 0.9904946368932724,
+        "title": "When the flammable gas concentration in a mixed gas",
+        "text_snippet": "(9) When the flammable gas concentration in a mixed gas\nexceeds the established high limit, an alarm...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "safety procedures": [
+      {
+        "id": "clause_9",
+        "document_id": 7,
+        "similarity": 0.9923231720924377,
+        "title": null,
+        "text_snippet": "Written operating procedures for safely conducting activities in each selected unit; annual certific...",
+        "source": "REG-29 CFR 1910 119.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-825",
+        "document_id": null,
+        "similarity": 0.9919104731082916,
+        "title": "",
+        "text_snippet": "7.6* Procedures. The user\u2019s operational and maintenance\nprogram shall include procedures that apply ...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-797",
+        "document_id": null,
+        "similarity": 0.9918277966976166,
+        "title": "Procedures shall be consistent with safety requirements",
+        "text_snippet": "7.3.7 Procedures shall be consistent with safety requirements\nand shall be kept current with changes...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "clause_3",
+        "document_id": 7,
+        "similarity": 0.9914303475618362,
+        "title": "Safety Systems in Operating Procedures",
+        "text_snippet": "Are safety systems and their functions included in the operating procedures?",
+        "source": "REG-29 CFR 1910 119.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-975",
+        "document_id": null,
+        "similarity": 0.9912008053064346,
+        "title": "Procedures",
+        "text_snippet": "7.6\nProcedures ........................................ 86\u2013 24\nChapter 8\nSafety Equipment and Applic...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ],
+    "fire protection": [
+      {
+        "id": "rule-REG-NFPA 86.pdf-1657",
+        "document_id": null,
+        "similarity": 0.9911907058954239,
+        "title": "Fire Protection",
+        "text_snippet": "14.5.6 Fire Protection. (Reserved)\nAnnex A\nExplanatory Material\nAnnex A is not a part of the require...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-2348",
+        "document_id": null,
+        "similarity": 0.9906690245866776,
+        "title": "This standard addresses the protection needs of ovens,",
+        "text_snippet": "A.9.1 This standard addresses the protection needs of ovens,\nfurnaces, and related equipment. Fire p...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-393",
+        "document_id": null,
+        "similarity": 0.990165832042694,
+        "title": "Where determined to be necessary, fixed or portable",
+        "text_snippet": "9.1.2\nWhere determined to be necessary, fixed or portable\nfire protection systems shall be provided.",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-406",
+        "document_id": null,
+        "similarity": 0.9901263457536698,
+        "title": "Drawings and Calculations",
+        "text_snippet": "9.4 Drawings and Calculations. Prior to the beginning of in-\nstallation of a fixed fire protection s...",
+        "source": "REG-NFPA 86.pdf"
+      },
+      {
+        "id": "rule-REG-NFPA 86.pdf-400",
+        "document_id": null,
+        "similarity": 0.9900561237335205,
+        "title": "",
+        "text_snippet": "9.2.6* Where dry chemical protection systems are provided,\nthey shall be installed in accordance wit...",
+        "source": "REG-NFPA 86.pdf"
+      }
+    ]
+  },
+  "summary": {
+    "langchain_count": 0,
+    "faiss_count": 60
+  }
+}
