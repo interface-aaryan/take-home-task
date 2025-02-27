@@ -13,11 +13,12 @@ from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 
 # Configure logging for this main file
+log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "regulatory_compliance.log")
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("regulatory_compliance.log"),
+        logging.FileHandler(log_file),
         logging.StreamHandler()
     ]
 )
@@ -343,6 +344,10 @@ def process_sop(sop_file: str, document_store: DocumentStore, vector_store: Any)
 def save_report(report: Dict[str, Any], output_file: str) -> None:
     """Save compliance report to file"""
     try:
+        # If output_file is not an absolute path, make it relative to the current directory
+        if not os.path.isabs(output_file):
+            output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_file)
+            
         with open(output_file, 'w') as f:
             json.dump(report, f, indent=2)
         logger.info(f"Saved compliance report to {output_file}")

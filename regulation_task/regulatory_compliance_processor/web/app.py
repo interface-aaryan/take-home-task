@@ -15,11 +15,12 @@ from ..analysis.compliance_analyzer import ComplianceAnalyzer
 from ..version_control.version_tracker import VersionTracker
 
 # Set up logging
+log_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "web_app.log")
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("web_app.log"),
+        logging.FileHandler(log_file),
         logging.StreamHandler()
     ]
 )

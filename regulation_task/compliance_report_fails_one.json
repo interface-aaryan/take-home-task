@@ -1,0 +1,295 @@
+{
+  "sop": {
+    "file_name": "fails_one.docx",
+    "sections": [
+      {
+        "title": "Purpose",
+        "content": "This SOP ensures compliance with national safety, inspection, and operational standards for regulated equipment.",
+        "requirements": []
+      },
+      {
+        "title": "Scope",
+        "content": "Applies to all personnel operating and maintaining regulated equipment under ASTM, CFR, IEEE, API, ANSI, NFPA, SASO, and other governing regulations.",
+        "requirements": []
+      },
+      {
+        "title": "Pre-Operation Inspection",
+        "content": "Verify equipment logbooks are updated with the last maintenance record. Ensure all safety guards and emergency shutoffs are functional. Check for visible wear, damage, or signs of material fatigue. Inspect environmental conditions to ensure operational safety.",
+        "requirements": [
+          "Verify equipment logbooks are updated with the last maintenance record.",
+          "Ensure all safety guards and emergency shutoffs are functional.",
+          "Check for visible wear, damage, or signs of material fatigue.",
+          "Inspect environmental conditions to ensure operational safety."
+        ]
+      },
+      {
+        "title": "Operational Guidelines",
+        "content": "Operators must be trained and certified under OSHA (29 CFR 1910.119) and follow manufacturer safety guidelines. Only authorized personnel may operate, inspect, or maintain equipment. Equipment should not exceed its designated load, speed, or operational limits. Proper PPE (Personal Protective Equipment) must be worn at all times.",
+        "requirements": [
+          "Operators must be trained and certified under OSHA (29 CFR 1910.119).",
+          "Only authorized personnel may operate, inspect, or maintain equipment.",
+          "Equipment should not exceed its designated load, speed, or operational limits.",
+          "Proper PPE (Personal Protective Equipment) must be worn at all times."
+        ]
+      },
+      {
+        "title": "Emergency Procedures",
+        "content": "In case of a failure, shut down the equipment immediately and notify the supervisor. Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines. Maintain an accessible emergency evacuation plan.",
+        "requirements": [
+          "In case of a failure, shut down the equipment immediately and notify the supervisor.",
+          "Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines.",
+          "Maintain an accessible emergency evacuation plan."
+        ]
+      },
+      {
+        "title": "Maintenance & Recordkeeping",
+        "content": "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards. Logs of all maintenance, repairs, and inspections must be maintained and made available upon request. Calibration and testing should be documented in accordance with SASO IEC 60051-1.",
+        "requirements": [
+          "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards.",
+          "Logs of all maintenance, repairs, and inspections must be maintained and made available upon request.",
+          "Calibration and testing should be documented in accordance with SASO IEC 60051-1."
+        ]
+      }
+    ]
+  },
+  "relevant_clauses": [
+    {
+      "text": "Purpose",
+      "document_id": 9,
+      "document_version": 1,
+      "section": "1.2",
+      "title": "Purpose",
+      "requirement_type": "informative",
+      "source_document": "REG-ANSI A92.2.pdf",
+      "similarity": 1.0
+    },
+    {
+      "text": "The recommended test methods for checking compliance with the requirements of this standard are given in IEC 60051-9. In case of dispute, the test methods of IEC 60051-9 are referee methods.",
+      "document_id": 8,
+      "document_version": 1,
+      "section": "4.3.2",
+      "title": "Compliance with the requirements of this standard",
+      "requirement_type": "recommended",
+      "source_document": "REG-SASO-IEC-60051-1-2020-E.pdf",
+      "similarity": 0.9317624618265907
+    },
+    {
+      "text": "The owner or operator shall comply with the recordkeeping and reporting requirements specified in \u00a7\u00a7 63.774 and 63.775.",
+      "document_id": 5,
+      "document_version": 1,
+      "section": "\u00a7 63.764(c)(1)(iii)",
+      "title": "General standards",
+      "requirement_type": "mandatory",
+      "source_document": "REG-40 CFR Part 63 Subpart HH.pdf",
+      "similarity": 0.9218342403715359
+    },
+    {
+      "text": "7.5 Record Retention. Records of inspection, testing, and\nmaintenance activities shall be retained for a period of 1 year\nor until the next inspection, testing, or maintenance activity,\nwhichever is longer.",
+      "document_id": "",
+      "document_version": "",
+      "section": "7.5",
+      "title": "Record Retention",
+      "requirement_type": "mandatory",
+      "source_document": "REG-NFPA 86.pdf",
+      "similarity": 0.8957207451757274
+    },
+    {
+      "text": "General",
+      "document_id": 6,
+      "document_version": 1,
+      "section": "6.1",
+      "title": "General",
+      "requirement_type": "mandatory",
+      "source_document": "REG-API 510 2022.pdf",
+      "similarity": 0.8931693188033445
+    },
+    {
+      "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+      "document_id": 7,
+      "document_version": 1,
+      "section": "1910.119(d)",
+      "title": "Process Safety Information",
+      "requirement_type": "mandatory",
+      "source_document": "REG-29 CFR 1910 119.pdf",
+      "similarity": 0.8528929572818388
+    }
+  ],
+  "compliance_analysis": [
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "Purpose: This SOP ensures compliance with national safety, inspection, and operational standards for regulated equipment.",
+      "missing_requirements": [
+        "Specific reference to REG-ANSI A92.2.pdf Section 1.2 is not mentioned."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP's purpose section generally aligns with the intent of ensuring compliance with safety and operational standards. However, it does not specifically reference REG-ANSI A92.2.pdf Section 1.2, which may be required for full compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 9,
+        "section": "1.2",
+        "title": "Purpose",
+        "text": "Purpose",
+        "source_document": "REG-ANSI A92.2.pdf"
+      }
+    },
+    {
+      "clause_index": 2,
+      "compliance_status": "Partial",
+      "addressed_by": "Calibration and testing should be documented in accordance with SASO IEC 60051-1.",
+      "missing_requirements": [
+        "No mention of IEC 60051-9 test methods as referee methods in case of dispute."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP references compliance with SASO IEC 60051-1 for calibration and testing documentation but does not address the use of IEC 60051-9 test methods as referee methods in case of dispute, which is a specific requirement of the clause.",
+      "clause": {
+        "id": null,
+        "document_id": 8,
+        "section": "4.3.2",
+        "title": "Compliance with the requirements of this standard",
+        "text": "The recommended test methods for checking compliance with the requirements of this standard are given in IEC 60051-9. In case of dispute, the test methods of IEC 60051-9 are referee methods.",
+        "source_document": "REG-SASO-IEC-60051-1-2020-E.pdf"
+      }
+    },
+    {
+      "clause_index": 3,
+      "compliance_status": "Partial",
+      "addressed_by": "Report any hazardous incidents in compliance with 40 CFR Part 63 and applicable safety guidelines.",
+      "missing_requirements": [
+        "Specific reference to \u00a7\u00a7 63.774 and 63.775 for recordkeeping and reporting requirements is not included."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP mentions compliance with 40 CFR Part 63 for reporting hazardous incidents but lacks specific reference to the detailed recordkeeping and reporting requirements outlined in \u00a7\u00a7 63.774 and 63.775.",
+      "clause": {
+        "id": null,
+        "document_id": 5,
+        "section": "\u00a7 63.764(c)(1)(iii)",
+        "title": "General standards",
+        "text": "The owner or operator shall comply with the recordkeeping and reporting requirements specified in \u00a7\u00a7 63.774 and 63.775.",
+        "source_document": "REG-40 CFR Part 63 Subpart HH.pdf"
+      }
+    },
+    {
+      "clause_index": 4,
+      "compliance_status": "No",
+      "addressed_by": "Logs of all maintenance, repairs, and inspections must be maintained and made available upon request.",
+      "missing_requirements": [
+        "Retention period of 1 year or until the next activity is not specified."
+      ],
+      "severity": "High",
+      "explanation": "The SOP requires maintenance logs to be maintained but does not specify the retention period of 1 year or until the next inspection, testing, or maintenance activity, as required by NFPA 86 Section 7.5.",
+      "clause": {
+        "id": null,
+        "document_id": "",
+        "section": "7.5",
+        "title": "Record Retention",
+        "text": "7.5 Record Retention. Records of inspection, testing, and\nmaintenance activities shall be retained for a period of 1 year\nor until the next inspection, testing, or maintenance activity,\nwhichever is longer.",
+        "source_document": "REG-NFPA 86.pdf"
+      }
+    },
+    {
+      "clause_index": 5,
+      "compliance_status": "Partial",
+      "addressed_by": "Equipment must undergo scheduled maintenance as per API 510 and NFPA 86 standards.",
+      "missing_requirements": [
+        "Specific details from API 510 Section 6.1 are not included."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP references API 510 for scheduled maintenance but does not provide specific details from Section 6.1, which may be necessary for full compliance.",
+      "clause": {
+        "id": null,
+        "document_id": 6,
+        "section": "6.1",
+        "title": "General",
+        "text": "General",
+        "source_document": "REG-API 510 2022.pdf"
+      }
+    },
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "Operational Guidelines: Operators must be trained and certified under OSHA (29 CFR 1910.119) and follow manufacturer safety guidelines.",
+      "missing_requirements": [
+        "The SOP does not explicitly mention the compilation of written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP partially addresses the requirements of 29 CFR 1910.119(d) by ensuring operators are trained and certified under OSHA standards, which implies some level of process safety management. However, it lacks explicit instructions for compiling written process safety information on process chemicals, technology, and equipment, which is essential for conducting process hazard analyses as required by the clause. This omission could lead to incomplete hazard analyses, impacting safety management effectiveness.",
+      "clause": {
+        "id": null,
+        "document_id": 7,
+        "section": "1910.119(d)",
+        "title": "Process Safety Information",
+        "text": "The intent of this paragraph is to provide complete and accurate information concerning the process which is essential for an effective process safety management program and for conducting process hazard analyses. Therefore in accordance with the schedule set forth in paragraph (e)(1) the employer is required to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+        "source_document": "REG-29 CFR 1910 119.pdf"
+      }
+    }
+  ],
+  "recommendations": {
+    "summary": "The SOP requires updates to ensure full compliance with various regulatory standards. Key improvements include adding specific references to regulatory sections, incorporating detailed procedures for testing and recordkeeping, and ensuring the inclusion of process safety information. These changes will enhance clarity, ensure adherence to regulatory requirements, and improve overall compliance.",
+    "improvements": [
+      {
+        "change": "Include a specific reference to REG-ANSI A92.2.pdf Section 1.2 in the SOP.",
+        "rationale": "Explicitly referencing the section ensures clarity and completeness in meeting the standard's purpose requirements.",
+        "priority": "Low",
+        "reference_clause": "REG-ANSI A92.2.pdf Section 1.2",
+        "implementation_guidance": "Update the introduction or purpose section of the SOP to include a direct citation of REG-ANSI A92.2.pdf Section 1.2."
+      },
+      {
+        "change": "Add a statement that IEC 60051-9 test methods are to be used as referee methods in case of dispute.",
+        "rationale": "This ensures that there is a clear, standardized method for resolving disputes, aligning with the regulatory requirement.",
+        "priority": "Medium",
+        "reference_clause": "REG-SASO-IEC-60051-1-2020-E.pdf Section 4.3.2",
+        "implementation_guidance": "In the testing procedures section, include a subsection that specifies the use of IEC 60051-9 test methods as the referee method in disputes."
+      },
+      {
+        "change": "Include specific references to \u00a7\u00a7 63.774 and 63.775 for recordkeeping and reporting requirements.",
+        "rationale": "This ensures that all necessary recordkeeping and reporting requirements are clearly identified and adhered to.",
+        "priority": "Medium",
+        "reference_clause": "REG-40 CFR Part 63 Subpart HH.pdf \u00a7 63.764(c)(1)(iii)",
+        "implementation_guidance": "Add a section dedicated to recordkeeping and reporting that explicitly references \u00a7\u00a7 63.774 and 63.775, detailing the requirements."
+      },
+      {
+        "change": "Specify the record retention period of 1 year or until the next inspection, testing, or maintenance activity, whichever is longer.",
+        "rationale": "Ensures compliance with record retention requirements, which is critical for audits and inspections.",
+        "priority": "High",
+        "reference_clause": "REG-NFPA 86.pdf Section 7.5",
+        "implementation_guidance": "In the record retention policy section, clearly state the retention period as per NFPA 86 requirements."
+      },
+      {
+        "change": "Include specific details from API 510 Section 6.1 in the SOP.",
+        "rationale": "Ensures that all general requirements from API 510 are fully addressed and understood.",
+        "priority": "Low",
+        "reference_clause": "REG-API 510 2022.pdf Section 6.1",
+        "implementation_guidance": "Review API 510 Section 6.1 and incorporate relevant details into the general requirements section of the SOP."
+      },
+      {
+        "change": "Explicitly mention the requirement to compile written process safety information on process chemicals, process technology, and process equipment before conducting any process hazard analysis.",
+        "rationale": "Ensures that all necessary safety information is compiled and available, which is essential for effective process safety management.",
+        "priority": "Medium",
+        "reference_clause": "REG-29 CFR 1910 119.pdf Section 1910.119(d)",
+        "implementation_guidance": "Add a section on process safety information that outlines the requirement to compile detailed information on chemicals, technology, and equipment prior to hazard analysis."
+      }
+    ]
+  },
+  "summary": {
+    "status": "Significantly Non-Compliant",
+    "compliance_percentage": 41.67,
+    "clause_counts": {
+      "total": 6,
+      "compliant": 0,
+      "partially_compliant": 5,
+      "non_compliant": 1
+    },
+    "severity_counts": {
+      "high": 1,
+      "medium": 3,
+      "low": 2
+    },
+    "improvement_counts": {
+      "total": 6,
+      "high_priority": 1,
+      "medium_priority": 3,
+      "low_priority": 2
+    }
+  }
+}
