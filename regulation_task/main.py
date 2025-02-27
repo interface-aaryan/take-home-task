@@ -78,16 +78,68 @@ def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, v
             # Clean memory before processing each document
             gc.collect()
             
-            # Parse document
-            doc_content = parser_factory.parse_document(doc_file)
+            # Log the start of document parsing with a timeout
+            logger.info(f"Starting to parse document: {file_name}")
+            
+            # Add timeout handling for large documents
+            import threading
+            import time
+            
+            # Flag for parser completion
+            parser_done = False
+            parser_result = None
+            parser_error = None
+            
+            # Define parser thread function
+            def parse_with_timeout():
+                nonlocal parser_done, parser_result, parser_error
+                try:
+                    result = parser_factory.parse_document(doc_file)
+                    parser_result = result
+                except Exception as e:
+                    parser_error = e
+                finally:
+                    parser_done = True
+            
+            # Create and start parser thread
+            parser_thread = threading.Thread(target=parse_with_timeout)
+            parser_thread.daemon = True
+            parser_thread.start()
+            
+            # Wait with timeout
+            max_wait_seconds = 600  # 10 minutes max for parsing
+            wait_interval = 10  # Log every 10 seconds
+            total_waited = 0
+            
+            while not parser_done and total_waited < max_wait_seconds:
+                time.sleep(wait_interval)
+                total_waited += wait_interval
+                logger.info(f"Still parsing {file_name} - waited {total_waited} seconds...")
+            
+            # Check if parsing completed or timed out
+            if not parser_done:
+                logger.error(f"Document parsing timed out after {max_wait_seconds} seconds: {file_name}")
+                raise TimeoutError(f"Document parsing timed out: {file_name}")
+            
+            # Check if parsing encountered an error
+            if parser_error:
+                logger.error(f"Error parsing document: {str(parser_error)}")
+                raise parser_error
+            
+            # Get the parsing result
+            doc_content = parser_result
             
             # Free memory after parsing
             doc_text = doc_content.get("text", "")
             doc_metadata = doc_content.get("metadata", {})
             doc_file_name = doc_content.get("file_name", file_name)
             
+            # Log successful parsing
+            logger.info(f"Successfully parsed document: {file_name} - Text length: {len(doc_text)} chars")
+            
             # Remove the original doc_content to save memory
             doc_content = None
+            parser_result = None
             gc.collect()
             
             # Add document to document store with version control

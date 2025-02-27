@@ -1438,3 +1438,1400 @@
 2025-02-26 15:57:57,175 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
 2025-02-26 15:57:57,175 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
 2025-02-26 15:57:57,175 - __main__ - INFO - Processing regulatory document: REG-29 CFR 1910 119.pdf (Size: 2.03 MB)
+2025-02-26 16:04:33,733 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 16:04:34,014 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 16:04:34,014 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 16:04:34,062 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 16:04:34,062 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 16:04:34,101 - faiss.loader - INFO - Loading faiss.
+2025-02-26 16:04:34,118 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 16:04:34,120 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 16:04:34,120 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 16:04:34,120 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 16:04:34,121 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 16:04:34,130 - __main__ - INFO - Starting with clean memory state
+2025-02-26 16:04:34,140 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 1065 entries
+2025-02-26 16:04:34,140 - __main__ - INFO - Rebuilding knowledge base from regulatory documents
+2025-02-26 16:04:34,140 - __main__ - INFO - Found 10 regulatory documents to process
+2025-02-26 16:04:34,140 - __main__ - INFO - Loaded checkpoint with 5 processed documents
+2025-02-26 16:04:34,140 - __main__ - INFO - Skipping already processed document: REG-ASTM D6400.pdf
+2025-02-26 16:04:34,140 - __main__ - INFO - Skipping already processed document: REG-14 CFR Part 77.pdf
+2025-02-26 16:04:34,140 - __main__ - INFO - Skipping already processed document: REG-IEEE 802.11.pdf
+2025-02-26 16:04:34,140 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
+2025-02-26 16:04:34,140 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
+2025-02-26 16:04:34,140 - __main__ - INFO - Processing regulatory document: REG-29 CFR 1910 119.pdf (Size: 2.03 MB)
+2025-02-26 16:04:34,149 - __main__ - INFO - Starting to parse document: REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,622 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 143 pages (limited from 143 total)
+2025-02-26 16:04:35,658 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,666 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,672 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,677 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,683 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,687 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,692 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,697 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,705 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,711 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 100/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,717 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 110/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,722 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 120/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,728 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 130/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,735 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 140/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:35,737 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:04:35,737 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:04:44,154 - __main__ - INFO - Still parsing REG-29 CFR 1910 119.pdf - waited 10 seconds...
+2025-02-26 16:04:44,155 - __main__ - ERROR - Error parsing document: document closed
+2025-02-26 16:04:44,155 - __main__ - ERROR - Error processing document REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:04:44,181 - __main__ - INFO - Memory status after processing REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:44,181 - __main__ - INFO - Progress: 5/10 documents processed
+2025-02-26 16:04:44,181 - __main__ - INFO - Processing regulatory document: REG-SASO-IEC-60051-1-2020-E.pdf (Size: 2.38 MB)
+2025-02-26 16:04:44,194 - __main__ - INFO - Starting to parse document: REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,732 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 55 pages (limited from 55 total)
+2025-02-26 16:04:44,788 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,803 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,818 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,833 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,843 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:04:44,848 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-SASO-IEC-60051-1-2020-E.pdf: document closed
+2025-02-26 16:04:44,848 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-SASO-IEC-60051-1-2020-E.pdf: document closed
+2025-02-26 16:04:57,595 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 16:04:57,800 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 16:04:57,800 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 16:04:57,821 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 16:04:57,821 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 16:04:57,843 - faiss.loader - INFO - Loading faiss.
+2025-02-26 16:04:57,850 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 16:04:57,851 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 16:04:57,852 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 16:04:57,852 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 16:04:57,852 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 16:04:57,862 - __main__ - INFO - Starting with clean memory state
+2025-02-26 16:04:57,865 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 1065 entries
+2025-02-26 16:04:57,865 - __main__ - INFO - Rebuilding knowledge base from regulatory documents
+2025-02-26 16:04:57,865 - __main__ - INFO - Found 10 regulatory documents to process
+2025-02-26 16:04:57,866 - __main__ - INFO - Loaded checkpoint with 6 processed documents
+2025-02-26 16:04:57,866 - __main__ - INFO - Skipping already processed document: REG-ASTM D6400.pdf
+2025-02-26 16:04:57,866 - __main__ - INFO - Skipping already processed document: REG-14 CFR Part 77.pdf
+2025-02-26 16:04:57,866 - __main__ - INFO - Skipping already processed document: REG-IEEE 802.11.pdf
+2025-02-26 16:04:57,866 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
+2025-02-26 16:04:57,866 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
+2025-02-26 16:04:57,866 - __main__ - INFO - Processing regulatory document: REG-29 CFR 1910 119.pdf (Size: 2.03 MB)
+2025-02-26 16:04:57,873 - __main__ - INFO - Starting to parse document: REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,875 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 143 pages (limited from 143 total)
+2025-02-26 16:04:57,893 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,898 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,903 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,907 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,911 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,915 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,919 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,923 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,928 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,934 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 100/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,939 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 110/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,944 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 120/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,950 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 130/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,957 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 140/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:04:57,958 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:04:57,958 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:05:07,877 - __main__ - INFO - Still parsing REG-29 CFR 1910 119.pdf - waited 10 seconds...
+2025-02-26 16:05:07,877 - __main__ - ERROR - Error parsing document: document closed
+2025-02-26 16:05:07,878 - __main__ - ERROR - Error processing document REG-29 CFR 1910 119.pdf: document closed
+2025-02-26 16:05:07,904 - __main__ - INFO - Memory status after processing REG-29 CFR 1910 119.pdf
+2025-02-26 16:05:07,905 - __main__ - INFO - Progress: 5/10 documents processed
+2025-02-26 16:05:07,905 - __main__ - INFO - Processing regulatory document: REG-SASO-IEC-60051-1-2020-E.pdf (Size: 2.38 MB)
+2025-02-26 16:05:07,917 - __main__ - INFO - Starting to parse document: REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:07,919 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 55 pages (limited from 55 total)
+2025-02-26 16:05:07,959 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:07,972 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:07,986 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:08,000 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:08,009 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:08,014 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-SASO-IEC-60051-1-2020-E.pdf: document closed
+2025-02-26 16:05:08,014 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-SASO-IEC-60051-1-2020-E.pdf: document closed
+2025-02-26 16:05:17,922 - __main__ - INFO - Still parsing REG-SASO-IEC-60051-1-2020-E.pdf - waited 10 seconds...
+2025-02-26 16:05:17,923 - __main__ - ERROR - Error parsing document: document closed
+2025-02-26 16:05:17,923 - __main__ - ERROR - Error processing document REG-SASO-IEC-60051-1-2020-E.pdf: document closed
+2025-02-26 16:05:17,948 - __main__ - INFO - Memory status after processing REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:05:17,948 - __main__ - INFO - Progress: 5/10 documents processed
+2025-02-26 16:05:17,948 - __main__ - INFO - Processing regulatory document: REG-ANSI A92.2.pdf (Size: 3.45 MB)
+2025-02-26 16:05:17,956 - __main__ - INFO - Starting to parse document: REG-ANSI A92.2.pdf
+2025-02-26 16:05:18,420 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 19 pages (limited from 19 total)
+2025-02-26 16:05:18,480 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/19 pages from REG-ANSI A92.2.pdf
+2025-02-26 16:05:18,504 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-ANSI A92.2.pdf: document closed
+2025-02-26 16:05:18,505 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-ANSI A92.2.pdf: document closed
+2025-02-26 16:05:27,962 - __main__ - INFO - Still parsing REG-ANSI A92.2.pdf - waited 10 seconds...
+2025-02-26 16:05:27,963 - __main__ - ERROR - Error parsing document: document closed
+2025-02-26 16:05:27,963 - __main__ - ERROR - Error processing document REG-ANSI A92.2.pdf: document closed
+2025-02-26 16:05:27,990 - __main__ - INFO - Memory status after processing REG-ANSI A92.2.pdf
+2025-02-26 16:05:27,990 - __main__ - INFO - Progress: 5/10 documents processed
+2025-02-26 16:05:27,990 - __main__ - INFO - Processing regulatory document: REG-NFPA 86.pdf (Size: 3.58 MB)
+2025-02-26 16:05:28,004 - __main__ - INFO - Starting to parse document: REG-NFPA 86.pdf
+2025-02-26 16:05:28,543 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 150 pages (limited from 150 total)
+2025-02-26 16:05:28,605 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,616 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,626 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,636 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,645 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,654 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,665 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,674 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,684 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,694 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 100/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,702 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 110/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,713 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 120/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,722 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 130/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,730 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 140/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:05:28,752 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-NFPA 86.pdf: document closed
+2025-02-26 16:05:28,753 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-NFPA 86.pdf: document closed
+2025-02-26 16:05:38,009 - __main__ - INFO - Still parsing REG-NFPA 86.pdf - waited 10 seconds...
+2025-02-26 16:05:38,010 - __main__ - ERROR - Error parsing document: document closed
+2025-02-26 16:05:38,010 - __main__ - ERROR - Error processing document REG-NFPA 86.pdf: document closed
+2025-02-26 16:05:38,036 - __main__ - INFO - Memory status after processing REG-NFPA 86.pdf
+2025-02-26 16:05:38,036 - __main__ - INFO - Progress: 5/10 documents processed
+2025-02-26 16:05:38,036 - __main__ - INFO - Processing regulatory document: REG-PA DEP of AIR QUALITY.pdf (Size: 4.27 MB)
+2025-02-26 16:05:38,048 - __main__ - INFO - Starting to parse document: REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,548 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 98 pages (limited from 98 total)
+2025-02-26 16:05:38,555 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,569 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,594 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,618 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,633 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,650 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,667 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,683 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,695 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/98 pages from REG-PA DEP of AIR QUALITY.pdf
+2025-02-26 16:05:38,706 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - ERROR - Error extracting text from PDF /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-PA DEP of AIR QUALITY.pdf: document closed
+2025-02-26 16:05:38,706 - regulatory_compliance_processor.document_processing.parsers - ERROR - Error parsing document /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/data/regulatory_docs/REG-PA DEP of AIR QUALITY.pdf: document closed
+2025-02-26 16:07:30,474 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-26 16:07:30,703 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-26 16:07:30,703 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-26 16:07:30,733 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-26 16:07:30,733 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI
+2025-02-26 16:07:30,772 - faiss.loader - INFO - Loading faiss.
+2025-02-26 16:07:30,779 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-26 16:07:30,781 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-26 16:07:30,781 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-26 16:07:30,781 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-26 16:07:30,782 - __main__ - INFO - Starting Regulatory Compliance Document Processor
+2025-02-26 16:07:30,792 - __main__ - INFO - Starting with clean memory state
+2025-02-26 16:07:30,795 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Loaded vector index with 1065 entries
+2025-02-26 16:07:30,795 - __main__ - INFO - Rebuilding knowledge base from regulatory documents
+2025-02-26 16:07:30,796 - __main__ - INFO - Found 10 regulatory documents to process
+2025-02-26 16:07:30,796 - __main__ - INFO - Loaded checkpoint with 9 processed documents
+2025-02-26 16:07:30,796 - __main__ - INFO - Skipping already processed document: REG-ASTM D6400.pdf
+2025-02-26 16:07:30,796 - __main__ - INFO - Skipping already processed document: REG-14 CFR Part 77.pdf
+2025-02-26 16:07:30,796 - __main__ - INFO - Skipping already processed document: REG-IEEE 802.11.pdf
+2025-02-26 16:07:30,796 - __main__ - INFO - Skipping already processed document: REG-40 CFR Part 63 Subpart HH.pdf
+2025-02-26 16:07:30,796 - __main__ - INFO - Skipping already processed document: REG-API 510 2022.pdf
+2025-02-26 16:07:30,796 - __main__ - INFO - Processing regulatory document: REG-29 CFR 1910 119.pdf (Size: 2.03 MB)
+2025-02-26 16:07:30,804 - __main__ - INFO - Starting to parse document: REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,806 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 143 pages (limited from 143 total)
+2025-02-26 16:07:30,824 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,830 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,834 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,838 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,846 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,850 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,853 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,857 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,863 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,868 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 100/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,874 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 110/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,878 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 120/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,884 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 130/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:30,891 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 140/143 pages from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:40,809 - __main__ - INFO - Still parsing REG-29 CFR 1910 119.pdf - waited 10 seconds...
+2025-02-26 16:07:40,810 - __main__ - INFO - Successfully parsed document: REG-29 CFR 1910 119.pdf - Text length: 264509 chars
+2025-02-26 16:07:40,840 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added new document REG-29 CFR 1910 119.pdf with id 7
+2025-02-26 16:07:40,843 - __main__ - INFO - Extracting clauses from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:40,843 - __main__ - INFO - Document is large (264509 chars), processing in chunks
+2025-02-26 16:07:40,843 - __main__ - INFO - Processing chunk 1/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:40,843 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:49,269 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:07:49,300 - __main__ - INFO - Processing chunk 1/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:07:49,301 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:01,334 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:08:01,362 - __main__ - INFO - Processing chunk 2/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:01,362 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:05,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:08:05,562 - __main__ - INFO - Processing chunk 3/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:05,563 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:23,462 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:08:23,492 - __main__ - INFO - Processing chunk 4/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:23,492 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:34,725 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:08:34,753 - __main__ - INFO - Processing chunk 5/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:34,753 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:43,998 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:08:44,015 - __main__ - INFO - Processing chunk 6/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:08:44,015 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:00,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:09:00,253 - __main__ - INFO - Processing chunk 6/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:00,253 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:17,938 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:09:17,967 - __main__ - INFO - Processing chunk 7/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:17,968 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:33,199 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:09:33,226 - __main__ - INFO - Processing chunk 8/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:33,226 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:46,199 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:09:46,229 - __main__ - INFO - Processing chunk 9/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:46,230 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:56,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:09:56,726 - __main__ - INFO - Processing chunk 10/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:09:56,727 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:03,998 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:10:04,031 - __main__ - INFO - Processing chunk 11/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:04,031 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:23,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:10:23,235 - __main__ - INFO - Processing chunk 11/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:23,235 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:33,305 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:10:33,332 - __main__ - INFO - Processing chunk 12/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:33,332 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:53,243 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:10:53,281 - __main__ - INFO - Processing chunk 13/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:10:53,282 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:09,812 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:11:09,840 - __main__ - INFO - Processing chunk 14/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:09,840 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:20,000 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:11:20,029 - __main__ - INFO - Processing chunk 15/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:20,030 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:35,590 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:11:35,621 - __main__ - INFO - Processing chunk 16/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:35,621 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:41,345 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:11:41,373 - __main__ - INFO - Processing chunk 16/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:41,373 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:55,636 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:11:55,661 - __main__ - INFO - Processing chunk 17/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:11:55,662 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:04,750 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:12:04,776 - __main__ - INFO - Processing chunk 18/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:04,777 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:16,139 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:12:16,186 - __main__ - INFO - Processing chunk 19/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:16,186 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:30,759 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:12:30,786 - __main__ - INFO - Processing chunk 20/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:30,787 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:40,722 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:12:40,750 - __main__ - INFO - Processing chunk 21/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:40,750 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:59,739 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:12:59,767 - __main__ - INFO - Processing chunk 21/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:12:59,767 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:12,646 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:13:12,673 - __main__ - INFO - Processing chunk 22/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:12,673 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:31,586 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:13:31,614 - __main__ - INFO - Processing chunk 23/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:31,614 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:44,723 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:13:44,757 - __main__ - INFO - Processing chunk 24/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:44,757 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:56,779 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:13:56,806 - __main__ - INFO - Processing chunk 25/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:13:56,807 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:13,163 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:14:13,191 - __main__ - INFO - Processing chunk 26/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:13,191 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:24,801 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:14:24,829 - __main__ - INFO - Processing chunk 26/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:24,829 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:40,297 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:14:40,326 - __main__ - INFO - Processing chunk 27/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:40,326 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:51,143 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:14:51,171 - __main__ - INFO - Processing chunk 28/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:14:51,171 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:00,573 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:15:00,602 - __main__ - INFO - Processing chunk 29/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:00,602 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:11,596 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:15:11,623 - __main__ - INFO - Processing chunk 30/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:11,624 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:28,839 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:15:28,868 - __main__ - INFO - Processing chunk 31/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:28,869 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:44,734 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:15:44,761 - __main__ - INFO - Processing chunk 31/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:15:44,761 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:03,655 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:16:03,682 - __main__ - INFO - Processing chunk 32/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:03,682 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:18,705 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:16:18,732 - __main__ - INFO - Processing chunk 33/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:18,732 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:33,041 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:16:33,070 - __main__ - INFO - Processing chunk 34/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:33,070 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:46,455 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:16:46,482 - __main__ - INFO - Processing chunk 35/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:46,483 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:59,155 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:16:59,183 - __main__ - INFO - Processing chunk 36/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:16:59,183 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:14,519 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:17:14,549 - __main__ - INFO - Processing chunk 36/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:14,549 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:28,235 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:17:28,261 - __main__ - INFO - Processing chunk 37/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:28,262 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:51,993 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:17:52,020 - __main__ - INFO - Processing chunk 38/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:17:52,020 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:16,152 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:18:16,180 - __main__ - INFO - Processing chunk 39/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:16,180 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:39,295 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:18:39,324 - __main__ - INFO - Processing chunk 40/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:39,324 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:58,751 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:18:58,783 - __main__ - INFO - Processing chunk 41/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:18:58,783 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:13,188 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:19:13,215 - __main__ - INFO - Processing chunk 41/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:13,215 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:33,566 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:19:33,595 - __main__ - INFO - Processing chunk 42/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:33,595 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:49,751 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:19:49,779 - __main__ - INFO - Processing chunk 43/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:19:49,779 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:01,830 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:20:01,859 - __main__ - INFO - Processing chunk 44/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:01,859 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:16,062 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:20:16,090 - __main__ - INFO - Processing chunk 45/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:16,090 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:25,689 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:20:25,719 - __main__ - INFO - Processing chunk 46/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:25,719 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:39,516 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:20:39,544 - __main__ - INFO - Processing chunk 46/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:39,544 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:53,541 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:20:53,568 - __main__ - INFO - Processing chunk 47/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:20:53,568 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:10,131 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:21:10,160 - __main__ - INFO - Processing chunk 48/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:10,160 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:26,924 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:21:26,952 - __main__ - INFO - Processing chunk 49/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:26,953 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:40,748 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:21:40,776 - __main__ - INFO - Processing chunk 50/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:40,777 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:54,370 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:21:54,398 - __main__ - INFO - Processing chunk 51/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:21:54,398 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:03,583 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:22:03,611 - __main__ - INFO - Processing chunk 51/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:03,611 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:17,411 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:22:17,441 - __main__ - INFO - Processing chunk 52/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:17,441 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:26,932 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:22:26,961 - __main__ - INFO - Processing chunk 53/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:26,961 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:39,782 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:22:39,810 - __main__ - INFO - Processing chunk 54/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:39,810 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:47,821 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:22:47,849 - __main__ - INFO - Processing chunk 55/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:22:47,849 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:01,031 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:23:01,059 - __main__ - INFO - Processing chunk 56/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:01,059 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:13,216 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:23:13,243 - __main__ - INFO - Processing chunk 56/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:13,244 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:27,962 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:23:27,989 - __main__ - INFO - Processing chunk 57/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:27,989 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:39,432 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:23:39,460 - __main__ - INFO - Processing chunk 58/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:39,460 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:53,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:23:53,284 - __main__ - INFO - Processing chunk 59/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:23:53,284 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:05,764 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:24:05,798 - __main__ - INFO - Processing chunk 60/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:05,798 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:18,447 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:24:18,476 - __main__ - INFO - Processing chunk 61/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:18,476 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:29,304 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:24:29,330 - __main__ - INFO - Processing chunk 61/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:29,330 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:37,912 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:24:37,939 - __main__ - INFO - Processing chunk 62/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:37,939 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:56,642 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:24:56,670 - __main__ - INFO - Processing chunk 63/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:24:56,671 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:10,158 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:25:10,186 - __main__ - INFO - Processing chunk 64/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:10,187 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:26,235 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:25:26,262 - __main__ - INFO - Processing chunk 65/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:26,263 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:37,908 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:25:37,936 - __main__ - INFO - Processing chunk 66/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:37,936 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:56,546 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:25:56,575 - __main__ - INFO - Processing chunk 66/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:25:56,575 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:08,936 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:26:08,963 - __main__ - INFO - Processing chunk 67/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:08,963 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:21,942 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:26:21,972 - __main__ - INFO - Processing chunk 68/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:21,972 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:34,641 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:26:34,671 - __main__ - INFO - Processing chunk 69/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:34,672 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:45,392 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:26:45,422 - __main__ - INFO - Processing chunk 70/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:26:45,422 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:01,676 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:01,703 - __main__ - INFO - Processing chunk 71/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:01,703 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:20,413 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:20,441 - __main__ - INFO - Processing chunk 71/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:20,441 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:36,388 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:36,414 - __main__ - INFO - Processing chunk 72/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:36,414 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:45,296 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:45,323 - __main__ - INFO - Processing chunk 73/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:45,323 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:54,412 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:54,439 - __main__ - INFO - Processing chunk 74/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:54,439 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:58,712 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:27:58,738 - __main__ - INFO - Processing chunk 75/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:27:58,738 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:12,742 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:28:12,769 - __main__ - INFO - Processing chunk 76/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:12,769 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:36,487 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:28:36,514 - __main__ - INFO - Processing chunk 76/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:36,514 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:51,959 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:28:51,985 - __main__ - INFO - Processing chunk 77/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:28:51,985 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:06,707 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:29:06,736 - __main__ - INFO - Processing chunk 78/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:06,736 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:20,178 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:29:20,206 - __main__ - INFO - Processing chunk 79/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:20,206 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:35,482 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:29:35,509 - __main__ - INFO - Processing chunk 80/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:35,509 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:55,653 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:29:55,682 - __main__ - INFO - Processing chunk 81/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:29:55,683 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:30:25,690 - openai._base_client - INFO - Retrying request to /chat/completions in 0.478449 seconds
+2025-02-26 16:30:48,292 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:30:48,318 - __main__ - INFO - Processing chunk 81/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:30:48,319 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:01,294 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:31:01,322 - __main__ - INFO - Processing chunk 82/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:01,322 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:16,840 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:31:16,868 - __main__ - INFO - Processing chunk 83/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:16,869 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:27,261 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:31:27,291 - __main__ - INFO - Processing chunk 84/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:27,291 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:31:57,298 - openai._base_client - INFO - Retrying request to /chat/completions in 0.409648 seconds
+2025-02-26 16:32:21,988 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:32:22,014 - __main__ - INFO - Processing chunk 85/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:32:22,015 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:32:41,030 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:32:41,057 - __main__ - INFO - Processing chunk 86/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:32:41,058 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:32:55,981 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:32:56,008 - __main__ - INFO - Processing chunk 86/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:32:56,008 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:33:03,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:33:03,280 - __main__ - INFO - Processing chunk 87/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:33:03,281 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:33:21,382 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:33:21,409 - __main__ - INFO - Processing chunk 88/89 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:33:21,410 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-29 CFR 1910 119.pdf
+2025-02-26 16:33:31,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:33:31,774 - __main__ - INFO - Deduplicating 556 extracted clauses
+2025-02-26 16:33:31,774 - __main__ - INFO - Found 510 unique clauses after deduplication
+2025-02-26 16:33:31,787 - __main__ - INFO - Adding clauses to document store
+2025-02-26 16:33:31,795 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 510 regulatory clauses for document 7 version 1
+2025-02-26 16:33:31,797 - __main__ - INFO - Adding clauses to vector store in batches
+2025-02-26 16:33:33,975 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:34,544 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1085 entries
+2025-02-26 16:33:34,544 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:34,544 - __main__ - INFO - Added batch 1/26 of clauses to vector store
+2025-02-26 16:33:35,203 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:35,825 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1105 entries
+2025-02-26 16:33:35,825 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:35,825 - __main__ - INFO - Added batch 2/26 of clauses to vector store
+2025-02-26 16:33:36,841 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:37,442 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1125 entries
+2025-02-26 16:33:37,442 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:37,443 - __main__ - INFO - Added batch 3/26 of clauses to vector store
+2025-02-26 16:33:38,480 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:38,797 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1145 entries
+2025-02-26 16:33:38,797 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:38,798 - __main__ - INFO - Added batch 4/26 of clauses to vector store
+2025-02-26 16:33:39,708 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:40,006 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1165 entries
+2025-02-26 16:33:40,006 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:40,006 - __main__ - INFO - Added batch 5/26 of clauses to vector store
+2025-02-26 16:33:40,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:41,341 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1185 entries
+2025-02-26 16:33:41,341 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:41,341 - __main__ - INFO - Added batch 6/26 of clauses to vector store
+2025-02-26 16:33:42,062 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:42,663 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1205 entries
+2025-02-26 16:33:42,663 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:42,663 - __main__ - INFO - Added batch 7/26 of clauses to vector store
+2025-02-26 16:33:43,381 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:43,917 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1225 entries
+2025-02-26 16:33:43,917 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:43,917 - __main__ - INFO - Added batch 8/26 of clauses to vector store
+2025-02-26 16:33:44,725 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:45,313 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1245 entries
+2025-02-26 16:33:45,313 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:45,313 - __main__ - INFO - Added batch 9/26 of clauses to vector store
+2025-02-26 16:33:46,261 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:46,517 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1265 entries
+2025-02-26 16:33:46,517 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:46,517 - __main__ - INFO - Added batch 10/26 of clauses to vector store
+2025-02-26 16:33:47,491 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:48,001 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1285 entries
+2025-02-26 16:33:48,001 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:48,001 - __main__ - INFO - Added batch 11/26 of clauses to vector store
+2025-02-26 16:33:49,233 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:49,675 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1305 entries
+2025-02-26 16:33:49,675 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:49,675 - __main__ - INFO - Added batch 12/26 of clauses to vector store
+2025-02-26 16:33:50,548 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:50,873 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1325 entries
+2025-02-26 16:33:50,873 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:50,873 - __main__ - INFO - Added batch 13/26 of clauses to vector store
+2025-02-26 16:33:51,324 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:51,655 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1345 entries
+2025-02-26 16:33:51,655 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:51,655 - __main__ - INFO - Added batch 14/26 of clauses to vector store
+2025-02-26 16:33:52,713 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:53,077 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1365 entries
+2025-02-26 16:33:53,077 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:53,077 - __main__ - INFO - Added batch 15/26 of clauses to vector store
+2025-02-26 16:33:53,530 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:53,836 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1385 entries
+2025-02-26 16:33:53,836 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:53,837 - __main__ - INFO - Added batch 16/26 of clauses to vector store
+2025-02-26 16:33:54,555 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:54,975 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1405 entries
+2025-02-26 16:33:54,975 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:54,976 - __main__ - INFO - Added batch 17/26 of clauses to vector store
+2025-02-26 16:33:55,785 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:56,087 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1425 entries
+2025-02-26 16:33:56,087 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:56,087 - __main__ - INFO - Added batch 18/26 of clauses to vector store
+2025-02-26 16:33:56,810 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:57,369 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1445 entries
+2025-02-26 16:33:57,369 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:57,370 - __main__ - INFO - Added batch 19/26 of clauses to vector store
+2025-02-26 16:33:58,842 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:33:59,139 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1465 entries
+2025-02-26 16:33:59,139 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:33:59,139 - __main__ - INFO - Added batch 20/26 of clauses to vector store
+2025-02-26 16:33:59,991 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:00,428 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1485 entries
+2025-02-26 16:34:00,428 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:34:00,428 - __main__ - INFO - Added batch 21/26 of clauses to vector store
+2025-02-26 16:34:01,108 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:01,673 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1505 entries
+2025-02-26 16:34:01,673 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:34:01,674 - __main__ - INFO - Added batch 22/26 of clauses to vector store
+2025-02-26 16:34:02,340 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:02,627 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1525 entries
+2025-02-26 16:34:02,628 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:34:02,628 - __main__ - INFO - Added batch 23/26 of clauses to vector store
+2025-02-26 16:34:03,159 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:03,670 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1545 entries
+2025-02-26 16:34:03,670 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:34:03,670 - __main__ - INFO - Added batch 24/26 of clauses to vector store
+2025-02-26 16:34:04,103 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:04,744 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1565 entries
+2025-02-26 16:34:04,744 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:34:04,744 - __main__ - INFO - Added batch 25/26 of clauses to vector store
+2025-02-26 16:34:05,412 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:34:05,566 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1575 entries
+2025-02-26 16:34:05,566 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 10 clauses to vector store
+2025-02-26 16:34:05,566 - __main__ - INFO - Added batch 26/26 of clauses to vector store
+2025-02-26 16:34:05,582 - __main__ - INFO - Successfully processed REG-29 CFR 1910 119.pdf and extracted 510 clauses
+2025-02-26 16:34:05,595 - __main__ - INFO - Memory status after processing REG-29 CFR 1910 119.pdf
+2025-02-26 16:34:05,595 - __main__ - INFO - Progress: 6/10 documents processed
+2025-02-26 16:34:05,595 - __main__ - INFO - Processing regulatory document: REG-SASO-IEC-60051-1-2020-E.pdf (Size: 2.38 MB)
+2025-02-26 16:34:05,602 - __main__ - INFO - Starting to parse document: REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:05,603 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 55 pages (limited from 55 total)
+2025-02-26 16:34:05,635 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:05,646 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:05,659 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:05,673 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:05,682 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/55 pages from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:15,612 - __main__ - INFO - Still parsing REG-SASO-IEC-60051-1-2020-E.pdf - waited 10 seconds...
+2025-02-26 16:34:15,613 - __main__ - INFO - Successfully parsed document: REG-SASO-IEC-60051-1-2020-E.pdf - Text length: 108085 chars
+2025-02-26 16:34:15,639 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added new document REG-SASO-IEC-60051-1-2020-E.pdf with id 8
+2025-02-26 16:34:15,641 - __main__ - INFO - Extracting clauses from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:15,641 - __main__ - INFO - Document is large (108085 chars), processing in chunks
+2025-02-26 16:34:15,641 - __main__ - INFO - Processing chunk 1/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:15,641 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:21,897 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:34:21,926 - __main__ - INFO - Processing chunk 1/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:21,926 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:40,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:34:40,563 - __main__ - INFO - Processing chunk 2/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:34:40,564 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:04,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:04,729 - __main__ - INFO - Processing chunk 3/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:04,729 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:16,462 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:16,491 - __main__ - INFO - Processing chunk 4/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:16,491 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:18,933 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:18,961 - __main__ - INFO - Processing chunk 5/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:18,961 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:24,982 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:25,008 - __main__ - INFO - Processing chunk 6/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:25,008 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:28,455 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:28,483 - __main__ - INFO - Processing chunk 6/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:28,483 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:29,582 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:29,608 - __main__ - INFO - Processing chunk 7/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:29,608 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:30,811 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:30,838 - __main__ - INFO - Processing chunk 8/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:30,839 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:53,959 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:35:53,986 - __main__ - INFO - Processing chunk 9/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:35:53,986 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:23,034 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:36:23,063 - __main__ - INFO - Processing chunk 10/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:23,064 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:23,924 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:36:23,959 - __main__ - INFO - Processing chunk 11/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:23,960 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:25,391 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:36:25,418 - __main__ - INFO - Processing chunk 11/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:25,418 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:31,943 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:36:31,969 - __main__ - INFO - Processing chunk 12/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:31,970 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:45,366 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:36:45,393 - __main__ - INFO - Processing chunk 13/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:36:45,393 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:06,558 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:37:06,587 - __main__ - INFO - Processing chunk 14/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:06,587 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:13,694 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:37:13,722 - __main__ - INFO - Processing chunk 15/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:13,722 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:28,161 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:37:28,189 - __main__ - INFO - Processing chunk 16/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:28,190 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:38,527 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:37:38,556 - __main__ - INFO - Processing chunk 16/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:38,556 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:55,401 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:37:55,427 - __main__ - INFO - Processing chunk 17/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:37:55,428 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:02,263 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:38:02,290 - __main__ - INFO - Processing chunk 18/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:02,291 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:18,441 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:38:18,468 - __main__ - INFO - Processing chunk 19/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:18,468 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:27,146 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:38:27,172 - __main__ - INFO - Processing chunk 20/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:27,172 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:47,131 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:38:47,161 - __main__ - INFO - Processing chunk 21/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:38:47,161 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:13,534 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:39:13,562 - __main__ - INFO - Processing chunk 21/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:13,563 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:32,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:39:32,099 - __main__ - INFO - Processing chunk 22/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:32,099 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:47,633 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:39:47,661 - __main__ - INFO - Processing chunk 23/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:39:47,661 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:06,885 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:40:06,913 - __main__ - INFO - Processing chunk 24/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:06,913 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:28,675 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:40:28,703 - __main__ - INFO - Processing chunk 25/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:28,703 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:47,377 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:40:47,415 - __main__ - INFO - Processing chunk 26/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:47,415 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:55,482 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:40:55,516 - __main__ - INFO - Processing chunk 26/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:40:55,516 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:41:18,403 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:41:18,432 - __main__ - INFO - Processing chunk 27/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:41:18,432 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:41:26,347 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:41:26,372 - __main__ - INFO - Processing chunk 28/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:41:26,372 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:41:56,379 - openai._base_client - INFO - Retrying request to /chat/completions in 0.472570 seconds
+2025-02-26 16:42:27,450 - openai._base_client - INFO - Retrying request to /chat/completions in 0.982280 seconds
+2025-02-26 16:42:58,842 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 16:42:58,869 - __main__ - INFO - Processing chunk 29/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:42:58,870 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:43:29,447 - openai._base_client - INFO - Retrying request to /chat/completions in 0.495047 seconds
+2025-02-26 16:44:00,642 - openai._base_client - INFO - Retrying request to /chat/completions in 0.921017 seconds
+2025-02-26 16:44:31,957 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 16:44:31,982 - __main__ - INFO - Processing chunk 30/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:44:31,982 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:44:51,774 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:44:51,802 - __main__ - INFO - Processing chunk 31/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:44:51,803 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:45:16,171 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:45:16,199 - __main__ - INFO - Processing chunk 31/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:45:16,199 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:45:42,700 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:45:42,728 - __main__ - INFO - Processing chunk 32/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:45:42,728 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:03,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:03,622 - __main__ - INFO - Processing chunk 33/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:03,622 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:24,075 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:24,104 - __main__ - INFO - Processing chunk 34/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:24,105 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:34,005 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:34,033 - __main__ - INFO - Processing chunk 35/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:34,034 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:43,834 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:43,863 - __main__ - INFO - Processing chunk 36/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:43,863 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:48,287 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:48,317 - __main__ - INFO - Processing chunk 36/37 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:48,317 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:49,057 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:46:49,093 - __main__ - INFO - Deduplicating 206 extracted clauses
+2025-02-26 16:46:49,093 - __main__ - INFO - Found 187 unique clauses after deduplication
+2025-02-26 16:46:49,104 - __main__ - INFO - Adding clauses to document store
+2025-02-26 16:46:49,107 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 187 regulatory clauses for document 8 version 1
+2025-02-26 16:46:49,108 - __main__ - INFO - Adding clauses to vector store in batches
+2025-02-26 16:46:49,468 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:49,951 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1595 entries
+2025-02-26 16:46:49,951 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:49,952 - __main__ - INFO - Added batch 1/10 of clauses to vector store
+2025-02-26 16:46:50,285 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:50,522 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1615 entries
+2025-02-26 16:46:50,522 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:50,522 - __main__ - INFO - Added batch 2/10 of clauses to vector store
+2025-02-26 16:46:50,900 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:51,148 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1635 entries
+2025-02-26 16:46:51,149 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:51,149 - __main__ - INFO - Added batch 3/10 of clauses to vector store
+2025-02-26 16:46:51,514 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:52,060 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1655 entries
+2025-02-26 16:46:52,060 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:52,060 - __main__ - INFO - Added batch 4/10 of clauses to vector store
+2025-02-26 16:46:52,335 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:52,659 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1675 entries
+2025-02-26 16:46:52,659 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:52,659 - __main__ - INFO - Added batch 5/10 of clauses to vector store
+2025-02-26 16:46:53,053 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:53,300 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1695 entries
+2025-02-26 16:46:53,300 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:53,300 - __main__ - INFO - Added batch 6/10 of clauses to vector store
+2025-02-26 16:46:53,665 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:54,166 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1715 entries
+2025-02-26 16:46:54,166 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:54,166 - __main__ - INFO - Added batch 7/10 of clauses to vector store
+2025-02-26 16:46:54,587 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:55,161 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1735 entries
+2025-02-26 16:46:55,161 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:55,162 - __main__ - INFO - Added batch 8/10 of clauses to vector store
+2025-02-26 16:46:55,611 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:55,859 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1755 entries
+2025-02-26 16:46:55,860 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:46:55,860 - __main__ - INFO - Added batch 9/10 of clauses to vector store
+2025-02-26 16:46:56,227 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:46:56,313 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1762 entries
+2025-02-26 16:46:56,314 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 7 clauses to vector store
+2025-02-26 16:46:56,314 - __main__ - INFO - Added batch 10/10 of clauses to vector store
+2025-02-26 16:46:56,328 - __main__ - INFO - Successfully processed REG-SASO-IEC-60051-1-2020-E.pdf and extracted 187 clauses
+2025-02-26 16:46:56,342 - __main__ - INFO - Memory status after processing REG-SASO-IEC-60051-1-2020-E.pdf
+2025-02-26 16:46:56,344 - __main__ - INFO - Progress: 7/10 documents processed
+2025-02-26 16:46:56,344 - __main__ - INFO - Processing regulatory document: REG-ANSI A92.2.pdf (Size: 3.45 MB)
+2025-02-26 16:46:56,351 - __main__ - INFO - Starting to parse document: REG-ANSI A92.2.pdf
+2025-02-26 16:46:56,351 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 19 pages (limited from 19 total)
+2025-02-26 16:46:56,386 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/19 pages from REG-ANSI A92.2.pdf
+2025-02-26 16:47:06,361 - __main__ - INFO - Still parsing REG-ANSI A92.2.pdf - waited 10 seconds...
+2025-02-26 16:47:06,362 - __main__ - INFO - Successfully parsed document: REG-ANSI A92.2.pdf - Text length: 42009 chars
+2025-02-26 16:47:06,390 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added new document REG-ANSI A92.2.pdf with id 9
+2025-02-26 16:47:06,391 - __main__ - INFO - Extracting clauses from REG-ANSI A92.2.pdf
+2025-02-26 16:47:06,391 - __main__ - INFO - Document is large (42009 chars), processing in chunks
+2025-02-26 16:47:06,392 - __main__ - INFO - Processing chunk 1/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:06,392 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:17,991 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:18,018 - __main__ - INFO - Processing chunk 1/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:18,018 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:21,315 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:21,344 - __main__ - INFO - Processing chunk 2/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:21,344 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:22,134 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:22,161 - __main__ - INFO - Processing chunk 3/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:22,161 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:32,477 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:32,504 - __main__ - INFO - Processing chunk 4/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:32,504 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:46,609 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:46,638 - __main__ - INFO - Processing chunk 5/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:46,638 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:59,407 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:47:59,436 - __main__ - INFO - Processing chunk 6/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:47:59,436 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:04,323 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:48:04,351 - __main__ - INFO - Processing chunk 6/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:04,351 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:19,478 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:48:19,507 - __main__ - INFO - Processing chunk 7/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:19,507 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:34,328 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:48:34,356 - __main__ - INFO - Processing chunk 8/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:34,356 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:55,627 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:48:55,652 - __main__ - INFO - Processing chunk 9/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:48:55,653 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:18,258 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:49:18,286 - __main__ - INFO - Processing chunk 10/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:18,287 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:38,947 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:49:38,974 - __main__ - INFO - Processing chunk 11/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:38,974 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:50,719 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:49:50,745 - __main__ - INFO - Processing chunk 11/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:49:50,745 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:13,109 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:13,178 - __main__ - INFO - Processing chunk 12/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:13,178 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:20,521 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:20,548 - __main__ - INFO - Processing chunk 13/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:20,549 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:32,191 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:32,218 - __main__ - INFO - Processing chunk 14/15 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:32,219 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-ANSI A92.2.pdf
+2025-02-26 16:50:32,791 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:32,835 - __main__ - INFO - Deduplicating 76 extracted clauses
+2025-02-26 16:50:32,836 - __main__ - INFO - Found 72 unique clauses after deduplication
+2025-02-26 16:50:32,846 - __main__ - INFO - Adding clauses to document store
+2025-02-26 16:50:32,847 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Added 72 regulatory clauses for document 9 version 1
+2025-02-26 16:50:32,848 - __main__ - INFO - Adding clauses to vector store in batches
+2025-02-26 16:50:33,524 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:50:33,796 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1782 entries
+2025-02-26 16:50:33,797 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:50:33,797 - __main__ - INFO - Added batch 1/4 of clauses to vector store
+2025-02-26 16:50:34,136 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:50:34,671 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1802 entries
+2025-02-26 16:50:34,671 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:50:34,672 - __main__ - INFO - Added batch 2/4 of clauses to vector store
+2025-02-26 16:50:35,262 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:50:35,817 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1822 entries
+2025-02-26 16:50:35,817 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 20 clauses to vector store
+2025-02-26 16:50:35,817 - __main__ - INFO - Added batch 3/4 of clauses to vector store
+2025-02-26 16:50:36,595 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-26 16:50:37,021 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Saved vector index with 1834 entries
+2025-02-26 16:50:37,021 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Added 12 clauses to vector store
+2025-02-26 16:50:37,022 - __main__ - INFO - Added batch 4/4 of clauses to vector store
+2025-02-26 16:50:37,032 - __main__ - INFO - Successfully processed REG-ANSI A92.2.pdf and extracted 72 clauses
+2025-02-26 16:50:37,045 - __main__ - INFO - Memory status after processing REG-ANSI A92.2.pdf
+2025-02-26 16:50:37,045 - __main__ - INFO - Progress: 8/10 documents processed
+2025-02-26 16:50:37,045 - __main__ - INFO - Processing regulatory document: REG-NFPA 86.pdf (Size: 3.58 MB)
+2025-02-26 16:50:37,051 - __main__ - INFO - Starting to parse document: REG-NFPA 86.pdf
+2025-02-26 16:50:37,053 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processing PDF with 150 pages (limited from 150 total)
+2025-02-26 16:50:37,092 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 10/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,101 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 20/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,110 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 30/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,119 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 40/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,128 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 50/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,137 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 60/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,147 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 70/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,156 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 80/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,166 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 90/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,175 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 100/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,183 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 110/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,193 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 120/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,202 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 130/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:37,209 - regulatory_compliance_processor.document_processing.parsers.pdf_parser - INFO - Processed 140/150 pages from REG-NFPA 86.pdf
+2025-02-26 16:50:47,054 - __main__ - INFO - Still parsing REG-NFPA 86.pdf - waited 10 seconds...
+2025-02-26 16:50:47,055 - __main__ - INFO - Successfully parsed document: REG-NFPA 86.pdf - Text length: 735442 chars
+2025-02-26 16:50:47,083 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Document REG-NFPA 86.pdf already exists with the same content
+2025-02-26 16:50:47,084 - __main__ - INFO - Extracting clauses from REG-NFPA 86.pdf
+2025-02-26 16:50:47,084 - __main__ - INFO - Document is large (735442 chars), processing in chunks
+2025-02-26 16:50:47,084 - __main__ - INFO - Processing chunk 1/246 from REG-NFPA 86.pdf
+2025-02-26 16:50:47,084 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:50:47,919 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:47,946 - __main__ - INFO - Processing chunk 1/246 from REG-NFPA 86.pdf
+2025-02-26 16:50:47,946 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:50:59,332 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:50:59,358 - __main__ - INFO - Processing chunk 2/246 from REG-NFPA 86.pdf
+2025-02-26 16:50:59,358 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:06,292 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:06,320 - __main__ - INFO - Processing chunk 3/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:06,320 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:06,905 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:06,933 - __main__ - INFO - Processing chunk 4/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:06,934 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:24,009 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:24,034 - __main__ - INFO - Processing chunk 5/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:24,034 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:36,090 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:36,118 - __main__ - INFO - Processing chunk 6/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:36,118 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:40,605 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:40,634 - __main__ - INFO - Processing chunk 6/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:40,635 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:51:46,332 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:51:46,366 - __main__ - INFO - Processing chunk 7/246 from REG-NFPA 86.pdf
+2025-02-26 16:51:46,366 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:52:16,373 - openai._base_client - INFO - Retrying request to /chat/completions in 0.455788 seconds
+2025-02-26 16:52:46,949 - openai._base_client - INFO - Retrying request to /chat/completions in 0.941170 seconds
+2025-02-26 16:53:18,007 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 16:53:18,034 - __main__ - INFO - Processing chunk 8/246 from REG-NFPA 86.pdf
+2025-02-26 16:53:18,034 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:53:42,392 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:53:42,424 - __main__ - INFO - Processing chunk 9/246 from REG-NFPA 86.pdf
+2025-02-26 16:53:42,424 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:53:47,165 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:53:47,194 - __main__ - INFO - Processing chunk 10/246 from REG-NFPA 86.pdf
+2025-02-26 16:53:47,194 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:54:03,756 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:54:03,785 - __main__ - INFO - Processing chunk 11/246 from REG-NFPA 86.pdf
+2025-02-26 16:54:03,785 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:54:29,662 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:54:29,714 - __main__ - INFO - Processing chunk 11/246 from REG-NFPA 86.pdf
+2025-02-26 16:54:29,714 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:54:47,687 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:54:47,712 - __main__ - INFO - Processing chunk 12/246 from REG-NFPA 86.pdf
+2025-02-26 16:54:47,712 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:55:04,069 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:55:04,096 - __main__ - INFO - Processing chunk 13/246 from REG-NFPA 86.pdf
+2025-02-26 16:55:04,097 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:55:27,113 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:55:27,141 - __main__ - INFO - Processing chunk 14/246 from REG-NFPA 86.pdf
+2025-02-26 16:55:27,141 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:55:34,380 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:55:34,407 - __main__ - INFO - Processing chunk 15/246 from REG-NFPA 86.pdf
+2025-02-26 16:55:34,407 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:55:43,308 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:55:43,335 - __main__ - INFO - Processing chunk 16/246 from REG-NFPA 86.pdf
+2025-02-26 16:55:43,336 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:55:57,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:55:57,251 - __main__ - INFO - Processing chunk 16/246 from REG-NFPA 86.pdf
+2025-02-26 16:55:57,251 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:56:26,714 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:56:26,743 - __main__ - INFO - Processing chunk 17/246 from REG-NFPA 86.pdf
+2025-02-26 16:56:26,743 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:56:30,805 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:56:30,834 - __main__ - INFO - Processing chunk 18/246 from REG-NFPA 86.pdf
+2025-02-26 16:56:30,834 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:56:39,508 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:56:39,537 - __main__ - INFO - Processing chunk 19/246 from REG-NFPA 86.pdf
+2025-02-26 16:56:39,537 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:57:04,906 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:57:04,934 - __main__ - INFO - Processing chunk 20/246 from REG-NFPA 86.pdf
+2025-02-26 16:57:04,934 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:57:28,867 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:57:28,897 - __main__ - INFO - Processing chunk 21/246 from REG-NFPA 86.pdf
+2025-02-26 16:57:28,897 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:57:42,386 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:57:42,412 - __main__ - INFO - Processing chunk 21/246 from REG-NFPA 86.pdf
+2025-02-26 16:57:42,412 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:57:51,601 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:57:51,627 - __main__ - INFO - Processing chunk 22/246 from REG-NFPA 86.pdf
+2025-02-26 16:57:51,627 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:58:05,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:58:05,352 - __main__ - INFO - Processing chunk 23/246 from REG-NFPA 86.pdf
+2025-02-26 16:58:05,352 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:58:16,075 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:58:16,101 - __main__ - INFO - Processing chunk 24/246 from REG-NFPA 86.pdf
+2025-02-26 16:58:16,102 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:58:23,243 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:58:23,270 - __main__ - INFO - Processing chunk 25/246 from REG-NFPA 86.pdf
+2025-02-26 16:58:23,271 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:58:49,048 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:58:49,075 - __main__ - INFO - Processing chunk 26/246 from REG-NFPA 86.pdf
+2025-02-26 16:58:49,076 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:59:17,963 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 16:59:17,995 - __main__ - INFO - Processing chunk 26/246 from REG-NFPA 86.pdf
+2025-02-26 16:59:17,996 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 16:59:48,003 - openai._base_client - INFO - Retrying request to /chat/completions in 0.475525 seconds
+2025-02-26 17:00:18,596 - openai._base_client - INFO - Retrying request to /chat/completions in 0.847745 seconds
+2025-02-26 17:00:49,532 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:00:49,563 - __main__ - INFO - Processing chunk 27/246 from REG-NFPA 86.pdf
+2025-02-26 17:00:49,564 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:01:19,673 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401144 seconds
+2025-02-26 17:01:50,149 - openai._base_client - INFO - Retrying request to /chat/completions in 0.889766 seconds
+2025-02-26 17:02:21,198 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:02:21,224 - __main__ - INFO - Processing chunk 28/246 from REG-NFPA 86.pdf
+2025-02-26 17:02:21,224 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:02:51,293 - openai._base_client - INFO - Retrying request to /chat/completions in 0.460674 seconds
+2025-02-26 17:03:21,886 - openai._base_client - INFO - Retrying request to /chat/completions in 0.859588 seconds
+2025-02-26 17:03:52,876 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:03:52,901 - __main__ - INFO - Processing chunk 29/246 from REG-NFPA 86.pdf
+2025-02-26 17:03:52,901 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:04:22,964 - openai._base_client - INFO - Retrying request to /chat/completions in 0.400463 seconds
+2025-02-26 17:04:53,441 - openai._base_client - INFO - Retrying request to /chat/completions in 0.775990 seconds
+2025-02-26 17:05:24,337 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:05:24,364 - __main__ - INFO - Processing chunk 30/246 from REG-NFPA 86.pdf
+2025-02-26 17:05:24,364 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:05:54,434 - openai._base_client - INFO - Retrying request to /chat/completions in 0.393262 seconds
+2025-02-26 17:06:24,931 - openai._base_client - INFO - Retrying request to /chat/completions in 0.849626 seconds
+2025-02-26 17:06:55,951 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:06:55,977 - __main__ - INFO - Processing chunk 31/246 from REG-NFPA 86.pdf
+2025-02-26 17:06:55,978 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:07:21,368 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:07:21,396 - __main__ - INFO - Processing chunk 31/246 from REG-NFPA 86.pdf
+2025-02-26 17:07:21,397 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:07:43,589 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:07:43,618 - __main__ - INFO - Processing chunk 32/246 from REG-NFPA 86.pdf
+2025-02-26 17:07:43,618 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:08:13,625 - openai._base_client - INFO - Retrying request to /chat/completions in 0.427524 seconds
+2025-02-26 17:08:44,189 - openai._base_client - INFO - Retrying request to /chat/completions in 0.779131 seconds
+2025-02-26 17:09:15,096 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:09:15,123 - __main__ - INFO - Processing chunk 33/246 from REG-NFPA 86.pdf
+2025-02-26 17:09:15,123 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:09:38,384 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:09:38,411 - __main__ - INFO - Processing chunk 34/246 from REG-NFPA 86.pdf
+2025-02-26 17:09:38,411 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:10:08,418 - openai._base_client - INFO - Retrying request to /chat/completions in 0.375220 seconds
+2025-02-26 17:10:38,910 - openai._base_client - INFO - Retrying request to /chat/completions in 0.989049 seconds
+2025-02-26 17:11:09,978 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:11:10,002 - __main__ - INFO - Processing chunk 35/246 from REG-NFPA 86.pdf
+2025-02-26 17:11:10,002 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:11:40,101 - openai._base_client - INFO - Retrying request to /chat/completions in 0.432326 seconds
+2025-02-26 17:12:10,642 - openai._base_client - INFO - Retrying request to /chat/completions in 0.819874 seconds
+2025-02-26 17:12:41,576 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:12:41,605 - __main__ - INFO - Processing chunk 36/246 from REG-NFPA 86.pdf
+2025-02-26 17:12:41,605 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:13:11,671 - openai._base_client - INFO - Retrying request to /chat/completions in 0.416042 seconds
+2025-02-26 17:13:42,194 - openai._base_client - INFO - Retrying request to /chat/completions in 0.902282 seconds
+2025-02-26 17:14:13,171 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:14:13,198 - __main__ - INFO - Processing chunk 36/246 from REG-NFPA 86.pdf
+2025-02-26 17:14:13,199 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:14:43,322 - openai._base_client - INFO - Retrying request to /chat/completions in 0.420670 seconds
+2025-02-26 17:15:13,830 - openai._base_client - INFO - Retrying request to /chat/completions in 0.818382 seconds
+2025-02-26 17:15:44,770 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:15:44,793 - __main__ - INFO - Processing chunk 37/246 from REG-NFPA 86.pdf
+2025-02-26 17:15:44,794 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:16:14,354 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:16:14,383 - __main__ - INFO - Processing chunk 38/246 from REG-NFPA 86.pdf
+2025-02-26 17:16:14,383 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:16:44,391 - openai._base_client - INFO - Retrying request to /chat/completions in 0.491656 seconds
+2025-02-26 17:17:15,002 - openai._base_client - INFO - Retrying request to /chat/completions in 0.985021 seconds
+2025-02-26 17:17:46,072 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:17:46,099 - __main__ - INFO - Processing chunk 39/246 from REG-NFPA 86.pdf
+2025-02-26 17:17:46,099 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:18:16,212 - openai._base_client - INFO - Retrying request to /chat/completions in 0.414882 seconds
+2025-02-26 17:18:46,700 - openai._base_client - INFO - Retrying request to /chat/completions in 0.819567 seconds
+2025-02-26 17:19:17,641 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:19:17,665 - __main__ - INFO - Processing chunk 40/246 from REG-NFPA 86.pdf
+2025-02-26 17:19:17,666 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:19:39,056 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:19:39,086 - __main__ - INFO - Processing chunk 41/246 from REG-NFPA 86.pdf
+2025-02-26 17:19:39,086 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:20:09,093 - openai._base_client - INFO - Retrying request to /chat/completions in 0.450874 seconds
+2025-02-26 17:20:39,659 - openai._base_client - INFO - Retrying request to /chat/completions in 0.815936 seconds
+2025-02-26 17:21:07,223 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:21:07,252 - __main__ - INFO - Processing chunk 41/246 from REG-NFPA 86.pdf
+2025-02-26 17:21:07,252 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:21:37,259 - openai._base_client - INFO - Retrying request to /chat/completions in 0.397514 seconds
+2025-02-26 17:22:07,774 - openai._base_client - INFO - Retrying request to /chat/completions in 0.990779 seconds
+2025-02-26 17:22:38,846 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:22:38,870 - __main__ - INFO - Processing chunk 42/246 from REG-NFPA 86.pdf
+2025-02-26 17:22:38,871 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:23:08,979 - openai._base_client - INFO - Retrying request to /chat/completions in 0.418137 seconds
+2025-02-26 17:23:39,478 - openai._base_client - INFO - Retrying request to /chat/completions in 0.922059 seconds
+2025-02-26 17:24:10,530 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:24:10,556 - __main__ - INFO - Processing chunk 43/246 from REG-NFPA 86.pdf
+2025-02-26 17:24:10,557 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:24:40,618 - openai._base_client - INFO - Retrying request to /chat/completions in 0.420200 seconds
+2025-02-26 17:25:11,155 - openai._base_client - INFO - Retrying request to /chat/completions in 0.910478 seconds
+2025-02-26 17:25:42,144 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:25:42,182 - __main__ - INFO - Processing chunk 44/246 from REG-NFPA 86.pdf
+2025-02-26 17:25:42,183 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:26:07,260 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:26:07,302 - __main__ - INFO - Processing chunk 45/246 from REG-NFPA 86.pdf
+2025-02-26 17:26:07,302 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:26:25,180 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:26:25,210 - __main__ - INFO - Processing chunk 46/246 from REG-NFPA 86.pdf
+2025-02-26 17:26:25,211 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:26:43,013 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:26:43,044 - __main__ - INFO - Processing chunk 46/246 from REG-NFPA 86.pdf
+2025-02-26 17:26:43,044 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:26:57,593 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:26:57,623 - __main__ - INFO - Processing chunk 47/246 from REG-NFPA 86.pdf
+2025-02-26 17:26:57,623 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:27:24,070 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:27:24,120 - __main__ - INFO - Processing chunk 48/246 from REG-NFPA 86.pdf
+2025-02-26 17:27:24,120 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:27:45,259 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:27:45,289 - __main__ - INFO - Processing chunk 49/246 from REG-NFPA 86.pdf
+2025-02-26 17:27:45,289 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:28:08,404 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:28:08,434 - __main__ - INFO - Processing chunk 50/246 from REG-NFPA 86.pdf
+2025-02-26 17:28:08,434 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:28:34,413 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:28:34,443 - __main__ - INFO - Processing chunk 51/246 from REG-NFPA 86.pdf
+2025-02-26 17:28:34,443 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:28:59,294 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:28:59,324 - __main__ - INFO - Processing chunk 51/246 from REG-NFPA 86.pdf
+2025-02-26 17:28:59,324 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:29:29,330 - openai._base_client - INFO - Retrying request to /chat/completions in 0.392288 seconds
+2025-02-26 17:29:59,831 - openai._base_client - INFO - Retrying request to /chat/completions in 0.774345 seconds
+2025-02-26 17:30:30,752 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:30:30,779 - __main__ - INFO - Processing chunk 52/246 from REG-NFPA 86.pdf
+2025-02-26 17:30:30,779 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:31:00,849 - openai._base_client - INFO - Retrying request to /chat/completions in 0.452457 seconds
+2025-02-26 17:31:31,419 - openai._base_client - INFO - Retrying request to /chat/completions in 0.893931 seconds
+2025-02-26 17:32:02,396 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:32:02,422 - __main__ - INFO - Processing chunk 53/246 from REG-NFPA 86.pdf
+2025-02-26 17:32:02,423 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:32:32,529 - openai._base_client - INFO - Retrying request to /chat/completions in 0.399954 seconds
+2025-02-26 17:33:03,019 - openai._base_client - INFO - Retrying request to /chat/completions in 0.801766 seconds
+2025-02-26 17:33:33,945 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:33:33,972 - __main__ - INFO - Processing chunk 54/246 from REG-NFPA 86.pdf
+2025-02-26 17:33:33,972 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:34:01,894 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:34:01,922 - __main__ - INFO - Processing chunk 55/246 from REG-NFPA 86.pdf
+2025-02-26 17:34:01,922 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:34:31,929 - openai._base_client - INFO - Retrying request to /chat/completions in 0.481626 seconds
+2025-02-26 17:35:02,528 - openai._base_client - INFO - Retrying request to /chat/completions in 0.835925 seconds
+2025-02-26 17:35:33,444 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:35:33,470 - __main__ - INFO - Processing chunk 56/246 from REG-NFPA 86.pdf
+2025-02-26 17:35:33,471 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:36:02,457 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:36:02,484 - __main__ - INFO - Processing chunk 56/246 from REG-NFPA 86.pdf
+2025-02-26 17:36:02,485 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:36:27,099 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:36:27,129 - __main__ - INFO - Processing chunk 57/246 from REG-NFPA 86.pdf
+2025-02-26 17:36:27,129 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:36:51,059 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:36:51,088 - __main__ - INFO - Processing chunk 58/246 from REG-NFPA 86.pdf
+2025-02-26 17:36:51,088 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:37:21,095 - openai._base_client - INFO - Retrying request to /chat/completions in 0.411027 seconds
+2025-02-26 17:37:49,839 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:37:49,867 - __main__ - INFO - Processing chunk 59/246 from REG-NFPA 86.pdf
+2025-02-26 17:37:49,867 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:38:16,517 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:38:16,547 - __main__ - INFO - Processing chunk 60/246 from REG-NFPA 86.pdf
+2025-02-26 17:38:16,547 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:38:46,554 - openai._base_client - INFO - Retrying request to /chat/completions in 0.440393 seconds
+2025-02-26 17:39:16,918 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:39:16,948 - __main__ - INFO - Processing chunk 61/246 from REG-NFPA 86.pdf
+2025-02-26 17:39:16,948 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:39:46,955 - openai._base_client - INFO - Retrying request to /chat/completions in 0.486052 seconds
+2025-02-26 17:40:16,162 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:40:16,195 - __main__ - INFO - Processing chunk 61/246 from REG-NFPA 86.pdf
+2025-02-26 17:40:16,195 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:40:42,532 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:40:42,563 - __main__ - INFO - Processing chunk 62/246 from REG-NFPA 86.pdf
+2025-02-26 17:40:42,563 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:40:57,225 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:40:57,252 - __main__ - INFO - Processing chunk 63/246 from REG-NFPA 86.pdf
+2025-02-26 17:40:57,252 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:41:27,259 - openai._base_client - INFO - Retrying request to /chat/completions in 0.469006 seconds
+2025-02-26 17:41:56,250 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:41:56,313 - __main__ - INFO - Processing chunk 64/246 from REG-NFPA 86.pdf
+2025-02-26 17:41:56,313 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:42:24,994 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:42:25,023 - __main__ - INFO - Processing chunk 65/246 from REG-NFPA 86.pdf
+2025-02-26 17:42:25,023 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:42:49,390 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:42:49,417 - __main__ - INFO - Processing chunk 66/246 from REG-NFPA 86.pdf
+2025-02-26 17:42:49,417 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:43:14,553 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:43:14,582 - __main__ - INFO - Processing chunk 66/246 from REG-NFPA 86.pdf
+2025-02-26 17:43:14,582 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:43:41,281 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:43:41,309 - __main__ - INFO - Processing chunk 67/246 from REG-NFPA 86.pdf
+2025-02-26 17:43:41,309 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:44:11,315 - openai._base_client - INFO - Retrying request to /chat/completions in 0.426484 seconds
+2025-02-26 17:44:41,857 - openai._base_client - INFO - Retrying request to /chat/completions in 0.830417 seconds
+2025-02-26 17:45:12,770 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:45:12,799 - __main__ - INFO - Processing chunk 68/246 from REG-NFPA 86.pdf
+2025-02-26 17:45:12,799 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:45:42,890 - openai._base_client - INFO - Retrying request to /chat/completions in 0.434576 seconds
+2025-02-26 17:46:13,437 - openai._base_client - INFO - Retrying request to /chat/completions in 0.822254 seconds
+2025-02-26 17:46:44,344 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:46:44,373 - __main__ - INFO - Processing chunk 69/246 from REG-NFPA 86.pdf
+2025-02-26 17:46:44,373 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:47:11,291 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:47:11,319 - __main__ - INFO - Processing chunk 70/246 from REG-NFPA 86.pdf
+2025-02-26 17:47:11,320 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:47:35,859 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:47:35,912 - __main__ - INFO - Processing chunk 71/246 from REG-NFPA 86.pdf
+2025-02-26 17:47:35,912 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:48:01,263 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:48:01,292 - __main__ - INFO - Processing chunk 71/246 from REG-NFPA 86.pdf
+2025-02-26 17:48:01,293 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:48:23,759 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:48:23,793 - __main__ - INFO - Processing chunk 72/246 from REG-NFPA 86.pdf
+2025-02-26 17:48:23,793 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:48:45,859 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:48:45,887 - __main__ - INFO - Processing chunk 73/246 from REG-NFPA 86.pdf
+2025-02-26 17:48:45,887 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:49:06,367 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:49:06,403 - __main__ - INFO - Processing chunk 74/246 from REG-NFPA 86.pdf
+2025-02-26 17:49:06,403 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:49:36,410 - openai._base_client - INFO - Retrying request to /chat/completions in 0.487334 seconds
+2025-02-26 17:49:57,712 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:49:57,740 - __main__ - INFO - Processing chunk 75/246 from REG-NFPA 86.pdf
+2025-02-26 17:49:57,740 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:50:25,312 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:50:25,342 - __main__ - INFO - Processing chunk 76/246 from REG-NFPA 86.pdf
+2025-02-26 17:50:25,343 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:50:55,349 - openai._base_client - INFO - Retrying request to /chat/completions in 0.427883 seconds
+2025-02-26 17:51:25,867 - openai._base_client - INFO - Retrying request to /chat/completions in 0.998044 seconds
+2025-02-26 17:51:56,935 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:51:56,964 - __main__ - INFO - Processing chunk 76/246 from REG-NFPA 86.pdf
+2025-02-26 17:51:56,964 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:52:27,067 - openai._base_client - INFO - Retrying request to /chat/completions in 0.471002 seconds
+2025-02-26 17:52:57,654 - openai._base_client - INFO - Retrying request to /chat/completions in 0.988288 seconds
+2025-02-26 17:53:28,733 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:53:28,762 - __main__ - INFO - Processing chunk 77/246 from REG-NFPA 86.pdf
+2025-02-26 17:53:28,762 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:53:57,926 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:53:57,955 - __main__ - INFO - Processing chunk 78/246 from REG-NFPA 86.pdf
+2025-02-26 17:53:57,956 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:54:19,945 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:54:19,975 - __main__ - INFO - Processing chunk 79/246 from REG-NFPA 86.pdf
+2025-02-26 17:54:19,975 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:54:43,634 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:54:43,662 - __main__ - INFO - Processing chunk 80/246 from REG-NFPA 86.pdf
+2025-02-26 17:54:43,662 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:55:13,669 - openai._base_client - INFO - Retrying request to /chat/completions in 0.432714 seconds
+2025-02-26 17:55:44,215 - openai._base_client - INFO - Retrying request to /chat/completions in 0.776539 seconds
+2025-02-26 17:56:15,063 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:56:15,092 - __main__ - INFO - Processing chunk 81/246 from REG-NFPA 86.pdf
+2025-02-26 17:56:15,093 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:56:45,206 - openai._base_client - INFO - Retrying request to /chat/completions in 0.392212 seconds
+2025-02-26 17:57:15,670 - openai._base_client - INFO - Retrying request to /chat/completions in 0.889604 seconds
+2025-02-26 17:57:46,663 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 17:57:46,690 - __main__ - INFO - Processing chunk 81/246 from REG-NFPA 86.pdf
+2025-02-26 17:57:46,690 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:58:15,159 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:58:15,187 - __main__ - INFO - Processing chunk 82/246 from REG-NFPA 86.pdf
+2025-02-26 17:58:15,187 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:58:36,356 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 17:58:36,385 - __main__ - INFO - Processing chunk 83/246 from REG-NFPA 86.pdf
+2025-02-26 17:58:36,385 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 17:59:06,392 - openai._base_client - INFO - Retrying request to /chat/completions in 0.408760 seconds
+2025-02-26 17:59:36,906 - openai._base_client - INFO - Retrying request to /chat/completions in 0.782024 seconds
+2025-02-26 18:00:07,800 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:00:07,826 - __main__ - INFO - Processing chunk 84/246 from REG-NFPA 86.pdf
+2025-02-26 18:00:07,826 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:00:32,683 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:00:32,712 - __main__ - INFO - Processing chunk 85/246 from REG-NFPA 86.pdf
+2025-02-26 18:00:32,712 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:01:02,719 - openai._base_client - INFO - Retrying request to /chat/completions in 0.462247 seconds
+2025-02-26 18:01:33,301 - openai._base_client - INFO - Retrying request to /chat/completions in 0.840635 seconds
+2025-02-26 18:02:00,851 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:02:00,881 - __main__ - INFO - Processing chunk 86/246 from REG-NFPA 86.pdf
+2025-02-26 18:02:00,882 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:02:21,818 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:02:21,850 - __main__ - INFO - Processing chunk 86/246 from REG-NFPA 86.pdf
+2025-02-26 18:02:21,850 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:02:37,199 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:02:37,226 - __main__ - INFO - Processing chunk 87/246 from REG-NFPA 86.pdf
+2025-02-26 18:02:37,227 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:02:58,810 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:02:58,839 - __main__ - INFO - Processing chunk 88/246 from REG-NFPA 86.pdf
+2025-02-26 18:02:58,839 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:03:28,844 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401124 seconds
+2025-02-26 18:03:59,372 - openai._base_client - INFO - Retrying request to /chat/completions in 0.955877 seconds
+2025-02-26 18:04:30,434 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:04:30,483 - __main__ - INFO - Processing chunk 89/246 from REG-NFPA 86.pdf
+2025-02-26 18:04:30,484 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:04:56,461 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:04:56,494 - __main__ - INFO - Processing chunk 90/246 from REG-NFPA 86.pdf
+2025-02-26 18:04:56,494 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:05:26,500 - openai._base_client - INFO - Retrying request to /chat/completions in 0.418734 seconds
+2025-02-26 18:05:57,025 - openai._base_client - INFO - Retrying request to /chat/completions in 0.953967 seconds
+2025-02-26 18:06:28,088 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:06:28,125 - __main__ - INFO - Processing chunk 91/246 from REG-NFPA 86.pdf
+2025-02-26 18:06:28,125 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:06:58,229 - openai._base_client - INFO - Retrying request to /chat/completions in 0.425101 seconds
+2025-02-26 18:07:28,771 - openai._base_client - INFO - Retrying request to /chat/completions in 0.915881 seconds
+2025-02-26 18:07:59,764 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:07:59,789 - __main__ - INFO - Processing chunk 91/246 from REG-NFPA 86.pdf
+2025-02-26 18:07:59,790 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:08:29,849 - openai._base_client - INFO - Retrying request to /chat/completions in 0.433069 seconds
+2025-02-26 18:09:00,382 - openai._base_client - INFO - Retrying request to /chat/completions in 0.770472 seconds
+2025-02-26 18:09:28,854 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:09:28,866 - __main__ - INFO - Processing chunk 92/246 from REG-NFPA 86.pdf
+2025-02-26 18:09:28,866 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:09:52,410 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:09:52,454 - __main__ - INFO - Processing chunk 93/246 from REG-NFPA 86.pdf
+2025-02-26 18:09:52,454 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:10:14,381 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:10:14,416 - __main__ - INFO - Processing chunk 94/246 from REG-NFPA 86.pdf
+2025-02-26 18:10:14,416 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:10:44,420 - openai._base_client - INFO - Retrying request to /chat/completions in 0.406002 seconds
+2025-02-26 18:11:14,889 - openai._base_client - INFO - Retrying request to /chat/completions in 0.813261 seconds
+2025-02-26 18:11:45,810 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:11:45,850 - __main__ - INFO - Processing chunk 95/246 from REG-NFPA 86.pdf
+2025-02-26 18:11:45,851 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:12:15,959 - openai._base_client - INFO - Retrying request to /chat/completions in 0.401257 seconds
+2025-02-26 18:12:46,435 - openai._base_client - INFO - Retrying request to /chat/completions in 0.914356 seconds
+2025-02-26 18:13:17,443 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:13:17,479 - __main__ - INFO - Processing chunk 96/246 from REG-NFPA 86.pdf
+2025-02-26 18:13:17,480 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:13:47,665 - openai._base_client - INFO - Retrying request to /chat/completions in 0.414738 seconds
+2025-02-26 18:14:18,176 - openai._base_client - INFO - Retrying request to /chat/completions in 0.846672 seconds
+2025-02-26 18:14:49,098 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:14:49,133 - __main__ - INFO - Processing chunk 96/246 from REG-NFPA 86.pdf
+2025-02-26 18:14:49,133 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:15:19,266 - openai._base_client - INFO - Retrying request to /chat/completions in 0.404369 seconds
+2025-02-26 18:15:49,773 - openai._base_client - INFO - Retrying request to /chat/completions in 0.788684 seconds
+2025-02-26 18:16:20,642 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:16:20,697 - __main__ - INFO - Processing chunk 97/246 from REG-NFPA 86.pdf
+2025-02-26 18:16:20,697 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:16:49,363 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:16:49,420 - __main__ - INFO - Processing chunk 98/246 from REG-NFPA 86.pdf
+2025-02-26 18:16:49,421 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:17:19,427 - openai._base_client - INFO - Retrying request to /chat/completions in 0.467349 seconds
+2025-02-26 18:17:46,669 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:17:46,697 - __main__ - INFO - Processing chunk 99/246 from REG-NFPA 86.pdf
+2025-02-26 18:17:46,697 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:18:16,701 - openai._base_client - INFO - Retrying request to /chat/completions in 0.377540 seconds
+2025-02-26 18:18:47,208 - openai._base_client - INFO - Retrying request to /chat/completions in 0.844584 seconds
+2025-02-26 18:19:18,157 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:19:18,184 - __main__ - INFO - Processing chunk 100/246 from REG-NFPA 86.pdf
+2025-02-26 18:19:18,185 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:19:48,247 - openai._base_client - INFO - Retrying request to /chat/completions in 0.496800 seconds
+2025-02-26 18:20:18,845 - openai._base_client - INFO - Retrying request to /chat/completions in 0.833411 seconds
+2025-02-26 18:20:49,748 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:20:49,794 - __main__ - INFO - Processing chunk 101/246 from REG-NFPA 86.pdf
+2025-02-26 18:20:49,794 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:21:19,898 - openai._base_client - INFO - Retrying request to /chat/completions in 0.435417 seconds
+2025-02-26 18:21:50,322 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-26 18:21:50,358 - __main__ - INFO - Processing chunk 101/246 from REG-NFPA 86.pdf
+2025-02-26 18:21:50,359 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:22:20,365 - openai._base_client - INFO - Retrying request to /chat/completions in 0.473717 seconds
+2025-02-26 18:22:50,938 - openai._base_client - INFO - Retrying request to /chat/completions in 0.846119 seconds
+2025-02-26 18:23:21,906 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
+2025-02-26 18:23:21,934 - __main__ - INFO - Processing chunk 102/246 from REG-NFPA 86.pdf
+2025-02-26 18:23:21,934 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
