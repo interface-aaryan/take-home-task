@@ -1,4 +1,5 @@
 import os
+import multiprocessing
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -10,14 +11,20 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = os.path.join(BASE_DIR, "data")
 REGULATORY_DOCS_DIR = os.path.join(DATA_DIR, "regulatory_docs")
 SOP_DIR = os.path.join(DATA_DIR, "sop")
+CACHE_DIR = os.path.join(DATA_DIR, "cache")
 
 # Create directories if they don't exist
 os.makedirs(REGULATORY_DOCS_DIR, exist_ok=True)
 os.makedirs(SOP_DIR, exist_ok=True)
+os.makedirs(CACHE_DIR, exist_ok=True)
 
 # Knowledge base settings
 VECTOR_DB_PATH = os.path.join(DATA_DIR, "vector_db")
 DOCUMENT_DB_PATH = os.path.join(DATA_DIR, "document_db")
+
+# Multi-processing settings
+MAX_WORKERS = min(multiprocessing.cpu_count(), 4)  # Limit to 4 workers max
+PROCESSING_TIMEOUT = 600  # 10 minutes timeout for processing tasks
 
 # OpenAI API settings
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -26,8 +33,12 @@ if not OPENAI_API_KEY:
     # Print warning if API key is not found
     print("WARNING: OpenAI API key not found in environment variables.")
     print("Using environment variable OPENAI_API_KEY only")
-GPT_MODEL = os.getenv("GPT_MODEL", "gpt-4o")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
+
+# Model settings
+USE_SMALLER_MODELS = os.getenv("USE_SMALLER_MODELS", "false").lower() == "true"
+GPT_MODEL = os.getenv("GPT_MODEL", "gpt-3.5-turbo" if USE_SMALLER_MODELS else "gpt-4o")
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-ada-002" if USE_SMALLER_MODELS else "text-embedding-3-large")
+EMBEDDING_DIMENSION = 1536 if EMBEDDING_MODEL == "text-embedding-ada-002" else 3072  # Dimension varies by model
 
 # Initialize logging
 import logging
@@ -48,6 +59,8 @@ try:
     
     # Log successful initialization
     config_logger.info(f"OpenAI client initialized. Client type: {openai_client.__class__.__name__}")
+    config_logger.info(f"Using GPT model: {GPT_MODEL}")
+    config_logger.info(f"Using embedding model: {EMBEDDING_MODEL} (dim: {EMBEDDING_DIMENSION})")
     config_logger.info(f"API key present: {'Yes' if OPENAI_API_KEY else 'No'}")
     
 except Exception as e:
@@ -73,3 +86,35 @@ CLAUSE_OVERLAP_THRESHOLD = 0.7
 COMPLIANCE_THRESHOLD = 0.8
 RELEVANCE_THRESHOLD = 0.75
 MAX_RELEVANT_CLAUSES = 50
+
+# Feature flags for optimizations
+USE_RULE_BASED_EXTRACTION = True  # Use rule-based extraction
+USE_HYBRID_EXTRACTION = True  # Use hybrid extraction (rule-based + LLM)
+USE_EMBEDDING_CACHE = True  # Cache embeddings to reduce API calls
+COMPRESS_LARGE_TEXTS = True  # Compress large texts to save memory
+USE_PARALLEL_PROCESSING = True  # Process documents in parallel
+
+# Add a function to get the optimal batch size based on system memory
+def get_optimal_batch_size():
+    """Get optimal batch size based on system memory"""
+    try:
+        import psutil
+        # Get available memory in GB
+        available_memory = psutil.virtual_memory().available / (1024 ** 3)
+        
+        # Adjust batch size based on available memory
+        if available_memory > 8:  # More than 8GB available
+            return 100
+        elif available_memory > 4:  # 4-8GB available
+            return 50
+        elif available_memory > 2:  # 2-4GB available
+            return 20
+        else:  # Less than 2GB available
+            return 10
+    except:
+        # Default if psutil not available
+        return 20
+
+# Batch sizes for different operations
+EMBEDDING_BATCH_SIZE = get_optimal_batch_size()
+PROCESSING_BATCH_SIZE = max(1, get_optimal_batch_size() // 5)  # Smaller batch for processing

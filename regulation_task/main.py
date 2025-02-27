@@ -6,8 +6,11 @@ import argparse
 import logging
 import json
 import glob
+import time
+import concurrent.futures
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple, Optional
+from datetime import datetime
 
 # Configure logging for this main file
 logging.basicConfig(
@@ -28,18 +31,175 @@ logger = logging.getLogger(__name__)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Import regulatory processor modules
-from regulatory_compliance_processor.config import REGULATORY_DOCS_DIR, SOP_DIR
+from regulatory_compliance_processor.config import (
+    REGULATORY_DOCS_DIR, SOP_DIR, MAX_WORKERS, PROCESSING_TIMEOUT,
+    USE_RULE_BASED_EXTRACTION, USE_HYBRID_EXTRACTION, USE_PARALLEL_PROCESSING,
+    COMPRESS_LARGE_TEXTS, EMBEDDING_BATCH_SIZE, PROCESSING_BATCH_SIZE
+)
 from regulatory_compliance_processor.document_processing.parsers import DocumentParserFactory
+from regulatory_compliance_processor.document_processing.parsers.pdf_parser import PDFParser
 from regulatory_compliance_processor.document_processing.extractors.llm_extractor import LLMClauseExtractor
+from regulatory_compliance_processor.document_processing.extractors.rule_extractor import RuleBasedClauseExtractor
+from regulatory_compliance_processor.document_processing.extractors.hybrid_extractor import HybridClauseExtractor
 from regulatory_compliance_processor.knowledge_base.document_store import DocumentStore
 from regulatory_compliance_processor.knowledge_base.vector_store import VectorStore
 from regulatory_compliance_processor.analysis.compliance_analyzer import ComplianceAnalyzer
 
-def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, vector_store: VectorStore) -> None:
-    """Process regulatory documents one at a time with checkpointing"""
-    parser_factory = DocumentParserFactory()
-    extractor = LLMClauseExtractor()
+def process_single_document(doc_file: str, 
+                            document_store: DocumentStore, 
+                            vector_store: VectorStore,
+                            processed_docs: Dict,
+                            checkpoint_file: str) -> Dict[str, Any]:
+    """Process a single regulatory document and return results"""
+    file_name = os.path.basename(doc_file)
     
+    # Skip if already processed successfully
+    if file_name in processed_docs and processed_docs[file_name].get("status") == "completed":
+        logger.info(f"Skipping already processed document: {file_name}")
+        return {"file_name": file_name, "status": "skipped"}
+    
+    logger.info(f"Processing regulatory document: {file_name} (Size: {os.path.getsize(doc_file)/1024/1024:.2f} MB)")
+    
+    # Track processing time
+    start_time = time.time()
+    
+    try:
+        # Clean memory before processing document
+        gc.collect()
+        
+        # Initialize parser based on file type
+        parser_factory = DocumentParserFactory()
+        
+        # Parse document with optimized parser
+        logger.info(f"Parsing document: {file_name}")
+        doc_content = parser_factory.parse_document(doc_file)
+        
+        # Check if we need to handle compressed text
+        if isinstance(doc_content, dict) and doc_content.get("is_compressed", False):
+            logger.info(f"Document has compressed text, decompressing: {file_name}")
+            if isinstance(doc_content.get("text"), bytes):
+                # This would be handled by PDFParser's get_text_from_result in a normal flow
+                # For now, just log it
+                logger.info(f"Document text is compressed binary, handling appropriately")
+                
+                # Get text using the PDF parser
+                pdf_parser = PDFParser()
+                doc_text = pdf_parser.get_text_from_result(doc_content)
+                doc_content["text"] = doc_text
+                doc_content["is_compressed"] = False
+        
+        # Get basic document info
+        doc_text = doc_content.get("text", "")
+        doc_metadata = doc_content.get("metadata", {})
+        
+        # Log successful parsing
+        logger.info(f"Successfully parsed document: {file_name} - Text length: {len(doc_text)} chars")
+        
+        # Add document to document store with version control
+        document_id, version_number = document_store.add_document(
+            file_name=file_name,
+            content=doc_text,
+            title=doc_metadata.get("title", ""),
+            source="Regulatory Document",
+            document_type="Regulation",
+            metadata=doc_metadata
+        )
+        
+        # Update checkpoint with document processing started
+        processed_docs[file_name] = {"status": "processing", "document_id": document_id, "version": version_number}
+        with open(checkpoint_file, 'w') as f:
+            json.dump(processed_docs, f)
+        
+        # Extract regulatory clauses using appropriate extractor
+        logger.info(f"Extracting clauses from {file_name}")
+        
+        # Choose the appropriate extractor based on configuration
+        if USE_HYBRID_EXTRACTION:
+            logger.info(f"Using hybrid extractor for {file_name}")
+            extractor = HybridClauseExtractor()
+            clauses = extractor.extract_clauses(doc_content)
+        elif USE_RULE_BASED_EXTRACTION:
+            logger.info(f"Using rule-based extractor for {file_name}")
+            extractor = RuleBasedClauseExtractor()
+            clauses = extractor.extract_clauses(doc_content)
+        else:
+            logger.info(f"Using LLM extractor for {file_name}")
+            extractor = LLMClauseExtractor()
+            clauses = extractor.extract_clauses(doc_content)
+            
+        logger.info(f"Extracted {len(clauses)} clauses from {file_name}")
+        
+        # Free memory
+        doc_text = None
+        doc_content = None
+        extractor = None
+        gc.collect()
+        
+        # Add clauses to document store
+        logger.info(f"Adding clauses to document store for {file_name}")
+        document_store.add_regulatory_clauses(document_id, version_number, clauses)
+        
+        # Add clauses to vector store in smaller batches for semantic search
+        logger.info(f"Adding clauses to vector store in batches for {file_name}")
+        batch_size = EMBEDDING_BATCH_SIZE
+        
+        for i in range(0, len(clauses), batch_size):
+            batch_clauses = clauses[i:i+batch_size]
+            
+            # Add document_id and version to each clause
+            for clause in batch_clauses:
+                clause["document_id"] = document_id
+                clause["document_version"] = version_number
+            
+            # Add to vector store
+            vector_store.add_clauses(batch_clauses)
+            logger.info(f"Added batch {i//batch_size + 1}/{(len(clauses) + batch_size - 1)//batch_size} of clauses to vector store for {file_name}")
+            
+            # Force memory cleanup between batches
+            gc.collect()
+        
+        # Mark document as completed in checkpoint
+        elapsed_time = time.time() - start_time
+        
+        result = {
+            "status": "completed", 
+            "document_id": document_id, 
+            "version": version_number, 
+            "clauses": len(clauses),
+            "elapsed_time": elapsed_time,
+            "completed_at": datetime.now().isoformat()
+        }
+        
+        processed_docs[file_name] = result
+        with open(checkpoint_file, 'w') as f:
+            json.dump(processed_docs, f)
+        
+        logger.info(f"Successfully processed {file_name} and extracted {len(clauses)} clauses in {elapsed_time:.2f} seconds")
+        
+        # Final cleanup
+        clauses = None
+        gc.collect()
+        
+        return {"file_name": file_name, "status": "completed", "document_id": document_id, "clauses": len(clauses)}
+        
+    except Exception as e:
+        logger.error(f"Error processing document {file_name}: {str(e)}")
+        # Mark document as failed in checkpoint
+        processed_docs[file_name] = {
+            "status": "failed", 
+            "error": str(e),
+            "failed_at": datetime.now().isoformat()
+        }
+        with open(checkpoint_file, 'w') as f:
+            json.dump(processed_docs, f)
+        
+        # Force memory cleanup after error
+        gc.collect()
+        
+        return {"file_name": file_name, "status": "failed", "error": str(e)}
+
+def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, vector_store: VectorStore) -> None:
+    """Process regulatory documents with optimized parallel processing and memory management"""
     # Get all PDF and DOCX files in the directory
     doc_files = []
     for ext in ['*.pdf', '*.docx', '*.doc']:
@@ -63,245 +223,108 @@ def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, v
         except Exception as e:
             logger.error(f"Error loading checkpoint: {str(e)}")
     
-    # Process one document at a time
-    for doc_file in doc_files:
-        file_name = os.path.basename(doc_file)
+    # Determine whether to use parallel processing
+    if USE_PARALLEL_PROCESSING and len(doc_files) > 1:
+        logger.info(f"Using parallel processing with {MAX_WORKERS} workers")
         
-        # Skip if already processed successfully
-        if file_name in processed_docs and processed_docs[file_name].get("status") == "completed":
-            logger.info(f"Skipping already processed document: {file_name}")
-            continue
-            
-        logger.info(f"Processing regulatory document: {file_name} (Size: {os.path.getsize(doc_file)/1024/1024:.2f} MB)")
+        # Process documents in smaller batches to control memory usage
+        batch_size = PROCESSING_BATCH_SIZE
+        batches = [doc_files[i:i+batch_size] for i in range(0, len(doc_files), batch_size)]
         
-        try:
-            # Clean memory before processing each document
-            gc.collect()
+        # Process each batch
+        for batch_idx, batch in enumerate(batches):
+            logger.info(f"Processing batch {batch_idx+1}/{len(batches)} of {len(batch)} documents")
             
-            # Log the start of document parsing with a timeout
-            logger.info(f"Starting to parse document: {file_name}")
-            
-            # Add timeout handling for large documents
-            import threading
-            import time
-            
-            # Flag for parser completion
-            parser_done = False
-            parser_result = None
-            parser_error = None
-            
-            # Define parser thread function
-            def parse_with_timeout():
-                nonlocal parser_done, parser_result, parser_error
-                try:
-                    result = parser_factory.parse_document(doc_file)
-                    parser_result = result
-                except Exception as e:
-                    parser_error = e
-                finally:
-                    parser_done = True
-            
-            # Create and start parser thread
-            parser_thread = threading.Thread(target=parse_with_timeout)
-            parser_thread.daemon = True
-            parser_thread.start()
-            
-            # Wait with timeout
-            max_wait_seconds = 600  # 10 minutes max for parsing
-            wait_interval = 10  # Log every 10 seconds
-            total_waited = 0
-            
-            while not parser_done and total_waited < max_wait_seconds:
-                time.sleep(wait_interval)
-                total_waited += wait_interval
-                logger.info(f"Still parsing {file_name} - waited {total_waited} seconds...")
-            
-            # Check if parsing completed or timed out
-            if not parser_done:
-                logger.error(f"Document parsing timed out after {max_wait_seconds} seconds: {file_name}")
-                raise TimeoutError(f"Document parsing timed out: {file_name}")
-            
-            # Check if parsing encountered an error
-            if parser_error:
-                logger.error(f"Error parsing document: {str(parser_error)}")
-                raise parser_error
-            
-            # Get the parsing result
-            doc_content = parser_result
-            
-            # Free memory after parsing
-            doc_text = doc_content.get("text", "")
-            doc_metadata = doc_content.get("metadata", {})
-            doc_file_name = doc_content.get("file_name", file_name)
-            
-            # Log successful parsing
-            logger.info(f"Successfully parsed document: {file_name} - Text length: {len(doc_text)} chars")
-            
-            # Remove the original doc_content to save memory
-            doc_content = None
-            parser_result = None
-            gc.collect()
-            
-            # Add document to document store with version control
-            document_id, version_number = document_store.add_document(
-                file_name=file_name,
-                content=doc_text,
-                title=doc_metadata.get("title", ""),
-                source="Regulatory Document",
-                document_type="Regulation",
-                metadata=doc_metadata
-            )
-            
-            # Update checkpoint with document processing started
-            processed_docs[file_name] = {"status": "processing", "document_id": document_id, "version": version_number}
-            with open(checkpoint_file, 'w') as f:
-                json.dump(processed_docs, f)
-            
-            # Recreate doc_content with minimal information for clause extraction
-            minimal_doc_content = {
-                "text": doc_text,
-                "file_name": file_name,
-                "metadata": {
-                    "title": doc_metadata.get("title", "")
-                }
-            }
-            
-            # Extract regulatory clauses
-            logger.info(f"Extracting clauses from {file_name}")
-            
-            # Split text into smaller chunks to prevent memory issues
-            max_chunk_size = 3000
-            text_length = len(doc_text)
-            
-            # If document is too large, process it in chunks
-            all_clauses = []
-            
-            if text_length > 10000:  # Only chunk large documents
-                logger.info(f"Document is large ({text_length} chars), processing in chunks")
+            # Process this batch in parallel
+            with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                futures = {}
                 
-                # Process in chunks of max_chunk_size with overlap
-                chunk_size = max_chunk_size
-                overlap = 500
-                
-                for start_idx in range(0, text_length, chunk_size - overlap):
-                    end_idx = min(start_idx + chunk_size, text_length)
-                    
-                    # Extract chunk
-                    chunk_text = doc_text[start_idx:end_idx]
-                    chunk_content = {
-                        "text": chunk_text,
-                        "file_name": file_name,
-                        "metadata": minimal_doc_content["metadata"]
-                    }
-                    
-                    # Process chunk
-                    logger.info(f"Processing chunk {start_idx//chunk_size + 1}/{(text_length + chunk_size - 1)//chunk_size} from {file_name}")
-                    try:
-                        chunk_clauses = extractor.extract_clauses(chunk_content)
-                        all_clauses.extend(chunk_clauses)
+                # Submit jobs to executor
+                for doc_file in batch:
+                    # Skip if already processed successfully
+                    file_name = os.path.basename(doc_file)
+                    if file_name in processed_docs and processed_docs[file_name].get("status") == "completed":
+                        logger.info(f"Skipping already processed document: {file_name}")
+                        continue
                         
-                        # Force cleanup
-                        chunk_content = None
-                        chunk_text = None
-                        gc.collect()
-                    except Exception as chunk_e:
-                        logger.error(f"Error processing chunk {start_idx//chunk_size + 1}: {str(chunk_e)}")
-            else:
-                # Process the whole document at once for smaller documents
-                try:
-                    all_clauses = extractor.extract_clauses(minimal_doc_content)
-                except Exception as e:
-                    logger.error(f"Error extracting clauses: {str(e)}")
+                    # Submit processing job
+                    futures[executor.submit(
+                        process_single_document, 
+                        doc_file, 
+                        document_store, 
+                        vector_store, 
+                        processed_docs,
+                        checkpoint_file
+                    )] = file_name
+                
+                # Process results as they complete
+                for future in concurrent.futures.as_completed(futures):
+                    file_name = futures[future]
+                    try:
+                        result = future.result(timeout=PROCESSING_TIMEOUT)
+                        logger.info(f"Completed processing {file_name}: {result.get('status')}")
+                    except concurrent.futures.TimeoutError:
+                        logger.error(f"Processing {file_name} timed out after {PROCESSING_TIMEOUT} seconds")
+                    except Exception as e:
+                        logger.error(f"Error processing {file_name}: {str(e)}")
             
-            # Free document text to save memory
-            doc_text = None
-            minimal_doc_content = None
+            # Force cleanup after each batch
             gc.collect()
             
-            # Deduplicate clauses
-            logger.info(f"Deduplicating {len(all_clauses)} extracted clauses")
-            unique_clauses = []
-            seen_texts = set()
+            # Log progress after each batch
+            completed = sum(1 for d in processed_docs.values() if d.get("status") == "completed")
+            logger.info(f"Progress: {completed}/{len(doc_files)} documents processed ({completed/len(doc_files)*100:.1f}%)")
             
-            for clause in all_clauses:
-                # Simple deduplication based on text
-                norm_text = clause["text"].strip()[:100]  # Use prefix for deduplication
-                if norm_text not in seen_texts:
-                    unique_clauses.append(clause)
-                    seen_texts.add(norm_text)
+    else:
+        # Process documents sequentially
+        logger.info("Using sequential processing")
+        
+        for doc_file in doc_files:
+            result = process_single_document(
+                doc_file, 
+                document_store, 
+                vector_store, 
+                processed_docs,
+                checkpoint_file
+            )
+            logger.info(f"Document {result.get('file_name')}: {result.get('status')}")
             
-            logger.info(f"Found {len(unique_clauses)} unique clauses after deduplication")
-            
-            # Free original clauses to save memory
-            all_clauses = None
-            seen_texts = None
+            # Force memory cleanup after each document
             gc.collect()
-            
-            # Add clauses to document store
-            logger.info(f"Adding clauses to document store")
-            document_store.add_regulatory_clauses(document_id, version_number, unique_clauses)
-            
-            # Add clauses to vector store in smaller batches for semantic search
-            logger.info(f"Adding clauses to vector store in batches")
-            batch_size = 20  # Process 20 clauses at a time to reduce memory usage
-            
-            for i in range(0, len(unique_clauses), batch_size):
-                batch_clauses = unique_clauses[i:i+batch_size]
-                
-                # Add document_id and version to each clause
-                for clause in batch_clauses:
-                    clause["document_id"] = document_id
-                    clause["document_version"] = version_number
-                
-                # Add to vector store
-                vector_store.add_clauses(batch_clauses)
-                logger.info(f"Added batch {i//batch_size + 1}/{(len(unique_clauses) + batch_size - 1)//batch_size} of clauses to vector store")
-                
-                # Force memory cleanup between batches
-                gc.collect()
-            
-            # Mark document as completed in checkpoint
-            processed_docs[file_name] = {
-                "status": "completed", 
-                "document_id": document_id, 
-                "version": version_number, 
-                "clauses": len(unique_clauses)
-            }
-            with open(checkpoint_file, 'w') as f:
-                json.dump(processed_docs, f)
-            
-            logger.info(f"Successfully processed {file_name} and extracted {len(unique_clauses)} clauses")
-            
-            # Final cleanup
-            unique_clauses = None
-            gc.collect()
-            
-        except Exception as e:
-            logger.error(f"Error processing document {file_name}: {str(e)}")
-            # Mark document as failed in checkpoint
-            processed_docs[file_name] = {"status": "failed", "error": str(e)}
-            with open(checkpoint_file, 'w') as f:
-                json.dump(processed_docs, f)
-        
-        # Force memory cleanup after each document
-        gc.collect()
-        
-        # Log memory status
-        logger.info(f"Memory status after processing {file_name}")
-        
-        # Always save progress after each document
-        logger.info(f"Progress: {sum(1 for d in processed_docs.values() if d.get('status') == 'completed')}/{len(doc_files)} documents processed")
+    
+    # Calculate and log final statistics
+    stats = {
+        "total": len(doc_files),
+        "completed": sum(1 for d in processed_docs.values() if d.get("status") == "completed"),
+        "failed": sum(1 for d in processed_docs.values() if d.get("status") == "failed"),
+        "total_clauses": sum(d.get("clauses", 0) for d in processed_docs.values()),
+    }
+    
+    logger.info(f"Document processing completed: {stats['completed']}/{stats['total']} documents processed, {stats['total_clauses']} clauses extracted")
+    
+    # Analyze any failures
+    if stats["failed"] > 0:
+        failures = [name for name, info in processed_docs.items() if info.get("status") == "failed"]
+        logger.warning(f"Failed documents: {', '.join(failures)}")
 
 def process_sop(sop_file: str, document_store: DocumentStore, vector_store: VectorStore) -> Dict[str, Any]:
-    """Process SOP and analyze compliance"""
+    """Process SOP and analyze compliance with optimized methods"""
     parser_factory = DocumentParserFactory()
     analyzer = ComplianceAnalyzer(vector_store=vector_store)
     
     logger.info(f"Processing SOP: {os.path.basename(sop_file)}")
     
     try:
-        # Parse SOP document
+        # Parse SOP document with optimized parser
         sop_content = parser_factory.parse_document(sop_file)
+        
+        # Check if we need to handle compressed text
+        if isinstance(sop_content, dict) and sop_content.get("is_compressed", False):
+            logger.info(f"SOP document has compressed text, decompressing")
+            pdf_parser = PDFParser()
+            sop_text = pdf_parser.get_text_from_result(sop_content)
+            sop_content["text"] = sop_text
+            sop_content["is_compressed"] = False
         
         # Analyze SOP compliance
         compliance_results = analyzer.analyze_sop_compliance(sop_content)
@@ -324,6 +347,29 @@ def save_report(report: Dict[str, Any], output_file: str) -> None:
     except Exception as e:
         logger.error(f"Error saving report to {output_file}: {str(e)}")
 
+def print_system_info():
+    """Print system information for diagnostics"""
+    try:
+        import platform
+        import psutil
+        
+        # Get system info
+        system_info = {
+            "platform": platform.platform(),
+            "python_version": platform.python_version(),
+            "cpu_count": psutil.cpu_count(logical=False),
+            "logical_cpus": psutil.cpu_count(logical=True),
+            "memory_gb": round(psutil.virtual_memory().total / (1024**3), 2),
+            "available_memory_gb": round(psutil.virtual_memory().available / (1024**3), 2)
+        }
+        
+        logger.info("System Information:")
+        for key, value in system_info.items():
+            logger.info(f"  - {key}: {value}")
+            
+    except ImportError:
+        logger.info("System information not available (psutil not installed)")
+
 def main():
     parser = argparse.ArgumentParser(description="Regulatory Compliance Document Processor")
     parser.add_argument("--sop", type=str, help="Path to SOP document", default=os.path.join(SOP_DIR, "original.docx"))
@@ -331,9 +377,13 @@ def main():
     parser.add_argument("--output", type=str, help="Path to output report file", default="compliance_report.json")
     parser.add_argument("--rebuild-kb", action="store_true", help="Rebuild knowledge base from scratch")
     parser.add_argument("--build-only", action="store_true", help="Only build knowledge base, don't process SOP")
+    parser.add_argument("--optimize", action="store_true", help="Use optimized processing methods")
     args = parser.parse_args()
     
     logger.info("Starting Regulatory Compliance Document Processor")
+    
+    # Print system information
+    print_system_info()
     
     try:
         # Cleanup memory before starting

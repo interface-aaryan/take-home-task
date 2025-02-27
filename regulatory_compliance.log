@@ -2835,3 +2835,4 @@
 2025-02-26 18:23:21,906 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - ERROR - Error calling OpenAI API: Request timed out.
 2025-02-26 18:23:21,934 - __main__ - INFO - Processing chunk 102/246 from REG-NFPA 86.pdf
 2025-02-26 18:23:21,934 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - Processing chunk 1/1 from REG-NFPA 86.pdf
+2025-02-26 18:23:52,037 - openai._base_client - INFO - Retrying request to /chat/completions in 0.460526 seconds
