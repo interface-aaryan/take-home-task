@@ -190,6 +190,11 @@
                                     </p>
                                 </div>
                             {% endfor %}
+                            {% if recent_analyses|length > 3 %}
+                                <div class="text-center mt-3">
+                                    <a href="/all_analyses" class="btn btn-sm btn-outline-secondary">View All</a>
+                                </div>
+                            {% endif %}
                         {% else %}
                             <p class="text-center text-muted my-4">No SOP analyses yet.</p>
                             <div class="text-center">

@@ -223,24 +223,45 @@ def index():
     vector_stats = vector_store.get_stats()
     documents = document_store.get_all_documents(include_latest_version=True)
     
-    # Get recent analyses
+    # Get recent analyses from database
+    db_analyses = document_store.get_all_sop_analyses(limit=5)
+    
+    # Convert to the format expected by the template
     recent_analyses = []
-    analysis_files = os.path.join(app.config['UPLOAD_FOLDER'], "analysis_*.json")
-    for file_path in sorted(glob.glob(analysis_files), key=os.path.getmtime, reverse=True)[:5]:
-        try:
+    for analysis in db_analyses:
+        recent_analyses.append({
+            "id": analysis["id"],
+            "filename": analysis["filename"],
+            "status": analysis["status"],
+            "timestamp": analysis["updated_at"]
+        })
+    
+    # If we have fewer than 5 analyses from database, supplement with file-based ones
+    if len(recent_analyses) < 5:
+        analysis_files = os.path.join(app.config['UPLOAD_FOLDER'], "analysis_*.json")
+        for file_path in sorted(glob.glob(analysis_files), key=os.path.getmtime, reverse=True):
+            # Skip if we already have this analysis
             analysis_id = os.path.basename(file_path).replace("analysis_", "").replace(".json", "")
-            with open(file_path, 'r') as f:
-                analysis_data = json.load(f)
-            
-            analysis_info = {
-                "id": analysis_id,
-                "filename": analysis_data.get("filename", os.path.basename(file_path)),
-                "status": analysis_data.get("status", "completed"),
-                "timestamp": analysis_data.get("timestamp", datetime.fromtimestamp(os.path.getmtime(file_path)).isoformat())
-            }
-            recent_analyses.append(analysis_info)
-        except Exception as e:
-            logger.error(f"Error loading analysis file {file_path}: {str(e)}")
+            if any(a["id"] == analysis_id for a in recent_analyses):
+                continue
+                
+            try:
+                with open(file_path, 'r') as f:
+                    analysis_data = json.load(f)
+                
+                analysis_info = {
+                    "id": analysis_id,
+                    "filename": analysis_data.get("filename", os.path.basename(file_path)),
+                    "status": analysis_data.get("status", "completed"),
+                    "timestamp": analysis_data.get("timestamp", datetime.fromtimestamp(os.path.getmtime(file_path)).isoformat())
+                }
+                recent_analyses.append(analysis_info)
+                
+                # Stop if we have 5 analyses
+                if len(recent_analyses) >= 5:
+                    break
+            except Exception as e:
+                logger.error(f"Error loading analysis file {file_path}: {str(e)}")
     
     return render_template(
         'index.html', 
@@ -354,14 +375,24 @@ def analyze_sop():
                 # Generate unique analysis ID
                 analysis_id = str(uuid.uuid4())
                 
-                # Create a placeholder result file with processing status
+                # Create a placeholder in the database
+                current_time = datetime.now().isoformat()
                 processing_status = {
                     "status": "processing",
                     "filename": filename,
-                    "timestamp": datetime.now().isoformat(),
+                    "timestamp": current_time,
                     "message": "SOP analysis in progress. This page will automatically refresh."
                 }
                 
+                # Add record to database with processing status
+                document_store.add_sop_analysis(
+                    analysis_id, 
+                    filename, 
+                    "processing", 
+                    json.dumps(processing_status)
+                )
+                
+                # Also create file for compatibility
                 analysis_file = os.path.join(app.config['UPLOAD_FOLDER'], f"analysis_{analysis_id}.json")
                 with open(analysis_file, 'w') as f:
                     json.dump(processing_status, f, indent=2)
@@ -456,6 +487,54 @@ def document_version(document_id, version_number):
 @app.route('/view_analysis/<analysis_id>')
 def view_analysis(analysis_id):
     """View compliance analysis results with status handling"""
+    # First try to get from database
+    analysis_record = document_store.get_sop_analysis(analysis_id)
+    
+    if analysis_record:
+        # Get status from database record
+        status = analysis_record.get('status')
+        
+        if status == 'processing':
+            # Analysis is still processing
+            try:
+                analysis_data = json.loads(analysis_record.get('result_json', '{}'))
+                return render_template('analysis_processing.html', 
+                                      analysis_id=analysis_id, 
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      message=analysis_data.get('message', 'Processing in progress'))
+            except:
+                # If we can't parse the JSON, just show generic processing
+                return render_template('analysis_processing.html', 
+                                      analysis_id=analysis_id, 
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      message='Processing in progress')
+        
+        elif status == 'failed':
+            # Analysis failed
+            try:
+                analysis_data = json.loads(analysis_record.get('result_json', '{}'))
+                return render_template('analysis_failed.html',
+                                      analysis_id=analysis_id,
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      error=analysis_data.get('error', 'Unknown error'))
+            except:
+                # If we can't parse the JSON, show generic error
+                return render_template('analysis_failed.html',
+                                      analysis_id=analysis_id,
+                                      filename=analysis_record.get('filename', 'SOP document'),
+                                      error='Unknown error occurred during analysis')
+        
+        else:
+            # Analysis completed successfully
+            try:
+                analysis_data = json.loads(analysis_record.get('result_json', '{}'))
+                return render_template('view_analysis.html', analysis=analysis_data)
+            except Exception as e:
+                logger.error(f"Error parsing analysis JSON {analysis_id}: {str(e)}")
+                flash(f'Error loading analysis results: {str(e)}')
+                return redirect(url_for('index'))
+    
+    # Fall back to file-based approach if not in database
     analysis_file = os.path.join(app.config['UPLOAD_FOLDER'], f"analysis_{analysis_id}.json")
     
     if not os.path.exists(analysis_file):
@@ -495,6 +574,55 @@ def all_documents():
     return render_template(
         'all_documents.html',
         documents=documents
+    )
+    
+@app.route('/all_analyses')
+def all_analyses():
+    """View all SOP analyses"""
+    # Get all analyses from database
+    db_analyses = document_store.get_all_sop_analyses()
+    
+    # Convert to the format expected by the template
+    analyses = []
+    for analysis in db_analyses:
+        analyses.append({
+            "id": analysis["id"],
+            "filename": analysis["filename"],
+            "status": analysis["status"],
+            "created_at": analysis["created_at"],
+            "updated_at": analysis["updated_at"]
+        })
+    
+    # Supplement with file-based analyses that might not be in the database
+    analysis_files = os.path.join(app.config['UPLOAD_FOLDER'], "analysis_*.json")
+    for file_path in glob.glob(analysis_files):
+        analysis_id = os.path.basename(file_path).replace("analysis_", "").replace(".json", "")
+        
+        # Skip if we already have this analysis
+        if any(a["id"] == analysis_id for a in analyses):
+            continue
+            
+        try:
+            with open(file_path, 'r') as f:
+                analysis_data = json.load(f)
+            
+            file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path)).isoformat()
+            analyses.append({
+                "id": analysis_id,
+                "filename": analysis_data.get("filename", os.path.basename(file_path)),
+                "status": analysis_data.get("status", "completed"),
+                "created_at": analysis_data.get("timestamp", file_mtime),
+                "updated_at": file_mtime
+            })
+        except Exception as e:
+            logger.error(f"Error loading analysis file {file_path}: {str(e)}")
+    
+    # Sort by updated_at
+    analyses.sort(key=lambda x: x["updated_at"], reverse=True)
+    
+    return render_template(
+        'all_analyses.html',
+        analyses=analyses
     )
 
 @app.route('/search', methods=['GET', 'POST'])
