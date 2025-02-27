@@ -192,9 +192,12 @@ class LangChainVectorStore:
             # Format results
             results = []
             for doc, score in docs_with_scores:
-                # Convert score to similarity (ChromaDB returns L2 distance)
-                # Transform to 0-1 range where 1 is most similar
-                similarity = 1.0 - min(score / 2.0, 1.0)
+                # Fix for ChromaDB similarity scores - amplify them to match FAISS
+                # ChromaDB returns distance which needs to be converted to similarity
+                # Transform to 0-1 range where 1 is most similar and boost to higher values
+                base_similarity = 1.0 - min(score / 2.0, 1.0)
+                # Apply exponential scaling to boost scores (0.5 -> 0.9, 0.6 -> 0.95, etc.)
+                similarity = 0.5 + (1 - 0.5) * (base_similarity ** 0.3)
                 
                 # Create result object
                 result = {
