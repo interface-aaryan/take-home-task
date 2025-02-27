@@ -16,6 +16,7 @@ dependencies = [
     "numpy",
     "openai==1.64.0",
     "pandas>=2.2.3",
+    "psutils>=3.3.9",
     "pymupdf==1.22.3",
     "pypdf2>=3.0.1",
     "python-docx==0.8.11",

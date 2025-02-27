@@ -13,7 +13,7 @@ from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 
 # Configure logging for this main file
-log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "regulatory_compliance.log")
+log_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "regulatory_compliance_processor", "logs", "main.log")
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -214,7 +214,9 @@ def process_regulatory_documents(docs_dir: str, document_store: DocumentStore, v
     logger.info(f"Found {len(doc_files)} regulatory documents to process")
     
     # Create checkpoint file to track processed documents
-    checkpoint_file = os.path.join(os.path.dirname(docs_dir), "processing_checkpoint.json")
+    checkpoint_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "regulatory_compliance_processor", "data")
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    checkpoint_file = os.path.join(checkpoint_dir, "processing_checkpoint.json")
     processed_docs = {}
     
     # Load checkpoint if exists
@@ -344,9 +346,12 @@ def process_sop(sop_file: str, document_store: DocumentStore, vector_store: Any)
 def save_report(report: Dict[str, Any], output_file: str) -> None:
     """Save compliance report to file"""
     try:
-        # If output_file is not an absolute path, make it relative to the current directory
+        # If output_file is not an absolute path, make it relative to the reports directory
         if not os.path.isabs(output_file):
-            output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), output_file)
+            output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reports", os.path.basename(output_file))
+        
+        # Ensure reports directory exists
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
             
         with open(output_file, 'w') as f:
             json.dump(report, f, indent=2)
@@ -381,7 +386,7 @@ def main():
     parser = argparse.ArgumentParser(description="Regulatory Compliance Document Processor")
     parser.add_argument("--sop", type=str, help="Path to SOP document", default=os.path.join(SOP_DIR, "original.docx"))
     parser.add_argument("--reg-docs", type=str, help="Path to directory containing regulatory documents", default=REGULATORY_DOCS_DIR)
-    parser.add_argument("--output", type=str, help="Path to output report file", default="compliance_report.json")
+    parser.add_argument("--output", type=str, help="Path to output report file", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "reports", "compliance_report.json"))
     parser.add_argument("--rebuild-kb", action="store_true", help="Rebuild knowledge base from scratch")
     parser.add_argument("--build-only", action="store_true", help="Only build knowledge base, don't process SOP")
     parser.add_argument("--optimize", action="store_true", help="Use optimized processing methods")

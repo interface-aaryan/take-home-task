@@ -15,19 +15,20 @@ from datetime import datetime
 import time
 
 # Configure logging
+log_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "migrate_to_langchain.log")
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("migrate_to_langchain.log")
+        logging.FileHandler(log_file)
     ]
 )
 logger = logging.getLogger("migrate_to_langchain")
 
-# Add the parent directory to sys.path to allow importing from the module
-parent_dir = Path(__file__).parent
-sys.path.append(str(parent_dir))
+# Add the project root to sys.path to allow importing from the module
+project_root = Path(__file__).parent.parent.parent
+sys.path.append(str(project_root))
 
 # Now import from the regulatory_compliance_processor module
 from regulatory_compliance_processor.knowledge_base.langchain_vector_store import LangChainVectorStore
