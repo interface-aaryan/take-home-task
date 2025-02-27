@@ -1,0 +1,12 @@
+2025-02-27 09:46:44,076 - regulatory_compliance_processor.config - INFO - Configuring OpenAI client...
+2025-02-27 09:46:44,263 - regulatory_compliance_processor.config - INFO - OpenAI client initialized. Client type: OpenAI
+2025-02-27 09:46:44,263 - regulatory_compliance_processor.config - INFO - Using GPT model: gpt-4o
+2025-02-27 09:46:44,263 - regulatory_compliance_processor.config - INFO - Using embedding model: text-embedding-3-large (dim: 3072)
+2025-02-27 09:46:44,264 - regulatory_compliance_processor.config - INFO - API key present: Yes
+2025-02-27 09:46:44,264 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - EmbeddingGenerator using OpenAI client from config
+2025-02-27 09:46:44,264 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - OpenAI client type in EmbeddingGenerator: OpenAI
+2025-02-27 09:46:44,265 - faiss.loader - INFO - Loading faiss.
+2025-02-27 09:46:44,275 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-27 09:46:44,277 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-27 09:46:44,379 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - LLMClauseExtractor using OpenAI client from config
+2025-02-27 09:46:44,379 - regulatory_compliance_processor.document_processing.extractors.llm_extractor - INFO - OpenAI client type: OpenAI

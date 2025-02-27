@@ -30,7 +30,7 @@ class DocumentStore:
         
         # Create tables if they don't exist
         with conn:
-            # Documents table
+            # Documents table - intentionally without status field for upgrade
             conn.execute('''
             CREATE TABLE IF NOT EXISTS documents (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -43,6 +43,21 @@ class DocumentStore:
                 metadata TEXT
             )
             ''')
+            
+            # Migrate database by adding status column if it doesn't exist
+            try:
+                # Check if status column exists
+                cursor = conn.execute("SELECT status FROM documents LIMIT 1")
+                cursor.fetchone()  # This will throw an exception if status doesn't exist
+            except sqlite3.OperationalError:
+                # Status column doesn't exist, add it
+                logger.info("Migrating database: Adding status column to documents table")
+                conn.execute("ALTER TABLE documents ADD COLUMN status TEXT DEFAULT 'completed'")
+                conn.commit()
+                logger.info("Database migration completed successfully")
+            except Exception:
+                # If fetching failed for other reasons (empty table), that's fine
+                pass
             
             # Document versions table
             conn.execute('''
@@ -76,13 +91,35 @@ class DocumentStore:
                 FOREIGN KEY (document_id, document_version) REFERENCES document_versions (document_id, version_number)
             )
             ''')
+            
+            # SOP analysis records table
+            conn.execute('''
+            CREATE TABLE IF NOT EXISTS sop_analyses (
+                id TEXT PRIMARY KEY,
+                filename TEXT NOT NULL,
+                status TEXT NOT NULL DEFAULT 'completed',
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                result_json TEXT
+            )
+            ''')
         
         return conn
     
-    def add_document(self, file_name, content, title=None, source=None, document_type=None, metadata=None, comment=None):
+    def add_document(self, file_name, content, title=None, source=None, document_type=None, metadata=None, comment=None, status="completed"):
         """
         Add a new document or a new version of an existing document
         
+        Args:
+            file_name: Name of the file
+            content: Document content
+            title: Document title
+            source: Document source
+            document_type: Type of document
+            metadata: Additional metadata as dict
+            comment: Version comment
+            status: Document processing status (completed, processing, failed)
+            
         Returns:
             Tuple (document_id, version_number)
         """
@@ -123,10 +160,10 @@ class DocumentStore:
                         
                         return document_id, version_result[0]
                     
-                    # Update the document metadata
+                    # Update the document metadata and status
                     self.conn.execute(
-                        "UPDATE documents SET last_updated = ?, metadata = ? WHERE id = ?",
-                        (current_time, json.dumps(metadata or {}), document_id)
+                        "UPDATE documents SET last_updated = ?, metadata = ?, status = ? WHERE id = ?",
+                        (current_time, json.dumps(metadata or {}), status, document_id)
                     )
                     
                     # Add new version
@@ -149,8 +186,8 @@ class DocumentStore:
                     # New document
                     metadata_json = json.dumps(metadata or {})
                     cursor = self.conn.execute(
-                        "INSERT INTO documents (file_name, title, source, document_type, added_date, last_updated, metadata) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                        (file_name, title, source, document_type, current_time, current_time, metadata_json)
+                        "INSERT INTO documents (file_name, title, source, document_type, added_date, last_updated, metadata, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                        (file_name, title, source, document_type, current_time, current_time, metadata_json, status)
                     )
                     document_id = cursor.lastrowid
                     
@@ -160,7 +197,7 @@ class DocumentStore:
                         (document_id, 1, content_hash, content, current_time, comment or "Initial version")
                     )
                     
-                    logger.info(f"Added new document {file_name} with id {document_id}")
+                    logger.info(f"Added new document {file_name} with id {document_id} and status {status}")
                     return document_id, 1
                     
         except Exception as e:
@@ -212,11 +249,20 @@ class DocumentStore:
         """Get document content and metadata"""
         try:
             with self.conn:
-                # Get document metadata
-                cursor = self.conn.execute(
-                    "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata FROM documents WHERE id = ?",
-                    (document_id,)
-                )
+                # Check if status column exists in documents table
+                status_exists = True
+                try:
+                    self.conn.execute("SELECT status FROM documents LIMIT 1")
+                except sqlite3.OperationalError:
+                    status_exists = False
+                
+                # Get document metadata, with or without status
+                if status_exists:
+                    query = "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata, status FROM documents WHERE id = ?"
+                else:
+                    query = "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata FROM documents WHERE id = ?"
+                
+                cursor = self.conn.execute(query, (document_id,))
                 doc_result = cursor.fetchone()
                 
                 if not doc_result:
@@ -233,6 +279,11 @@ class DocumentStore:
                     "last_updated": doc_result[6],
                     "metadata": json.loads(doc_result[7] or '{}')
                 }
+                
+                if status_exists and len(doc_result) > 8:
+                    document["status"] = doc_result[8] or "completed"
+                else:
+                    document["status"] = "completed"
                 
                 # Get the requested version or the latest
                 if version_number:
@@ -266,9 +317,20 @@ class DocumentStore:
         """Get all documents with optional latest version content"""
         try:
             with self.conn:
-                cursor = self.conn.execute(
-                    "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata FROM documents ORDER BY last_updated DESC"
-                )
+                # Check if status column exists in documents table
+                status_exists = True
+                try:
+                    self.conn.execute("SELECT status FROM documents LIMIT 1")
+                except sqlite3.OperationalError:
+                    status_exists = False
+                
+                # Get all documents, with or without status
+                if status_exists:
+                    query = "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata, status FROM documents ORDER BY last_updated DESC"
+                else:
+                    query = "SELECT id, file_name, title, source, document_type, added_date, last_updated, metadata FROM documents ORDER BY last_updated DESC"
+                
+                cursor = self.conn.execute(query)
                 documents = []
                 
                 for row in cursor.fetchall():
@@ -282,6 +344,12 @@ class DocumentStore:
                         "last_updated": row[6],
                         "metadata": json.loads(row[7] or '{}')
                     }
+                    
+                    # Add status if available
+                    if status_exists and len(row) > 8:
+                        document["status"] = row[8] or "completed"
+                    else:
+                        document["status"] = "completed"
                     
                     if include_latest_version:
                         version_cursor = self.conn.execute(
@@ -304,6 +372,199 @@ class DocumentStore:
         except Exception as e:
             logger.error(f"Error getting all documents: {str(e)}")
             raise
+            
+    def update_document_status(self, document_id, status):
+        """Update the processing status of a document"""
+        try:
+            with self.conn:
+                # Check if status column exists
+                status_exists = True
+                try:
+                    self.conn.execute("SELECT status FROM documents LIMIT 1")
+                except sqlite3.OperationalError:
+                    status_exists = False
+                    
+                # Add status column if needed
+                if not status_exists:
+                    logger.info(f"Adding status column to documents table before updating status")
+                    self.conn.execute("ALTER TABLE documents ADD COLUMN status TEXT DEFAULT 'completed'")
+                    self.conn.commit()
+                
+                # Update status
+                self.conn.execute(
+                    "UPDATE documents SET status = ? WHERE id = ?",
+                    (status, document_id)
+                )
+                logger.info(f"Updated document {document_id} status to '{status}'")
+                return True
+        except Exception as e:
+            logger.error(f"Error updating document {document_id} status: {str(e)}")
+            return False
+            
+    def get_document_status(self, document_id):
+        """Get the processing status of a document"""
+        try:
+            with self.conn:
+                # Check if status column exists
+                status_exists = True
+                try:
+                    self.conn.execute("SELECT status FROM documents LIMIT 1")
+                except sqlite3.OperationalError:
+                    status_exists = False
+                    
+                # Add status column if needed
+                if not status_exists:
+                    logger.info(f"Adding status column to documents table before getting status")
+                    self.conn.execute("ALTER TABLE documents ADD COLUMN status TEXT DEFAULT 'completed'")
+                    self.conn.commit()
+                
+                # Get status
+                cursor = self.conn.execute(
+                    "SELECT status FROM documents WHERE id = ?",
+                    (document_id,)
+                )
+                result = cursor.fetchone()
+                return result[0] if result else "completed"
+        except Exception as e:
+            logger.error(f"Error getting document {document_id} status: {str(e)}")
+            return "completed"
+            
+    def add_sop_analysis(self, analysis_id, filename, status, result_json=None):
+        """
+        Add or update a SOP analysis record
+        
+        Args:
+            analysis_id: Unique ID for the analysis
+            filename: Name of the analyzed file
+            status: Status of the analysis (processing, completed, failed)
+            result_json: JSON string of analysis results (can be None for processing state)
+            
+        Returns:
+            bool: True if successful
+        """
+        try:
+            current_time = datetime.now().isoformat()
+            with self.conn:
+                # Check if record already exists
+                cursor = self.conn.execute(
+                    "SELECT id FROM sop_analyses WHERE id = ?", (analysis_id,)
+                )
+                result = cursor.fetchone()
+                
+                if result:
+                    # Update existing record
+                    self.conn.execute(
+                        """
+                        UPDATE sop_analyses 
+                        SET status = ?, updated_at = ?, result_json = COALESCE(?, result_json)
+                        WHERE id = ?
+                        """,
+                        (status, current_time, result_json, analysis_id)
+                    )
+                else:
+                    # Insert new record
+                    self.conn.execute(
+                        """
+                        INSERT INTO sop_analyses (id, filename, status, created_at, updated_at, result_json)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                        """,
+                        (analysis_id, filename, status, current_time, current_time, result_json or "")
+                    )
+                
+                logger.info(f"Saved SOP analysis record for {filename} with status {status}")
+                return True
+        except Exception as e:
+            logger.error(f"Error saving SOP analysis record: {str(e)}")
+            return False
+            
+    def get_sop_analysis(self, analysis_id):
+        """
+        Get a SOP analysis record by ID
+        
+        Args:
+            analysis_id: Analysis ID
+            
+        Returns:
+            dict: Analysis record or None if not found
+        """
+        try:
+            with self.conn:
+                cursor = self.conn.execute(
+                    "SELECT id, filename, status, created_at, updated_at, result_json FROM sop_analyses WHERE id = ?",
+                    (analysis_id,)
+                )
+                result = cursor.fetchone()
+                
+                if result:
+                    return {
+                        "id": result[0],
+                        "filename": result[1],
+                        "status": result[2],
+                        "created_at": result[3],
+                        "updated_at": result[4],
+                        "result_json": result[5]
+                    }
+                return None
+        except Exception as e:
+            logger.error(f"Error getting SOP analysis {analysis_id}: {str(e)}")
+            return None
+            
+    def get_all_sop_analyses(self, limit=None):
+        """
+        Get all SOP analyses, optionally limited to a number of records
+        
+        Args:
+            limit: Maximum number of records to return, ordered by updated_at
+            
+        Returns:
+            list: Analysis records
+        """
+        try:
+            with self.conn:
+                query = "SELECT id, filename, status, created_at, updated_at FROM sop_analyses ORDER BY updated_at DESC"
+                if limit:
+                    query += f" LIMIT {int(limit)}"
+                    
+                cursor = self.conn.execute(query)
+                results = []
+                
+                for row in cursor.fetchall():
+                    results.append({
+                        "id": row[0],
+                        "filename": row[1],
+                        "status": row[2],
+                        "created_at": row[3],
+                        "updated_at": row[4]
+                    })
+                    
+                return results
+        except Exception as e:
+            logger.error(f"Error getting SOP analyses: {str(e)}")
+            return []
+            
+    def update_sop_analysis_status(self, analysis_id, status):
+        """
+        Update the status of a SOP analysis
+        
+        Args:
+            analysis_id: Analysis ID
+            status: New status (processing, completed, failed)
+            
+        Returns:
+            bool: True if successful
+        """
+        try:
+            with self.conn:
+                current_time = datetime.now().isoformat()
+                self.conn.execute(
+                    "UPDATE sop_analyses SET status = ?, updated_at = ? WHERE id = ?",
+                    (status, current_time, analysis_id)
+                )
+                logger.info(f"Updated SOP analysis {analysis_id} status to {status}")
+                return True
+        except Exception as e:
+            logger.error(f"Error updating SOP analysis status: {str(e)}")
+            return False
     
     def get_document_versions(self, document_id):
         """Get all versions of a document without content"""

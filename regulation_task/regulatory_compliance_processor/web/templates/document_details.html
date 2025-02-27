@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ document.file_name }} - Document Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .clause-card {
+            margin-bottom: 1rem;
+            transition: transform 0.2s;
+        }
+        .clause-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .status-badge {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">Regulatory Compliance Processor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/upload_regulatory">Upload Regulation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/analyze_sop">Analyze SOP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">{{ document.file_name }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0">{{ document.file_name }}</h4>
+                        <div>
+                            {% if status == 'processing' %}
+                                <span class="badge bg-warning text-dark status-badge">
+                                    <i class="bi bi-hourglass-split me-1"></i> Processing
+                                </span>
+                            {% elif status == 'failed' %}
+                                <span class="badge bg-danger status-badge">
+                                    <i class="bi bi-exclamation-triangle me-1"></i> Failed
+                                </span>
+                            {% else %}
+                                <span class="badge bg-success status-badge">
+                                    <i class="bi bi-check-circle me-1"></i> Completed
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Document Information</h5>
+                                <table class="table table-sm table-borderless">
+                                    <tr>
+                                        <td><strong>Title:</strong></td>
+                                        <td>{{ document.title or document.file_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Document Type:</strong></td>
+                                        <td>{{ document.document_type }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Source:</strong></td>
+                                        <td>{{ document.source }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Added Date:</strong></td>
+                                        <td>{{ document.added_date }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Last Updated:</strong></td>
+                                        <td>{{ document.last_updated }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Version History</h5>
+                                <div class="list-group">
+                                    {% for version in versions %}
+                                        <a href="/document/{{ document.id }}/version/{{ version.number }}" class="list-group-item list-group-item-action">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">Version {{ version.number }}</h6>
+                                                <small>{{ version.added_date }}</small>
+                                            </div>
+                                            <small>{{ version.comment }}</small>
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if status == 'processing' %}
+            <div class="row">
+                <div class="col-12 text-center my-5">
+                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h4 class="mt-3">Processing Document</h4>
+                    <p class="text-muted">This document is being processed in the background. Clause extraction is in progress.</p>
+                    <p>This page will automatically refresh to show results when processing is complete.</p>
+                    <script>
+                        // Auto-refresh the page every 5 seconds
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 5000);
+                    </script>
+                </div>
+            </div>
+        {% elif status == 'failed' %}
+            <div class="row">
+                <div class="col-12 text-center my-5">
+                    <div class="text-danger">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                    </div>
+                    <h4 class="mt-3">Processing Failed</h4>
+                    <p class="text-muted">There was an error processing this document. Please try again or contact support.</p>
+                </div>
+            </div>
+        {% else %}
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0">Regulatory Clauses</h5>
+                        </div>
+                        <div class="card-body">
+                            {% if clauses %}
+                                <div class="row">
+                                    {% for clause in clauses %}
+                                        <div class="col-md-6">
+                                            <div class="card clause-card">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">
+                                                        {% if clause.section %}Section {{ clause.section }}:{% endif %} 
+                                                        {{ clause.title or 'Untitled Clause' }}
+                                                    </h6>
+                                                    <p class="card-text">{{ clause.text|truncate(150) }}</p>
+                                                    {% if clause.requirement_type %}
+                                                        <span class="badge {% if clause.requirement_type == 'mandatory' %}bg-danger{% elif clause.requirement_type == 'recommended' %}bg-warning text-dark{% else %}bg-info{% endif %}">
+                                                            {{ clause.requirement_type|capitalize }}
+                                                        </span>
+                                                    {% endif %}
+                                                    {% if clause.page_number %}
+                                                        <small class="text-muted">Page: {{ clause.page_number }}</small>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <div class="text-center my-5">
+                                    <p class="text-muted">No clauses found for this document.</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer class="bg-light py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">
+                        &copy; 2024 Regulatory Compliance Document Processor
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

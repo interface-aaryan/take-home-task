@@ -1,0 +1,407 @@
+2025-02-27 10:40:14,479 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:40:14,479 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:40:14,479 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Created new empty vector index with dimension 3072
+2025-02-27 10:40:14,505 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:40:14,505 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:40:14,506 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:40:15,072 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:40:15,072 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:40:15,072 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Created new empty vector index with dimension 3072
+2025-02-27 10:40:15,077 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:40:15,088 - werkzeug - INFO -  * Debugger PIN: 281-248-868
+2025-02-27 10:40:28,657 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:40:28,758 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:40:29,380 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:40:29,381 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:40:29,381 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Created new empty vector index with dimension 3072
+2025-02-27 10:40:29,386 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:40:29,394 - werkzeug - INFO -  * Debugger PIN: 181-895-304
+2025-02-27 10:40:36,985 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:40:36,993 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:40:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:40:37,011 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:40:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-02-27 10:40:37,011 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:40:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-02-27 10:40:37,022 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:40:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-02-27 10:40:43,052 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:40:43,164 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:40:43,713 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:40:43,713 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:40:43,713 - regulatory_compliance_processor.knowledge_base.vector_store - INFO - Created new empty vector index with dimension 3072
+2025-02-27 10:40:43,716 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:40:43,724 - werkzeug - INFO -  * Debugger PIN: 331-064-006
+2025-02-27 10:40:54,145 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:40:54,259 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:40:54,832 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:40:54,832 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:40:54,832 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:40:55,097 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:40:55,441 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:40:55,444 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:40:55,453 - werkzeug - INFO -  * Debugger PIN: 102-317-941
+2025-02-27 10:41:15,333 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:41:15,894 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:41:16,457 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:41:16,457 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:41:16,457 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:41:16,617 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:41:16,832 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:41:16,836 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:41:16,846 - werkzeug - INFO -  * Debugger PIN: 124-768-903
+2025-02-27 10:41:40,254 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:41:40,263 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:40] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:41:40,275 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:40] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:41:40,277 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:40] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:41:40,282 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:40] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,083 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:41:41,092 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:41:41,101 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,102 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,106 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,680 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:41:41,689 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:41:41,699 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,700 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:41:41,705 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:41:41] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:41:46,204 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:41:46,420 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:41:47,094 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:41:47,094 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:41:47,094 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:41:47,290 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:41:47,587 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:41:47,592 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:41:47,603 - werkzeug - INFO -  * Debugger PIN: 946-828-523
+2025-02-27 10:41:57,058 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:41:57,549 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:41:58,270 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:41:58,271 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:41:58,271 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:41:58,457 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:41:58,755 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:41:58,761 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:41:58,769 - werkzeug - INFO -  * Debugger PIN: 582-344-589
+2025-02-27 10:42:05,067 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:42:05,569 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:42:06,183 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:42:06,183 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:42:06,183 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:42:06,338 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:42:06,552 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:42:06,555 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:42:06,563 - werkzeug - INFO -  * Debugger PIN: 476-022-152
+2025-02-27 10:42:12,857 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:42:13,420 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:42:14,085 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:42:14,085 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:42:14,085 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:42:14,243 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:42:14,531 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:42:14,534 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:42:14,543 - werkzeug - INFO -  * Debugger PIN: 514-771-378
+2025-02-27 10:42:20,309 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:42:20,315 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:42:20,324 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:20] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:42:20,326 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:20] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:42:20,329 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:42:21,236 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:42:21,242 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:42:21,247 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:21] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:42:21,248 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:21] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:42:21,251 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:42:43,897 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:42:43,898 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:42:43,898 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:42:44,057 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:42:44,336 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:42:44,361 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:42:44,362 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:42:44,362 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:42:44,905 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:42:44,905 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:42:44,906 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:42:45,057 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:42:45,267 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:42:45,270 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:42:45,280 - werkzeug - INFO -  * Debugger PIN: 118-844-749
+2025-02-27 10:42:49,291 - regulatory_compliance_processor.knowledge_base.document_store - ERROR - Error getting all documents: no such column: status
+2025-02-27 10:42:49,301 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:49] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:42:49,317 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:49] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:42:49,318 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:49] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:42:49,323 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:42:49] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:43:18,845 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:43:19,004 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:43:19,618 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Migrating database: Adding status column to documents table
+2025-02-27 10:43:19,621 - regulatory_compliance_processor.knowledge_base.document_store - INFO - Database migration completed successfully
+2025-02-27 10:43:19,621 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:43:19,621 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:43:19,621 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:43:19,784 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:43:20,073 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:43:20,077 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:43:20,087 - werkzeug - INFO -  * Debugger PIN: 597-927-535
+2025-02-27 10:43:29,520 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:43:29,971 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:43:30,658 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:43:30,658 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:43:30,658 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:43:30,826 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:43:31,124 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:43:31,129 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:43:31,139 - werkzeug - INFO -  * Debugger PIN: 102-022-957
+2025-02-27 10:43:40,545 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:43:40,957 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:43:41,610 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:43:41,610 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:43:41,610 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:43:41,786 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:43:42,080 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:43:42,085 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:43:42,094 - werkzeug - INFO -  * Debugger PIN: 867-821-193
+2025-02-27 10:43:50,469 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:43:50,917 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:43:51,498 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:43:51,499 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:43:51,499 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:43:51,655 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:43:51,876 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:43:51,880 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:43:51,889 - werkzeug - INFO -  * Debugger PIN: 836-554-918
+2025-02-27 10:44:01,317 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:44:01,844 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:44:02,406 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:44:02,406 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:44:02,406 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:44:02,563 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:44:02,781 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:44:02,784 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:44:02,793 - werkzeug - INFO -  * Debugger PIN: 434-095-831
+2025-02-27 10:44:16,235 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:44:16,235 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:44:16,235 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:44:16,393 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:44:16,605 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:44:16,628 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:44:16,628 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:44:16,629 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:44:17,169 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:44:17,169 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:44:17,169 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:44:17,326 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:44:17,542 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:44:17,545 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:44:17,554 - werkzeug - INFO -  * Debugger PIN: 115-091-648
+2025-02-27 10:44:20,127 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:44:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-02-27 10:44:20,139 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:44:20] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-02-27 10:44:20,139 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:44:20] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-02-27 10:44:20,144 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:44:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-02-27 10:46:41,056 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:46:41,057 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:46:41,057 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:46:41,222 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:46:41,503 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:46:41,541 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:46:41,541 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:46:41,541 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:46:42,090 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:46:42,090 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:46:42,090 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6160 misses
+2025-02-27 10:46:42,243 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:46:42,455 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:46:42,458 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:46:42,468 - werkzeug - INFO -  * Debugger PIN: 132-250-428
+2025-02-27 10:46:45,894 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:46:45] "GET / HTTP/1.1" 200 -
+2025-02-27 10:46:57,402 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:46:57] "GET /search HTTP/1.1" 200 -
+2025-02-27 10:47:01,707 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-27 10:47:01,868 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:47:01] "POST /search HTTP/1.1" 200 -
+2025-02-27 10:47:14,869 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:47:14] "GET /search HTTP/1.1" 200 -
+2025-02-27 10:47:16,834 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:47:16] "GET / HTTP/1.1" 200 -
+2025-02-27 10:47:18,386 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:47:18] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:48:54,227 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:48:54,542 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:48:55,338 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:48:55,338 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:48:55,338 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:48:55,547 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:48:55,845 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:48:55,849 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:48:55,859 - werkzeug - INFO -  * Debugger PIN: 108-361-485
+2025-02-27 10:48:58,052 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:48:58,245 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:48:58,906 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:48:58,906 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:48:58,906 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:48:59,068 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:48:59,284 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:48:59,287 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:48:59,296 - werkzeug - INFO -  * Debugger PIN: 408-298-801
+2025-02-27 10:48:59,330 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:48:59] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:49:01,452 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:49:01,696 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:49:02,314 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:49:02,315 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:49:02,315 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:49:02,491 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:49:02,719 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:49:02,723 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:49:02,732 - werkzeug - INFO -  * Debugger PIN: 632-480-465
+2025-02-27 10:50:37,485 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:50:37,485 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:50:37,485 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:50:37,745 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:50:38,094 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:50:38,111 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:50:38,111 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:50:38,112 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:50:38,681 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:50:38,681 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:50:38,681 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:50:38,840 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:50:39,051 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:50:39,054 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:50:39,063 - werkzeug - INFO -  * Debugger PIN: 100-767-573
+2025-02-27 10:50:46,666 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:50:46] "GET / HTTP/1.1" 200 -
+2025-02-27 10:50:48,960 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:50:48] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:50:55,225 - __main__ - INFO - Starting background analysis thread for SOP: original.docx
+2025-02-27 10:50:55,225 - __main__ - INFO - Starting background processing for SOP analysis: original.docx (ID: aa531be9-b743-48a5-9f6e-ae06f8e021dc)
+2025-02-27 10:50:55,226 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:50:55] "[32mPOST /analyze_sop HTTP/1.1[0m" 302 -
+2025-02-27 10:50:55,246 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:50:55] "GET /view_analysis/aa531be9-b743-48a5-9f6e-ae06f8e021dc HTTP/1.1" 200 -
+2025-02-27 10:51:00,287 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:00] "GET /view_analysis/aa531be9-b743-48a5-9f6e-ae06f8e021dc HTTP/1.1" 200 -
+2025-02-27 10:51:03,282 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:03] "GET / HTTP/1.1" 200 -
+2025-02-27 10:51:08,465 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:08] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:51:10,799 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:10] "GET /upload_regulatory HTTP/1.1" 200 -
+2025-02-27 10:51:12,534 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:12] "GET / HTTP/1.1" 200 -
+2025-02-27 10:51:15,797 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:51:15] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:51:54,908 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:51:55,520 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:51:56,212 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:51:56,213 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:51:56,213 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:51:56,402 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:51:56,705 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:51:56,709 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:51:56,720 - werkzeug - INFO -  * Debugger PIN: 128-477-129
+2025-02-27 10:51:58,853 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:51:59,103 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:51:59,745 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:51:59,746 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:51:59,746 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:51:59,912 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:52:00,129 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:52:00,133 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:52:00,142 - werkzeug - INFO -  * Debugger PIN: 242-965-366
+2025-02-27 10:52:10,988 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:10] "GET / HTTP/1.1" 200 -
+2025-02-27 10:52:19,636 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:19] "GET /upload_regulatory HTTP/1.1" 200 -
+2025-02-27 10:52:21,233 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:21] "GET / HTTP/1.1" 200 -
+2025-02-27 10:52:40,997 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:52:40,998 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:52:40,998 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:52:41,187 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:52:41,480 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:52:41,515 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:52:41,515 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:52:41,515 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:52:42,061 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:52:42,061 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:52:42,061 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:52:42,231 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:52:42,449 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:52:42,452 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:52:42,461 - werkzeug - INFO -  * Debugger PIN: 667-623-295
+2025-02-27 10:52:43,983 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:43] "GET / HTTP/1.1" 200 -
+2025-02-27 10:52:46,870 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:46] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:52:51,843 - __main__ - INFO - Starting background analysis thread for SOP: original.docx
+2025-02-27 10:52:51,843 - __main__ - INFO - Starting background processing for SOP analysis: original.docx (ID: 7ec1517c-7ef5-4fed-8a79-1ff02710d91d)
+2025-02-27 10:52:51,849 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:51] "[32mPOST /analyze_sop HTTP/1.1[0m" 302 -
+2025-02-27 10:52:51,865 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:51] "GET /view_analysis/7ec1517c-7ef5-4fed-8a79-1ff02710d91d HTTP/1.1" 200 -
+2025-02-27 10:52:54,396 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:52:54] "GET / HTTP/1.1" 200 -
+2025-02-27 10:53:42,199 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:53:42] "GET / HTTP/1.1" 200 -
+2025-02-27 10:53:53,046 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/web/app.py', reloading
+2025-02-27 10:53:53,364 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:53:54,083 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:53:54,083 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:53:54,083 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:53:54,288 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:53:54,593 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:53:54,598 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:53:54,607 - werkzeug - INFO -  * Debugger PIN: 119-360-796
+2025-02-27 10:54:24,689 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:54:24,690 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:54:24,690 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:54:24,843 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:54:25,054 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:54:25,069 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-02-27 10:54:25,069 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-27 10:54:25,069 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:54:25,639 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:54:25,640 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:54:25,640 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:54:25,791 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:54:26,073 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:54:26,076 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:54:26,087 - werkzeug - INFO -  * Debugger PIN: 832-115-987
+2025-02-27 10:54:27,906 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:27] "GET / HTTP/1.1" 200 -
+2025-02-27 10:54:30,673 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:30] "GET /all_documents HTTP/1.1" 200 -
+2025-02-27 10:54:34,143 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:34] "GET /document/10 HTTP/1.1" 200 -
+2025-02-27 10:54:46,727 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:46] "GET / HTTP/1.1" 200 -
+2025-02-27 10:54:52,223 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:52] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:54:57,027 - __main__ - INFO - Starting background analysis thread for SOP: fails_one.docx
+2025-02-27 10:54:57,028 - __main__ - INFO - Starting background processing for SOP analysis: fails_one.docx (ID: 574a5519-2f12-4fba-8bfd-66f26ceb305e)
+2025-02-27 10:54:57,035 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:57] "[32mPOST /analyze_sop HTTP/1.1[0m" 302 -
+2025-02-27 10:54:57,065 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:57] "GET /view_analysis/574a5519-2f12-4fba-8bfd-66f26ceb305e HTTP/1.1" 200 -
+2025-02-27 10:54:59,504 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:54:59] "GET / HTTP/1.1" 200 -
+2025-02-27 10:55:08,702 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-27 10:55:20,474 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-27 10:55:30,098 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-27 10:55:48,733 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-02-27 10:55:48,736 - __main__ - INFO - Successfully completed SOP analysis for fails_one.docx (ID: 574a5519-2f12-4fba-8bfd-66f26ceb305e)
+2025-02-27 10:55:48,736 - __main__ - INFO - Removed temporary file: /var/folders/_p/1tsg949n0qzgrfk4rclgt1k80000gn/T/tmpu7lrcesk/fails_one.docx
+2025-02-27 10:55:58,503 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:55:58] "GET /view_analysis/574a5519-2f12-4fba-8bfd-66f26ceb305e HTTP/1.1" 200 -
+2025-02-27 10:57:04,120 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:04] "GET / HTTP/1.1" 200 -
+2025-02-27 10:57:11,428 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:11] "GET /all_documents HTTP/1.1" 200 -
+2025-02-27 10:57:14,417 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:14] "GET / HTTP/1.1" 200 -
+2025-02-27 10:57:17,956 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:17] "GET /view_analysis/574a5519-2f12-4fba-8bfd-66f26ceb305e HTTP/1.1" 200 -
+2025-02-27 10:57:20,789 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:20] "GET / HTTP/1.1" 200 -
+2025-02-27 10:57:24,939 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:24] "GET /analyze_sop HTTP/1.1" 200 -
+2025-02-27 10:57:29,855 - __main__ - INFO - Starting background analysis thread for SOP: original.docx
+2025-02-27 10:57:29,856 - __main__ - INFO - Starting background processing for SOP analysis: original.docx (ID: 46cd6bec-1921-4b9c-9a25-2fc4fa01b034)
+2025-02-27 10:57:29,857 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:29] "[32mPOST /analyze_sop HTTP/1.1[0m" 302 -
+2025-02-27 10:57:29,872 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:29] "GET /view_analysis/46cd6bec-1921-4b9c-9a25-2fc4fa01b034 HTTP/1.1" 200 -
+2025-02-27 10:57:32,154 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:32] "GET /upload_regulatory HTTP/1.1" 200 -
+2025-02-27 10:57:32,877 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:32] "GET / HTTP/1.1" 200 -
+2025-02-27 10:57:36,233 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:36] "GET /all_documents HTTP/1.1" 200 -
+2025-02-27 10:57:38,469 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:38] "GET / HTTP/1.1" 200 -
+2025-02-27 10:57:43,196 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:57:43] "GET /view_analysis/574a5519-2f12-4fba-8bfd-66f26ceb305e HTTP/1.1" 200 -
+2025-02-27 10:58:37,382 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:58:37] "GET /upload_regulatory HTTP/1.1" 200 -
+2025-02-27 10:58:38,450 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:58:38] "GET / HTTP/1.1" 200 -
+2025-02-27 10:59:12,981 - werkzeug - INFO - 192.168.1.59 - - [27/Feb/2025 10:59:12] "GET / HTTP/1.1" 200 -
+2025-02-27 10:59:15,320 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:59:15,859 - werkzeug - INFO -  * Restarting with stat
+2025-02-27 10:59:16,559 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-02-27 10:59:16,560 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-02-27 10:59:16,560 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 22700 hits, 6161 misses
+2025-02-27 10:59:16,759 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-27 10:59:17,052 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4100 documents
+2025-02-27 10:59:17,056 - werkzeug - WARNING -  * Debugger is active!
+2025-02-27 10:59:17,066 - werkzeug - INFO -  * Debugger PIN: 751-517-603
+2025-02-27 10:59:39,076 - werkzeug - INFO -  * Detected change in '/Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface_take_home/take-home-task/regulation_task/regulatory_compliance_processor/knowledge_base/document_store.py', reloading
+2025-02-27 10:59:39,558 - werkzeug - INFO -  * Restarting with stat

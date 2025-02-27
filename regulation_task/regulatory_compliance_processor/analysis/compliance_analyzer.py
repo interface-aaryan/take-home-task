@@ -90,7 +90,7 @@ Here's the SOP text:
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.1
+                temperature=0
             )
             
             # Extract and parse the response
@@ -119,7 +119,7 @@ Respond with a JSON object with the same structure as before.
                                 {"role": "user", "content": chunk_prompt}
                             ],
                             response_format={"type": "json_object"},
-                            temperature=0.1
+                            temperature=0
                         )
                         
                         chunk_text = chunk_response.choices[0].message.content
@@ -261,7 +261,7 @@ Respond with a JSON object with this structure:
                         {"role": "user", "content": prompt}
                     ],
                     response_format={"type": "json_object"},
-                    temperature=0.1
+                    temperature=0
                 )
                 
                 # Extract and parse the response
@@ -365,7 +365,7 @@ Respond with a JSON object with this structure:
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.1
+                temperature=0
             )
             
             # Extract and parse the response

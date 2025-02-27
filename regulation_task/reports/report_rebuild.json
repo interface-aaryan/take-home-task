@@ -1,0 +1,417 @@
+{
+  "sop": {
+    "file_name": "original.docx",
+    "sections": [
+      {
+        "title": "Purpose",
+        "content": "Initial Purge of Condensate Skid: V-720, V-730, HE-735, V-740, E-742, V-745, V-750, V-785, H-080, V-730-130, HTR-750, E-735, E-751, V-750-110, V-750-115, ET-750-100, HE-750-140, V-774-100-200-300, P-782 and 783 and P-787 and 788. Purge gas used will be natural gas or nitrogen. If natural gas will be used, a suitable spot to source the system must be selected. Tie in natural gas or nitrogen at a low point drain between SDV-700 and PCV-705. The facility is based in Pennsylvania.",
+        "requirements": [
+          "Purge gas used will be natural gas or nitrogen.",
+          "Tie in natural gas or nitrogen at a low point drain between SDV-700 and PCV-705."
+        ]
+      },
+      {
+        "title": "References",
+        "content": "MJV-CGP-10-0297, 0298, 0300, 0301, 0301B, 0301C, 0301D, 0302A, 0302B, 0302C, 0303, 0304, 0306, 0305A, 314A, 315, 316 and 317. Majorsville Cause & Effect Matrix. Vendor Manuals. CNX SPCC Plan. MS-SWP-0222 and MS-SWP-0223 for start-up and shutdown of electric pumps. Due to the extensive amount of ancillary equipment involved in this process, not all limits are listed in the above tables. Please refer to P&ID\u2019s MJV-CGP-10-302A, 302B and 302C for any limits not included above.",
+        "requirements": [
+          "Refer to P&ID\u2019s MJV-CGP-10-302A, 302B and 302C for any limits not included above."
+        ]
+      },
+      {
+        "title": "Precautions",
+        "content": "Before starting the purge, confirm the pressure in the condensate treating area is at zero psig. Do not go above 125 psig. Due to the MAOP V-750, operator is unable to purge with pressures exceeding 125 psig.",
+        "requirements": [
+          "Confirm the pressure in the condensate treating area is at zero psig.",
+          "Do not go above 125 psig."
+        ]
+      },
+      {
+        "title": "Special Equipment",
+        "content": "CNX Resources Standard PPE Calibrated personal four-gas monitor",
+        "requirements": [
+          "Use CNX Resources Standard PPE.",
+          "Use a calibrated personal four-gas monitor."
+        ]
+      },
+      {
+        "title": "Operator Requirements",
+        "content": "CNX Resources Site Hazard Training Complete CNX Midstream Risk Assessment or JSA. File accordingly. Document the event in the shift logs.",
+        "requirements": [
+          "Complete CNX Resources Site Hazard Training.",
+          "Complete CNX Midstream Risk Assessment or JSA.",
+          "Document the event in the shift logs."
+        ]
+      },
+      {
+        "title": "Procedure",
+        "content": "Safe Work Practice Complete CNX Risk Assessment or JSA. File accordingly. Complete hot work permit, blowdown tracker, and non-conformance. Valve Line-Up All PSV\u2019s throughout the wet skid should be in the locked and open position. All instrumentation shall be lined up and functional including all manual site glasses and gauges. Operator close all high point vents and low point drains on all vessels throughout the wet skid. Operator close 6\u201d manual block valve on slug catcher condensate line located upstream of SDV-700 slug catcher condensate outlet valve. Operator place SDV-700 in HAND in the closed position from Scada. Operator to open PCV-705 to 100% from Scada. Operator to open 6\u201d ball valve downstream of PVC-705. Operator to open 6\u201d ball valve on the (1) inlet and (1) outlet of F-715 A and B. Operator close 2\u201d ball valve on recycle line inlet of V-720. Operator open 6\u201d ball valve on the (1) outlet of V-720. Operator close fuel gas line to V-720. Operator open 3\u201d ball valve upstream and downstream of PCV-724. Operator put PCV-724 in hand at 0% from Scada. Operator open SDV-725 from Scada. Operator verify LCV-720 is closed from Scada. Operator close 6\u201d bypass ball valve on V-720. Operator open 6\u201d inlet and outlet valves on V-730. Operator close 6\u201d bypass ball valve on V-730. Operator close XV-730 from Scada. Operator set TCV-735 to 100% in order to direct flow to inside tube side of E-735 from Scada. Operator open (2) 3\u201d ball valves inlet and outlet of E-735 shell side. Operator open (2) 2\u201d ball valves inlet and outlet of FCV-740 from Scada. Operator open FCV-740 to 100%. Operator close 2\u201d bypass ball valve FCV-740. Operator open air bypass SDV on SDV-740 to force open the valve. Operator open 1\u201d ball valve inlet and outlet of PCV-740B of V-740 flash drum. Operator close 1\u201d bypass ball valve on V-740 flash drum. Operator place PCV-740B in AUTO at desired pressure from Scada. Operator close LCV-740A from Scada. Operator open LCV-740B from Scada. Operator open (4) 3\u201d ball valves on the outlet of V-740. Operator open 3\u201d ball valve at Y connection feed to V-745 and V-750-100. Operator open (3) 3\u201d ball valves on inlet and outlet of TCV-742. Operator set TCV-742 to 50% from Scada. Operator close 2\u201d bypass valve around TCV-742. Operator open 3\u201d ball valve on inlet and outlet of E-742. Operator close 3\u201d bypass ball valve on E-742 shell side. Operator open 3\u201d ball valves (2) on inlet and outlet of AC-746. Operator close 3\u201d bypass ball valve on AC-746. Operator open 4\u201d inlet ball valve to V-745 cool feed. Operator open 4\u201d inlet ball valve to V-745 warm feed. Operator open 6\u201d inlet ball valve from E-745 vapor line. Operator open 4\u201d outlet ball valve from V-745 to E-745. Operator open 4\u201d vapor line ball valve from V-745 to VRU-785 A and B. Operator open 3\u201d ball valve on inlet and outlet of FCV-745-103. Operator open FCV-745-103 to 100%. Operator close 2\u201d bypass ball valve FCV-745-103. Operator open 3\u201d outlet ball valve from AC-746 to V-780 surge drum. Operator open 2\u201d ball valve at Y connection feed to V-745 and V-750-100. Operator open 2\u201d ball valves on inlet and outlet of FCV-750-140. Operator close 2\u201d bypass ball valve to FCV-750-140. Operator to open FCV-750-140 to 100% from Scada. NOTE: Fuel gas pressure is needed to regulate the following: SDV-740-140. LCV-750-130. SDV-750-120. Operator open all valves on the inlet and outlet of tube and shell side of HE-750-140. Operator close 2\u201d bypass ball valve on the tube side of HE-750-140. Operator open 2\u201d ball valve on inlet and outlet of V-750-130. Operator adjust PCV-750-150 to fully open. Operator open (2) 3\u201d ball valves on the outlet from V-750-110 to VRU-785 A and B. Operator open 2\u201d outlet ball valve on V-750-110 to V-750-115. Operator open (2) 2\u201d ball valves between V-750-115 and V-740. Operator open 1\u201d ball valve on inlet and the outlet of LCV-750-115. Operator open (3) 3\u201d ball valves on inlet and outlet of E-751. Operator open 3\u201d ball valve on inlet and outlet of V-780. Operator close 3\u201d bypass ball valve on V-780. Operator open 4\u201d ball valve on V-780 to P-787 and P-788. Operator close 3\u201d inlet ball valve of SDV-780. Operator to open 4\u201d inlet ball valves to P-787 and P-788. Operator to open 3\u201d outlet ball valves on P-787 and P-788. Operator to close 3\u201d recycle valve from P-787 and P-788 to V-780. Operator to close 3\u201d inlet ball valve to mole sieve dryer skid on outlet of P-787 and P-788. Operator open (3) 3\u201d ball valves at Y connection to bypass mole sieve dryers. NOTE: Refer to mole sieve dryer purge procedure MS-SWP-0173. Operator close 6\u201d ball valve on outlet of NGL dry product filters. Operator close 3\u201d ball valves on inlet and outlet of LCV-780. Operator close 2\u201d bypass ball valve of LCV-780. Operator place LCV-780 in hand at 0% from Scada. Operator open (2) 6\u201d ball valves on the inlet to the measurement skid. Operator open 3\u201d ball valve on inlet of V-720 and tank farm. Operator close 6\u201d ball valve inlet of MarkWest measurement line. Operator close 6\u201d bypass ball valve to MarkWest measurement line. Operator open 2\u201d inlet ball valve to SDV-797. Operator open 2\u201d choke valve on the outlet of PCV-797. Operator open 2\u201d ball valve outlet of PCV-797. Operator places SDV-797 in hand 100% open from Scada. Operator places PCV-797 in hand 100% open from Scada. Operator open 2\u201d inlet ball valve to SDV-798 Operator open 2\u201d choke valve on the outlet of PCV-798. Operator close 2\u201d ball valve outlet of PCV-798. Operator place SDV-798 in HAND 100% open from Scada. Operator place PCV-798 in HAND 100% open from Scada.",
+        "requirements": [
+          "Complete CNX Risk Assessment or JSA.",
+          "Complete hot work permit, blowdown tracker, and non-conformance.",
+          "All PSV\u2019s throughout the wet skid should be in the locked and open position.",
+          "All instrumentation shall be lined up and functional including all manual site glasses and gauges.",
+          "Operator close all high point vents and low point drains on all vessels throughout the wet skid.",
+          "Operator close 6\u201d manual block valve on slug catcher condensate line located upstream of SDV-700 slug catcher condensate outlet valve.",
+          "Operator place SDV-700 in HAND in the closed position from Scada.",
+          "Operator to open PCV-705 to 100% from Scada.",
+          "Operator to open 6\u201d ball valve downstream of PVC-705.",
+          "Operator to open 6\u201d ball valve on the (1) inlet and (1) outlet of F-715 A and B.",
+          "Operator close 2\u201d ball valve on recycle line inlet of V-720.",
+          "Operator open 6\u201d ball valve on the (1) outlet of V-720.",
+          "Operator close fuel gas line to V-720.",
+          "Operator open 3\u201d ball valve upstream and downstream of PCV-724.",
+          "Operator put PCV-724 in hand at 0% from Scada.",
+          "Operator open SDV-725 from Scada.",
+          "Operator verify LCV-720 is closed from Scada.",
+          "Operator close 6\u201d bypass ball valve on V-720.",
+          "Operator open 6\u201d inlet and outlet valves on V-730.",
+          "Operator close 6\u201d bypass ball valve on V-730.",
+          "Operator close XV-730 from Scada.",
+          "Operator set TCV-735 to 100% in order to direct flow to inside tube side of E-735 from Scada.",
+          "Operator open (2) 3\u201d ball valves inlet and outlet of E-735 shell side.",
+          "Operator open (2) 2\u201d ball valves inlet and outlet of FCV-740 from Scada.",
+          "Operator open FCV-740 to 100%.",
+          "Operator close 2\u201d bypass ball valve FCV-740.",
+          "Operator open air bypass SDV on SDV-740 to force open the valve.",
+          "Operator open 1\u201d ball valve inlet and outlet of PCV-740B of V-740 flash drum.",
+          "Operator close 1\u201d bypass ball valve on V-740 flash drum.",
+          "Operator place PCV-740B in AUTO at desired pressure from Scada.",
+          "Operator close LCV-740A from Scada.",
+          "Operator open LCV-740B from Scada.",
+          "Operator open (4) 3\u201d ball valves on the outlet of V-740.",
+          "Operator open 3\u201d ball valve at Y connection feed to V-745 and V-750-100.",
+          "Operator open (3) 3\u201d ball valves on inlet and outlet of TCV-742.",
+          "Operator set TCV-742 to 50% from Scada.",
+          "Operator close 2\u201d bypass valve around TCV-742.",
+          "Operator open 3\u201d ball valve on inlet and outlet of E-742.",
+          "Operator close 3\u201d bypass ball valve on E-742 shell side.",
+          "Operator open 3\u201d ball valves (2) on inlet and outlet of AC-746.",
+          "Operator close 3\u201d bypass ball valve on AC-746.",
+          "Operator open 4\u201d inlet ball valve to V-745 cool feed.",
+          "Operator open 4\u201d inlet ball valve to V-745 warm feed.",
+          "Operator open 6\u201d inlet ball valve from E-745 vapor line.",
+          "Operator open 4\u201d outlet ball valve from V-745 to E-745.",
+          "Operator open 4\u201d vapor line ball valve from V-745 to VRU-785 A and B.",
+          "Operator open 3\u201d ball valve on inlet and outlet of FCV-745-103.",
+          "Operator open FCV-745-103 to 100%.",
+          "Operator close 2\u201d bypass ball valve FCV-745-103.",
+          "Operator open 3\u201d outlet ball valve from AC-746 to V-780 surge drum.",
+          "Operator open 2\u201d ball valve at Y connection feed to V-745 and V-750-100.",
+          "Operator open 2\u201d ball valves on inlet and outlet of FCV-750-140.",
+          "Operator close 2\u201d bypass ball valve to FCV-750-140.",
+          "Operator to open FCV-750-140 to 100% from Scada.",
+          "Operator open all valves on the inlet and outlet of tube and shell side of HE-750-140.",
+          "Operator close 2\u201d bypass ball valve on the tube side of HE-750-140.",
+          "Operator open 2\u201d ball valve on inlet and outlet of V-750-130.",
+          "Operator adjust PCV-750-150 to fully open.",
+          "Operator open (2) 3\u201d ball valves on the outlet from V-750-110 to VRU-785 A and B.",
+          "Operator open 2\u201d outlet ball valve on V-750-110 to V-750-115.",
+          "Operator open (2) 2\u201d ball valves between V-750-115 and V-740.",
+          "Operator open 1\u201d ball valve on inlet and the outlet of LCV-750-115.",
+          "Operator open (3) 3\u201d ball valves on inlet and outlet of E-751.",
+          "Operator open 3\u201d ball valve on inlet and outlet of V-780.",
+          "Operator close 3\u201d bypass ball valve on V-780.",
+          "Operator open 4\u201d ball valve on V-780 to P-787 and P-788.",
+          "Operator close 3\u201d inlet ball valve of SDV-780.",
+          "Operator to open 4\u201d inlet ball valves to P-787 and P-788.",
+          "Operator to open 3\u201d outlet ball valves on P-787 and P-788.",
+          "Operator to close 3\u201d recycle valve from P-787 and P-788 to V-780.",
+          "Operator to close 3\u201d inlet ball valve to mole sieve dryer skid on outlet of P-787 and P-788.",
+          "Operator open (3) 3\u201d ball valves at Y connection to bypass mole sieve dryers.",
+          "Operator close 6\u201d ball valve on outlet of NGL dry product filters.",
+          "Operator close 3\u201d ball valves on inlet and outlet of LCV-780.",
+          "Operator close 2\u201d bypass ball valve of LCV-780.",
+          "Operator place LCV-780 in hand at 0% from Scada.",
+          "Operator open (2) 6\u201d ball valves on the inlet to the measurement skid.",
+          "Operator open 3\u201d ball valve on inlet of V-720 and tank farm.",
+          "Operator close 6\u201d ball valve inlet of MarkWest measurement line.",
+          "Operator close 6\u201d bypass ball valve to MarkWest measurement line.",
+          "Operator open 2\u201d inlet ball valve to SDV-797.",
+          "Operator open 2\u201d choke valve on the outlet of PCV-797.",
+          "Operator open 2\u201d ball valve outlet of PCV-797.",
+          "Operator places SDV-797 in hand 100% open from Scada.",
+          "Operator places PCV-797 in hand 100% open from Scada.",
+          "Operator open 2\u201d inlet ball valve to SDV-798",
+          "Operator open 2\u201d choke valve on the outlet of PCV-798.",
+          "Operator close 2\u201d ball valve outlet of PCV-798.",
+          "Operator place SDV-798 in HAND 100% open from Scada.",
+          "Operator place PCV-798 in HAND 100% open from Scada."
+        ]
+      },
+      {
+        "title": "Continuous Purging",
+        "content": "NOTE: If continuous purging is preferred or necessary, proceed with this section C. If step-up and stepdown purging is preferred or necessary, proceed with section D below. Slowly increase wet skid pressure to 100-120 psig by using low point drain between SDV-700 and PCV-705. Operator continue to check for leaks throughout the plant especially at the areas where piping may have been opened for maintenance. Operator should monitor gas detectors and fire eyes during this process. After pressure is verified to be 100-120 psig throughout the wet skid, operator will open (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare and leave open until any and all present oxygen has been purged from the system. Operator to maintain 100-120 psig during the continuous purge process by regulating purge gas at low point drain between SDV-700 and PCV-705. After all present oxygen has been purged from the wet skid, operator will close low point drain between SDV-700 and PCV-705. Operator to close (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare. NOTE: To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels.",
+        "requirements": [
+          "Slowly increase wet skid pressure to 100-120 psig by using low point drain between SDV-700 and PCV-705.",
+          "Check for leaks throughout the plant.",
+          "Monitor gas detectors and fire eyes.",
+          "Open (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare.",
+          "Maintain 100-120 psig during the continuous purge process.",
+          "Close low point drain between SDV-700 and PCV-705 after purging.",
+          "Close (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare.",
+          "Verify that oxygen is completely purged by cracking high point vent and checking for oxygen on all vessels."
+        ]
+      },
+      {
+        "title": "Step-Up and Stepdown Purging",
+        "content": "Slowly increase wet skid pressure to 50-120 psig by using low point drain between SDV-700 and PCV-705. After the gas pressure is verified to be 50 psig throughout the wet skid, operator to close low point drain between SDV-700 and PCV-705. Operator opens (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare. After pressure has been blow down, repeat all steps above for 100 psig purge test and 120 psig thereafter. NOTE: To verify that oxygen is completely purged, operator to crack high point vent and check for oxygen on all vessels.",
+        "requirements": [
+          "Slowly increase wet skid pressure to 50-120 psig by using low point drain between SDV-700 and PCV-705.",
+          "Close low point drain between SDV-700 and PCV-705 after pressure is verified to be 50 psig.",
+          "Open (2) 1-\u00bd\u201d gate valves on P-787 and P-788 to high pressure flare.",
+          "Repeat all steps for 100 psig purge test and 120 psig thereafter.",
+          "Verify that oxygen is completely purged by cracking high point vent and checking for oxygen on all vessels."
+        ]
+      },
+      {
+        "title": "Revisions",
+        "content": "Revision (3) Date May 27, 2016 Revision (4) Date October 14, 2020 Reformatted to match new standard format. Revision (5) Date August 1, 2022 Added section 7. Revised per approver review.",
+        "requirements": [
+          "Reformatted to match new standard format.",
+          "Added section 7.",
+          "Revised per approver review."
+        ]
+      }
+    ]
+  },
+  "relevant_clauses": [
+    {
+      "text": "(iii) The group of all ancillary equip-\nment, except compressors, intended to \noperate in volatile hazardous air pol-",
+      "document_id": 33,
+      "document_version": 1,
+      "section": "iii",
+      "title": "The group of all ancillary equip-",
+      "requirement_type": "informative",
+      "source_document": "REG-40 CFR Part 63 Subpart HH.pdf",
+      "similarity": 0.8966091704322101
+    },
+    {
+      "text": "\u00a7 77.61\nRevision of construction or al-\nteration proposal. \n(a) The sponsor of any proposed con-\nstruction or alteration covered by this \npart may revise his proposal at any \ntime before or during the hearing. If he \nrevises it, the presiding officer decides \nwhether the revision affects the pro-\nposal to the extent that he should send \nit to the Administrator for a redeter-\nmination of the need for a hearing. \n(b) If the presiding officer decides \nthat it does not need to be resubmitted \nto the Administrator, he advises the \nparties of the revised proposal and \ntakes the action necessary to allow all \nparties to effectively participate in the \nhearing on the revised proposal. With-\nout limiting his discretion, the pre-\nsiding officer may recess and reconvene \nthe hearing, or hold another prehearing \nconference.",
+      "document_id": 3,
+      "document_version": 1,
+      "section": "77.61",
+      "title": "Revision of construction or al-",
+      "requirement_type": "mandatory",
+      "source_document": "REG-14 CFR Part 77.pdf",
+      "similarity": 0.8951030135293814
+    },
+    {
+      "text": "1.2 Purpose .......... ........................... ...................... ... ............................. ........... .................................... 7 7\nl.3 Minimum Requirements .. ................................. .............. ............. .......................................... ..... \n7",
+      "document_id": 5,
+      "document_version": 1,
+      "section": "1.2",
+      "title": "Purpose",
+      "requirement_type": "informative",
+      "source_document": "REG-ANSI A92.2.pdf",
+      "similarity": 0.8910824168851197
+    },
+    {
+      "text": "1.6\nUnits and Formulas ............................. 86\u2013\n7\nChapter 2\nReferenced Publications ................... 86\u2013\n7",
+      "document_id": 10,
+      "document_version": 1,
+      "section": "6",
+      "title": "Units and Formulas",
+      "requirement_type": "informative",
+      "source_document": "REG-NFPA 86.pdf",
+      "similarity": 0.8760125218996296
+    },
+    {
+      "text": "1.1\nGeneral Application .......................................................................................................................................1",
+      "document_id": 945,
+      "document_version": 1,
+      "section": "1",
+      "title": "General Application",
+      "requirement_type": "informative",
+      "source_document": "REG-API 510 2022.pdf",
+      "similarity": 0.8568543624043314
+    },
+    {
+      "text": "5. Why have the implementation decisions and priorities been made as recorded in the PSM\n documentation?",
+      "document_id": 950,
+      "document_version": 1,
+      "section": "Why have the implementation decisions and priorities been made as recorded in the PSM",
+      "title": "",
+      "requirement_type": "informative",
+      "source_document": "REG-29 CFR 1910 119.pdf",
+      "similarity": 0.8537382959557631
+    }
+  ],
+  "compliance_analysis": [
+    {
+      "clause_index": 1,
+      "compliance_status": "Partial",
+      "addressed_by": "The SOP mentions the use of natural gas or nitrogen for purging, which relates to handling volatile substances.",
+      "missing_requirements": [
+        "The SOP does not explicitly address the control of volatile hazardous air pollutants as required by the clause."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP partially addresses the handling of volatile substances by specifying the use of natural gas or nitrogen for purging. However, it lacks specific measures or controls for managing volatile hazardous air pollutants, which is a requirement under the regulatory clause.",
+      "clause": {
+        "id": null,
+        "document_id": 33,
+        "section": "iii",
+        "title": "The group of all ancillary equip-",
+        "text": "(iii) The group of all ancillary equip-\nment, except compressors, intended to \noperate in volatile hazardous air pol-",
+        "source_document": "REG-40 CFR Part 63 Subpart HH.pdf"
+      }
+    },
+    {
+      "clause_index": 2,
+      "compliance_status": "No",
+      "addressed_by": "N/A",
+      "missing_requirements": [
+        "The SOP does not mention any procedures for revising construction or alteration proposals as required by the clause."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP does not address any aspect of construction or alteration proposals, which is the focus of this regulatory clause. This is likely not applicable to the SOP's scope, which is focused on operational procedures rather than construction or alteration.",
+      "clause": {
+        "id": null,
+        "document_id": 3,
+        "section": "77.61",
+        "title": "Revision of construction or al-",
+        "text": "\u00a7 77.61\nRevision of construction or al-\nteration proposal. \n(a) The sponsor of any proposed con-\nstruction or alteration covered by this \npart may revise his proposal at any \ntime before or during the hearing. If he \nrevises it, the presiding officer decides \nwhether the revision affects the pro-\nposal to the extent that he should send \nit to the Administrator for a redeter-\nmination of the need for a hearing. \n(b) If the presiding officer decides \nthat it does not need to be resubmitted \nto the Administrator, he advises the \nparties of the revised proposal and \ntakes the action necessary to allow all \nparties to effectively participate in the \nhearing on the revised proposal. With-\nout limiting his discretion, the pre-\nsiding officer may recess and reconvene \nthe hearing, or hold another prehearing \nconference.",
+        "source_document": "REG-14 CFR Part 77.pdf"
+      }
+    },
+    {
+      "clause_index": 3,
+      "compliance_status": "No",
+      "addressed_by": "N/A",
+      "missing_requirements": [
+        "The SOP does not specify any minimum requirements as outlined in the clause."
+      ],
+      "severity": "Low",
+      "explanation": "The clause refers to minimum requirements, which are not explicitly mentioned in the SOP. The SOP focuses on operational procedures without detailing minimum requirements, which may not be directly relevant to its purpose.",
+      "clause": {
+        "id": null,
+        "document_id": 5,
+        "section": "1.2",
+        "title": "Purpose",
+        "text": "1.2 Purpose .......... ........................... ...................... ... ............................. ........... .................................... 7 7\nl.3 Minimum Requirements .. ................................. .............. ............. .......................................... ..... \n7",
+        "source_document": "REG-ANSI A92.2.pdf"
+      }
+    },
+    {
+      "clause_index": 4,
+      "compliance_status": "No",
+      "addressed_by": "N/A",
+      "missing_requirements": [
+        "The SOP does not include any units and formulas as required by the clause."
+      ],
+      "severity": "Low",
+      "explanation": "The SOP does not address units and formulas, which are the focus of this regulatory clause. This is likely outside the scope of the SOP, which is centered on procedural steps rather than technical calculations.",
+      "clause": {
+        "id": null,
+        "document_id": 10,
+        "section": "6",
+        "title": "Units and Formulas",
+        "text": "1.6\nUnits and Formulas ............................. 86\u2013\n7\nChapter 2\nReferenced Publications ................... 86\u2013\n7",
+        "source_document": "REG-NFPA 86.pdf"
+      }
+    },
+    {
+      "clause_index": 5,
+      "compliance_status": "Partial",
+      "addressed_by": "The SOP includes general application procedures for purging and safety measures.",
+      "missing_requirements": [
+        "The SOP does not fully address all general application requirements as might be detailed in the API 510 standard."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP provides general procedures for purging and safety, which partially aligns with the general application focus of the clause. However, it may not fully encompass all requirements of the API 510 standard, which could include more detailed inspection and maintenance protocols.",
+      "clause": {
+        "id": null,
+        "document_id": 945,
+        "section": "1",
+        "title": "General Application",
+        "text": "1.1\nGeneral Application .......................................................................................................................................1",
+        "source_document": "REG-API 510 2022.pdf"
+      }
+    },
+    {
+      "clause_index": 1,
+      "compliance_status": "No",
+      "addressed_by": "The SOP does not explicitly address the implementation decisions and priorities as recorded in the PSM documentation.",
+      "missing_requirements": [
+        "The SOP does not provide any information on why the implementation decisions and priorities have been made as recorded in the PSM documentation."
+      ],
+      "severity": "Medium",
+      "explanation": "The SOP lacks any reference or explanation regarding the implementation decisions and priorities as required by the PSM documentation. This is a critical aspect of process safety management, as it ensures that all actions and procedures are aligned with the overall safety strategy and risk management plan. The absence of this information could lead to misalignment with safety objectives and priorities, potentially increasing the risk of incidents.",
+      "clause": {
+        "id": null,
+        "document_id": 950,
+        "section": "Why have the implementation decisions and priorities been made as recorded in the PSM",
+        "title": "",
+        "text": "5. Why have the implementation decisions and priorities been made as recorded in the PSM\n documentation?",
+        "source_document": "REG-29 CFR 1910 119.pdf"
+      }
+    }
+  ],
+  "recommendations": {
+    "summary": "The SOP requires updates to address missing regulatory requirements across various standards, including control of volatile hazardous air pollutants, procedures for revising construction proposals, minimum requirements, units and formulas, general application requirements, and documentation of implementation decisions and priorities. These changes will ensure compliance with relevant regulations and improve operational safety and efficiency.",
+    "improvements": [
+      {
+        "change": "Include explicit procedures for controlling volatile hazardous air pollutants in the SOP.",
+        "rationale": "To ensure compliance with 40 CFR Part 63 Subpart HH, which mandates control measures for volatile hazardous air pollutants.",
+        "priority": "Medium",
+        "reference_clause": "40 CFR Part 63 Subpart HH Section iii",
+        "implementation_guidance": "Review the current processes and incorporate specific control measures such as monitoring, containment, and mitigation strategies for volatile hazardous air pollutants."
+      },
+      {
+        "change": "Add procedures for revising construction or alteration proposals in the SOP.",
+        "rationale": "To comply with 14 CFR Part 77 Section 77.61, which requires a process for revising proposals and ensuring all parties are informed and can participate effectively.",
+        "priority": "Low",
+        "reference_clause": "14 CFR Part 77 Section 77.61",
+        "implementation_guidance": "Develop a step-by-step procedure for revising proposals, including notification and documentation processes, and integrate it into the SOP."
+      },
+      {
+        "change": "Specify minimum requirements as outlined in the ANSI A92.2 standard in the SOP.",
+        "rationale": "To ensure compliance with ANSI A92.2 Section 1.2, which outlines minimum requirements for safety and operational standards.",
+        "priority": "Low",
+        "reference_clause": "ANSI A92.2 Section 1.2",
+        "implementation_guidance": "Review the ANSI A92.2 standard and extract relevant minimum requirements to be included in the SOP, ensuring clarity and completeness."
+      },
+      {
+        "change": "Incorporate units and formulas as required by NFPA 86 in the SOP.",
+        "rationale": "To comply with NFPA 86 Section 1.6, which requires the inclusion of specific units and formulas for safety and operational calculations.",
+        "priority": "Low",
+        "reference_clause": "NFPA 86 Section 1.6",
+        "implementation_guidance": "Identify all relevant units and formulas from NFPA 86 and integrate them into the SOP, ensuring they are easily accessible and understandable."
+      },
+      {
+        "change": "Fully address all general application requirements as detailed in the API 510 standard in the SOP.",
+        "rationale": "To ensure compliance with API 510 Section 1.1, which outlines general application requirements for pressure vessel inspection and maintenance.",
+        "priority": "Medium",
+        "reference_clause": "API 510 Section 1.1",
+        "implementation_guidance": "Conduct a thorough review of the API 510 standard and update the SOP to include all relevant general application requirements, ensuring alignment with industry best practices."
+      },
+      {
+        "change": "Document the rationale for implementation decisions and priorities in the PSM documentation within the SOP.",
+        "rationale": "To comply with 29 CFR 1910.119, which requires documentation of the rationale behind implementation decisions and priorities in the Process Safety Management (PSM) documentation.",
+        "priority": "Medium",
+        "reference_clause": "29 CFR 1910.119",
+        "implementation_guidance": "Develop a section in the SOP that outlines the decision-making process for implementation priorities, including criteria and justification, and ensure it is regularly updated and reviewed."
+      }
+    ]
+  },
+  "summary": {
+    "status": "Significantly Non-Compliant",
+    "compliance_percentage": 16.67,
+    "clause_counts": {
+      "total": 6,
+      "compliant": 0,
+      "partially_compliant": 2,
+      "non_compliant": 4
+    },
+    "severity_counts": {
+      "high": 0,
+      "medium": 3,
+      "low": 3
+    },
+    "improvement_counts": {
+      "total": 6,
+      "high_priority": 0,
+      "medium_priority": 3,
+      "low_priority": 3
+    }
+  }
+}

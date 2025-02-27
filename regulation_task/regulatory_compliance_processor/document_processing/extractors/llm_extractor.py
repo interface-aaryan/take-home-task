@@ -81,7 +81,7 @@ class LLMClauseExtractor:
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.1,
+                temperature=0,
                 max_tokens=2000,  # Limit the response size
                 timeout=30  # 30-second timeout to prevent hanging
             )
