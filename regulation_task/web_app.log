@@ -8888,3 +8888,22 @@
 2025-02-27 11:56:11,187 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2025 11:56:11] "GET / HTTP/1.1" 200 -
 2025-02-27 11:56:21,080 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2025 11:56:21] "GET /view_analysis/18bf49ac-4fcc-4bcf-9c26-840de44ab952 HTTP/1.1" 200 -
 2025-02-27 11:56:26,207 - werkzeug - INFO - 127.0.0.1 - - [27/Feb/2025 11:56:26] "GET / HTTP/1.1" 200 -
+2025-03-01 10:07:01,503 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-03-01 10:07:01,504 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface-take-home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-03-01 10:07:01,504 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 28676 hits, 6179 misses
+2025-03-01 10:07:01,989 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-01 10:07:02,430 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4101 documents
+2025-03-01 10:07:02,444 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5052
+ * Running on http://192.168.1.59:5052
+2025-03-01 10:07:02,444 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-01 10:07:02,446 - werkzeug - INFO -  * Restarting with stat
+2025-03-01 10:07:03,018 - regulatory_compliance_processor.knowledge_base.vector_store_factory - INFO - Creating LangChain vector store implementation
+2025-03-01 10:07:03,018 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Embedding cache initialized at /Users/uday/Desktop/Desktop-Udays_MacBook_Pro/MSAI/interface-take-home/take-home-task/regulation_task/regulatory_compliance_processor/cache/embeddings
+2025-03-01 10:07:03,018 - regulatory_compliance_processor.knowledge_base.embeddings - INFO - Cache stats: 28676 hits, 6179 misses
+2025-03-01 10:07:03,189 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-03-01 10:07:03,405 - regulatory_compliance_processor.knowledge_base.langchain_vector_store - INFO - Loaded existing Chroma vector store with 4101 documents
+2025-03-01 10:07:03,409 - werkzeug - WARNING -  * Debugger is active!
+2025-03-01 10:07:03,420 - werkzeug - INFO -  * Debugger PIN: 108-202-971
+2025-03-01 10:07:11,676 - werkzeug - INFO - 192.168.1.59 - - [01/Mar/2025 10:07:11] "GET / HTTP/1.1" 200 -
