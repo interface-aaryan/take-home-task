@@ -1,1 +1,70 @@
-*.DS_Store
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Dependency management
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# MyPy cache
+.mypy_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.py,cover
+.cache
+
+*.mo
+*.pot
+local_settings.py
+media/
+staticfiles/
+.envrc
+.env.development
+.env.production
+
+# Flask specific
+instance/
+*.bak
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Docker
+docker-compose.override.yml
+
+# Ignore personal Jupyter Notebook metadata
+**/.ipynb_checkpoints
+
+# Ignore files generated from Black autoformatter
+black.log
+
