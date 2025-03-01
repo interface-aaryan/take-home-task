@@ -1,90 +1,164 @@
 # Collaborative Revision Status Application
 
-## Overview
+A real-time collaborative application for maintaining and updating document revision status within organizations, built with Next.js and TypeScript.
 
-Imagine you're building an application where users update the a state of an important document. Each update includes details such as the reviewer's userid. Your task is to build a Next.js application using TypeScript (TSX) that enables users within the same organization to update and view the state in real time. Each user will have a unique `userId` and be associated with an organization via an `orgId` (both stored in cookies or otherwise). **Only users with the same `orgId` should be able to see and modify the state.** Users from different organizations must maintain independent states.
+## 🚀 Features
 
-Interface is all about the product thinking. 
+- **Real-time Collaboration**: Users within the same organization can see updates in real-time
+- **Organization Isolation**: Each organization has its own independent revision state
+- **User Authentication**: Simple user/organization identification system
+- **Revision History**: Complete history of all updates with timestamps and user information
+- **Rating System**: Intuitive 0-9 rating scale with optional comments
+- **Modern UI**: Clean, responsive design with dark mode support
 
-## Objectives
+## 📋 Project Overview
 
-- **Next.js Application:**  
-  Build your project using Next.js with TypeScript. Develop all components in tsx. If you really can't do it in TSX, let me know: aaryan@getinterface.ai.
+This application allows users within the same organization to collaborate on document revision statuses. Each revision includes details such as:
 
-- **Shared Revision Status State:**  
-  Implement functionality that allows users to update a state (e.g., with a boolean indicating approval or an integer rating between 0 and 9) or more complex (e.g. text editing like in google docs). When a user updates the state, the change should be synchronized in real time for all users in the same organization, including details of all the historical reviewer's userid and timestamp.
+- User ID who made the change
+- Timestamp when the change was made
+- A numerical rating (0-9)
+- Optional comment about the change
 
-- **Organization-Based Access Control:**  
-  - Each user will have a unique `userId` and an associated `orgId` stored in cookies.
-  - **Only users within the same organization (`orgId`) should see and modify the state.**
-  - Users with different `orgId` values should maintain independent states and not receive cross-organization updates.
+The application ensures that only users with the same Organization ID can see and modify the shared state, creating isolation between different organizations.
 
-- **User Experience & Frontend Design:**  
-  - **Visual Appeal:** Craft a polished, clean, and modern design that invites users to interact with the app.
-  - **Responsive Layout:** Ensure the application works seamlessly across devices and screen sizes.
-  - **Animations & Transitions:** Utilize subtle animations or transitions (e.g., for state changes or notifications) to enrich the user experience.
-  - **Accessibility:** Keep accessibility in mind by using appropriate color contrasts, clear typography, and ensuring keyboard navigability.
+## 📱 Implementation Details
 
-## Project Setup
+The application implements a real-time collaboration system using browser storage and custom events:
 
-1. **Test the initial project:**
-    - Run:
-    ```bash
-    cd colab_frontend
-    npm install
-    npm run dev
-    ```
-    - Open: http://localhost:3000 to view the initial project.
+- **Cross-Tab Communication**: Updates are synchronized across tabs/windows using StorageEvent
+- **Organization-Based Data Isolation**: Each organization's data is stored under a unique key in localStorage
+- **Real-time Updates**: Changes made by any user are immediately visible to all users in the same organization
+- **State Management**: React hooks provide a clean interface for accessing and updating the shared state
 
-2. **Implement Shared Revision Status State:**
-   - Set up a mechanism (e.g., Socket.IO, polling, or another method) to synchronize state changes among users in real time.
-   - When a user updates the revision status, broadcast the updated state (including the reviewer's name, date, and comments) to all users in the same organization.
-   - Ensure that users from different organizations (different `orgId`) have independent status values and do not receive updates across groups.
+## 🛠️ Technology Stack
 
-3. **Design Considerations:**
-   - **Design Rationale:** Include a brief document or section in your README explaining your design decisions. What influenced your choice of colors, typography, layout, and animations? How do these choices enhance usability?
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks
+- **Storage**: localStorage with custom event system for cross-tab communication
+- **Deployment**: Vercel-ready
 
-## Testing the Application
+## 🏁 Getting Started
 
-- **Development Server:**
-  - The application should run using `npm run dev` (or an equivalent command), allowing evaluators to start the development server and test functionality.
+### Prerequisites
 
-- **Simulating Different Users:**
-  - Open the application in multiple browser windows or tabs.
-  - In each browser, set the organization ID and user ID by running the following in the console:
-    ```js
-    document.cookie = "orgId=your-org-id";
-    document.cookie = "userId=your-user-id";
-    ```
-  -  The updated state should reflect in all windows sharing the same `orgId`, while users with a different `orgId` should **not** see these changes.
+- Node.js 18+ 
+- npm or yarn
 
-## Help
+### Installation
 
-If you want help/guidance, please reach out to me: aaryan@getinterface.ai
+1. Clone the repository
+   ```bash
+   git clone <repository-url>
+   cd colab_frontend
+   ```
 
-## Bonus (Optional)
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- **Enhanced Visual Feedback:**  
-  - Implement notifications, alerts, or animations that indicate when the state is updated.
-- **Stylistic Improvements:**  
-  - Consider using transitions for smoother UI updates.
-  - Make the app look modern and polished (as per your best judgement).
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Evaluation Criteria
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Your submission will be evaluated based on:
-- **Functionality:**  
-  Does the shared state update work as expected in real time for users within the same organization?
+## 🧪 Testing the Application
 
-- **Design Quality:**  
-  Is the application visually appealing, modern, and consistent? Does it provide an excellent user experience?
+To test the real-time collaboration features:
 
-- **User Experience:**  
-  Are interactions intuitive? Does the app provide clear feedback and handle edge cases gracefully?
+1. Open the application in multiple browser windows or tabs.
 
-- **Clever Solutions:**  
-  Are there creative or innovative approaches in both the code and the design? Did you document your design decisions?
+2. In each browser, set different User IDs but the same Organization ID:
+   - You can do this through the UI form
+   - Alternatively, you can manually set cookies in the browser console:
+     ```javascript
+     document.cookie = "orgId=your-org-id";
+     document.cookie = "userId=your-user-id";
+     ```
 
-## Good Luck!
+3. Make changes in one window and observe how they are reflected in real-time in the other windows with the same Organization ID.
 
-We're excited to see your implementation that balances technical prowess with elegant frontend design and thoughtful user experience. Happy coding!
+4. Try with different Organization IDs to verify that the state is isolated between organizations.
+
+## 🎨 Design Decisions
+
+### UI/UX Design Principles
+
+- **Clean and Minimal**: The interface focuses on content and functionality with minimal distractions
+- **Visual Hierarchy**: Important information like current status and recent updates are prominently displayed
+- **Consistent Design Language**: Consistent color scheme, spacing, and interaction patterns
+- **Responsive**: Works seamlessly on mobile, tablet, and desktop devices
+- **Accessibility**: Proper contrast ratios, semantic HTML, and keyboard navigation support
+- **Dark Mode Support**: Automatically adapts to user's system preferences
+
+### Color Scheme
+
+- Primary: Indigo (#4F46E5) - Conveys trust, professionalism and creativity
+- Background: Light with dark mode alternatives for improved readability in different environments
+- Text: Dark gray on light backgrounds, light gray on dark backgrounds for optimal contrast
+- Status indicators: Color-coded for quick visual recognition and feedback
+
+### Typography
+
+- Sans-serif font for clean, modern appearance and optimal readability
+- Clear hierarchy with distinct sizes for headings and body text
+- Proper line spacing and character width for comfortable reading
+
+### Animation & Feedback
+
+- Custom animations for state changes (fade-in, pulse-once)
+- Subtle hover effects with scale transformations for interactive elements
+- Visual notifications for successful updates and errors
+- Loading indicators during async operations for better user experience
+
+## 📁 Project Structure
+
+```
+colab_frontend/
+├── src/
+│   ├── app/           # Next.js app directory with routes
+│   ├── components/    # Reusable UI components
+│   │   ├── RevisionStatusPanel.tsx  # Main revision status interface
+│   │   └── UserSetup.tsx            # User & organization ID setup form
+│   ├── hooks/         # Custom React hooks
+│   │   ├── useRevisionStatus.tsx    # Hook for managing revision state
+│   │   └── useUser.tsx              # Hook for user context
+│   └── utils/         # Utility functions and types
+│       ├── cookies.ts              # Cookie management
+│       └── types.ts                # TypeScript type definitions
+├── public/            # Static assets
+├── next.config.ts     # Next.js configuration
+└── tailwind.config.ts # Tailwind CSS configuration
+```
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint for code quality
+
+## 🚀 Deployment
+
+This application is ready to be deployed on Vercel or any other Next.js-compatible hosting service.
+
+## 🧩 Future Enhancements
+
+- Server-side state management with a database
+- WebSockets for more efficient real-time updates
+- Enhanced authentication system
+- Expanded collaborative features like comments and suggestions
+- Mobile application with push notifications
+
+## 📄 License
+
+[MIT](LICENSE)

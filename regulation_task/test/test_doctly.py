@@ -7,18 +7,23 @@ import asyncio
 import aiofiles
 from typing import List, Dict, Any, Tuple
 import sys
+from concurrent.futures import ThreadPoolExecutor
+import threading
 
 # Add the parent directory to the sys.path to import from regulatory_compliance_processor
 current_dir = Path(__file__).resolve().parent
 parent_dir = current_dir.parent
 sys.path.append(str(parent_dir))
 
-# Import OpenAI client and model from config
-from regulatory_compliance_processor.config import openai_client, GPT_MODEL
+# Get OpenAI API key from environment
+openai_api_key = os.getenv("OPENAI_API_KEY")
+if openai_api_key:
+    print("Found OpenAI API key in environment")
+else:
+    print("OpenAI API key not found in environment")
+    sys.exit(1)
 
-# Convert sync client to async client
-from openai import AsyncOpenAI
-async_openai_client = AsyncOpenAI(api_key=openai_client.api_key)
+from regulatory_compliance_processor.config import GPT_MODEL, openai_client
 
 # Get Doctly API key from environment variables
 doctly_api_key = os.getenv("DOCTLY_API_KEY")
@@ -26,22 +31,33 @@ if doctly_api_key:
     print("Found Doctly API key in environment")
 else:
     print("Doctly API key not found")
+    sys.exit(1)
 
 # Initialize the Doctly client with your API key
-client = doctly.Client(doctly_api_key)
+doctly_client = doctly.Client(doctly_api_key)
 
-# Define directories
-REGULATIONS_DIR = "../data/regulations"
-RAW_MD_DIR = f"{REGULATIONS_DIR}/raw_md"
-POLISHED_MD_DIR = f"{REGULATIONS_DIR}/polished"
+# Define directories - use relative paths from the test directory
+REGULATIONS_DIR = os.path.join(parent_dir, "data/regulations")
+RAW_MD_DIR = os.path.join(REGULATIONS_DIR, "raw_md")
+POLISHED_MD_DIR = os.path.join(REGULATIONS_DIR, "polished")
+
+print(f"Regulations directory: {REGULATIONS_DIR}")
+print(f"Raw MD directory: {RAW_MD_DIR}")
+print(f"Polished MD directory: {POLISHED_MD_DIR}")
 
 # Create output directories if they don't exist
 os.makedirs(RAW_MD_DIR, exist_ok=True)
 os.makedirs(POLISHED_MD_DIR, exist_ok=True)
 
-# For tracking concurrent API calls
-doctly_semaphore = asyncio.Semaphore(2)  # Limit to 2 concurrent Doctly calls
-openai_semaphore = asyncio.Semaphore(5)  # Limit to 5 concurrent OpenAI calls
+# Locks for thread-safe printing and API access
+print_lock = threading.Lock()
+doctly_lock = threading.Lock()
+openai_lock = threading.Lock()
+
+# Function to safely print with a lock
+def safe_print(message):
+    with print_lock:
+        print(message)
 
 # Function to split text into chunks of approximately max_tokens
 def split_text_into_chunks(text, max_chars=6000):
@@ -68,91 +84,49 @@ def split_text_into_chunks(text, max_chars=6000):
     
     return chunks
 
-# Function to process a single chunk with OpenAI
-async def process_chunk_with_openai(chunk: str, meta_prompt: str, chunk_index: int, total_chunks: int, file_id: str) -> str:
-    print(f"[{file_id}] Processing chunk {chunk_index+1}/{total_chunks} (size: {len(chunk)} chars)")
-    
-    retry_count = 0
-    max_retries = 3
-    
-    while retry_count < max_retries:
-        try:
-            async with openai_semaphore:
-                # Uses the imported GPT_MODEL from config
-                response = await openai_client.chat.completions.create(
-                    model=GPT_MODEL,
-                    messages=[
-                        {"role": "system", "content": meta_prompt},
-                        {"role": "user", "content": chunk}
-                    ],
-                    temperature=0,
-                )
-                
-                return response.choices[0].message.content
-                
-        except Exception as e:
-            retry_count += 1
-            if "rate_limit_exceeded" in str(e):
-                wait_time = 20 * (2 ** retry_count)  # Exponential backoff
-                print(f"[{file_id}] Rate limit exceeded. Waiting {wait_time} seconds before retrying...")
-                await asyncio.sleep(wait_time)
-            else:
-                print(f"[{file_id}] Error processing chunk {chunk_index+1}: {e}")
-                if retry_count < max_retries:
-                    await asyncio.sleep(5)
-                    print(f"[{file_id}] Retrying... (Attempt {retry_count+1}/{max_retries})")
-                else:
-                    print(f"[{file_id}] Failed to process chunk after {max_retries} attempts. Using original content.")
-                    return chunk  # Return original chunk on failure
-    
-    return chunk  # Return original chunk if all retries failed
+# These functions are no longer needed as the logic is now in the main function's
+# process_with_semaphores local function
+# (Keeping them commented out for reference)
+
+# Function to process a single chunk with OpenAI (synchronous)
+# def process_chunk_with_openai(chunk, meta_prompt, chunk_index, total_chunks, file_id):
+#     # This function has been replaced by inline code in process_with_semaphores
+#     pass
 
 # Function to process multiple chunks with OpenAI in parallel
-async def process_chunks_with_openai(chunks: List[str], meta_prompt: str, file_id: str) -> List[str]:
-    # Process chunks concurrently with limited concurrency
-    tasks = []
-    for i, chunk in enumerate(chunks):
-        tasks.append(process_chunk_with_openai(chunk, meta_prompt, i, len(chunks), file_id))
-    
-    # Wait for all chunks to be processed
-    processed_chunks = await asyncio.gather(*tasks)
-    return processed_chunks
+# def process_chunks_with_openai(chunks, meta_prompt, file_id):
+#     # This function has been replaced by inline code in process_with_semaphores
+#     pass
 
 # Function to convert PDF to markdown using Doctly
-async def convert_pdf_to_markdown(pdf_path: str, raw_md_path: str, file_id: str) -> str:
-    # Run the synchronous Doctly conversion in a thread pool to avoid blocking
-    def doctly_convert():
+def convert_pdf_to_markdown(pdf_path, raw_md_path, file_id):
+    with doctly_lock:  # Use lock to prevent too many simultaneous Doctly requests
         try:
-            print(f"[{file_id}] Converting to Markdown...")
-            return client.to_markdown(pdf_path)
+            safe_print(f"[{file_id}] Converting to Markdown...")
+            markdown_content = doctly_client.to_markdown(pdf_path)
+            
+            # Save the markdown content
+            with open(raw_md_path, 'w', encoding='utf-8') as f:
+                f.write(markdown_content)
+            
+            safe_print(f"[{file_id}] Conversion successful! Saved as '{raw_md_path}'")
+            return markdown_content
         except Exception as e:
-            print(f"[{file_id}] Doctly conversion error: {e}")
+            safe_print(f"[{file_id}] Doctly conversion error: {e}")
             raise e
-    
-    # Use semaphore to limit concurrent Doctly calls
-    async with doctly_semaphore:
-        # Run the conversion in a separate thread pool
-        markdown_content = await asyncio.to_thread(doctly_convert)
-        
-        # Save the markdown content
-        async with aiofiles.open(raw_md_path, 'w', encoding='utf-8') as f:
-            await f.write(markdown_content)
-        
-        print(f"[{file_id}] Conversion successful! Saved as '{raw_md_path}'")
-        return markdown_content
 
 # Function to read markdown file
-async def read_markdown_file(file_path: str) -> str:
-    async with aiofiles.open(file_path, 'r', encoding='utf-8') as f:
-        return await f.read()
+def read_markdown_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return f.read()
 
 # Function to save polished markdown file
-async def save_polished_markdown(file_path: str, content: str) -> None:
-    async with aiofiles.open(file_path, 'w', encoding='utf-8') as f:
-        await f.write(content)
+def save_polished_markdown(file_path, content):
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
 
-# Function to process a single PDF file
-async def process_pdf_file(pdf_path: str, file_index: int, total_files: int) -> bool:
+# Function to process a single PDF file - this is the main processing pipeline for each file
+def process_single_file(pdf_path, file_index, total_files):
     # Get just the filename without directory or extension
     filename = os.path.basename(pdf_path)
     base_filename = os.path.splitext(filename)[0]
@@ -165,18 +139,22 @@ async def process_pdf_file(pdf_path: str, file_index: int, total_files: int) -> 
     try:
         # Check if the polished Markdown file already exists (full idempotence check)
         if os.path.exists(polished_md_path):
-            print(f"[{file_id}] '{polished_md_path}' already exists. Skipping processing.")
+            safe_print(f"[{file_id}] '{polished_md_path}' already exists. Skipping processing.")
             return True
         
         # Get or create raw markdown content
         if os.path.exists(raw_md_path):
-            print(f"[{file_id}] Raw markdown exists. Reading from file.")
-            markdown_content = await read_markdown_file(raw_md_path)
+            safe_print(f"[{file_id}] Raw markdown exists. Reading from file.")
+            markdown_content = read_markdown_file(raw_md_path)
         else:
-            # Convert PDF to markdown
-            markdown_content = await convert_pdf_to_markdown(pdf_path, raw_md_path, file_id)
+            try:
+                # Convert PDF to markdown using Doctly
+                markdown_content = convert_pdf_to_markdown(pdf_path, raw_md_path, file_id)
+            except Exception as e:
+                safe_print(f"[{file_id}] Could not convert PDF to markdown: {e}")
+                return False
         
-        # Meta prompt for polishing
+        # Process the markdown with OpenAI
         meta_prompt = """
 You are an expert in document formatting and text processing. Your task is to clean and standardize a Markdown (.md) file while preserving its structure and readability. Follow these guidelines:
 - Fix Paragraph Continuity: Ensure that paragraphs are correctly joined if they are broken across lines or pages.
@@ -191,30 +169,30 @@ You are an expert in document formatting and text processing. Your task is to cl
 Note: You will receive this document in chunks. Process each chunk independently and focus on cleaning the formatting while maintaining the content structure.
 """
         
-        print(f"[{file_id}] File size: {len(markdown_content)} characters")
+        safe_print(f"[{file_id}] File size: {len(markdown_content)} characters")
         
         # Split content into manageable chunks
         chunks = split_text_into_chunks(markdown_content)
-        print(f"[{file_id}] Split into {len(chunks)} chunks")
+        safe_print(f"[{file_id}] Split into {len(chunks)} chunks")
         
-        # Process chunks concurrently
-        processed_chunks = await process_chunks_with_openai(chunks, meta_prompt, file_id)
+        # Process chunks with OpenAI
+        processed_chunks = process_chunks_with_openai(chunks, meta_prompt, file_id)
         
         # Combine processed chunks
         polished_md = "\n\n".join(processed_chunks)
         
         # Save the polished content
-        await save_polished_markdown(polished_md_path, polished_md)
+        save_polished_markdown(polished_md_path, polished_md)
         
-        print(f"[{file_id}] Polishing successful! Saved as '{polished_md_path}'")
+        safe_print(f"[{file_id}] Polishing successful! Saved as '{polished_md_path}'")
         return True
         
     except Exception as e:
-        print(f"[{file_id}] Error: {e}")
+        safe_print(f"[{file_id}] Error: {e}")
         return False
 
-# Main function to process all PDF files
-async def main():
+# Main function to coordinate processing of all PDF files
+def main():
     print(f"Using OpenAI model: {GPT_MODEL}")
     
     # Get all PDF files in the regulations directory
@@ -226,13 +204,138 @@ async def main():
     
     print(f"Found {len(pdf_files)} PDF files to process")
     
-    # Process files concurrently (but with controlled concurrency)
-    tasks = []
-    for i, pdf_file in enumerate(pdf_files):
-        tasks.append(process_pdf_file(pdf_file, i, len(pdf_files)))
+    # Initialize counters and state
+    total_files = len(pdf_files)
+    processed_count = 0
+    results = []
     
-    # Wait for all files to be processed and track results
-    results = await asyncio.gather(*tasks)
+    # Initialize API semaphores - only ONE call to each API at a time
+    doctly_semaphore = threading.Semaphore(1)  # Only 1 Doctly call at a time
+    openai_semaphore = threading.Semaphore(1)  # Only 1 OpenAI call at a time
+    
+    # Define a modified process function that uses the shared semaphores
+    def process_with_semaphores(pdf_path, file_index):
+        # Get just the filename without directory or extension
+        filename = os.path.basename(pdf_path)
+        base_filename = os.path.splitext(filename)[0]
+        file_id = f"File {file_index+1}/{total_files} ({base_filename})"
+        
+        # Define output paths for raw and polished markdown
+        raw_md_path = os.path.join(RAW_MD_DIR, f"{base_filename}.md")
+        polished_md_path = os.path.join(POLISHED_MD_DIR, f"{base_filename}.md")
+        
+        try:
+            # Check if the polished Markdown file already exists (full idempotence check)
+            if os.path.exists(polished_md_path):
+                safe_print(f"[{file_id}] '{polished_md_path}' already exists. Skipping processing.")
+                return True
+            
+            # Get or create raw markdown content
+            if os.path.exists(raw_md_path):
+                safe_print(f"[{file_id}] Raw markdown exists. Reading from file.")
+                markdown_content = read_markdown_file(raw_md_path)
+            else:
+                try:
+                    # Convert PDF to markdown using Doctly - with semaphore
+                    safe_print(f"[{file_id}] Waiting for Doctly access...")
+                    with doctly_semaphore:
+                        safe_print(f"[{file_id}] Converting to Markdown with Doctly...")
+                        markdown_content = doctly_client.to_markdown(pdf_path)
+                        
+                        # Save the markdown content
+                        with open(raw_md_path, 'w', encoding='utf-8') as f:
+                            f.write(markdown_content)
+                        
+                        safe_print(f"[{file_id}] Conversion successful! Saved as '{raw_md_path}'")
+                except Exception as e:
+                    safe_print(f"[{file_id}] Could not convert PDF to markdown: {e}")
+                    return False
+            
+            # Process the markdown with OpenAI
+            meta_prompt = """
+You are an expert in document formatting and text processing. Your task is to clean and standardize a Markdown (.md) file while preserving its structure and readability. Follow these guidelines:
+- Fix Paragraph Continuity: Ensure that paragraphs are correctly joined if they are broken across lines or pages.
+- Standardize Formatting: Use proper Markdown syntax for section headers, subheadings, and bullet points.
+- Maintain Proper Indentation: Ensure hierarchical sections (headings, subheadings, lists) are properly indented and structured.
+- Apply Markdown Syntax: Use # for headings, **bold** for emphasis, and - or * for unordered lists where appropriate.
+- Remove Pagination Artifacts: Strip out any leftover page numbers, headers, or footers that do not belong in the content.
+- Fix Multi-Page Clauses: If a clause is split across multiple pages, merge it properly so it reads fluidly.
+- Preserve Legal Numbering: If the document contains numbered regulations or sections, ensure their structure and sequence remain intact.
+- Enhance Readability: Ensure the final output is well-formatted, easy to read, and retains all the original information without unnecessary clutter.
+
+Note: You will receive this document in chunks. Process each chunk independently and focus on cleaning the formatting while maintaining the content structure.
+"""
+            
+            safe_print(f"[{file_id}] File size: {len(markdown_content)} characters")
+            
+            # Split content into manageable chunks
+            chunks = split_text_into_chunks(markdown_content)
+            safe_print(f"[{file_id}] Split into {len(chunks)} chunks")
+            
+            # Process chunks with OpenAI one at a time - with semaphore
+            processed_chunks = []
+            for i, chunk in enumerate(chunks):
+                safe_print(f"[{file_id}] Waiting for OpenAI access for chunk {i+1}/{len(chunks)}...")
+                with openai_semaphore:
+                    safe_print(f"[{file_id}] Processing chunk {i+1}/{len(chunks)} (size: {len(chunk)} chars)")
+                    retry_count = 0
+                    max_retries = 3
+                    
+                    while retry_count < max_retries:
+                        try:
+                            response = openai_client.chat.completions.create(
+                                model=GPT_MODEL,
+                                messages=[
+                                    {"role": "system", "content": meta_prompt},
+                                    {"role": "user", "content": chunk}
+                                ],
+                                temperature=0,
+                            )
+                            
+                            processed_chunks.append(response.choices[0].message.content)
+                            break
+                                
+                        except Exception as e:
+                            retry_count += 1
+                            safe_print(f"[{file_id}] Error processing chunk {i+1}: {str(e)}")
+                            
+                            if "rate_limit_exceeded" in str(e):
+                                wait_time = 20 * (2 ** retry_count)  # Exponential backoff
+                                safe_print(f"[{file_id}] Rate limit exceeded. Waiting {wait_time} seconds before retrying...")
+                                time.sleep(wait_time)
+                            else:
+                                time.sleep(5)
+                                safe_print(f"[{file_id}] Retrying... (Attempt {retry_count+1}/{max_retries})")
+                                
+                            if retry_count >= max_retries:
+                                safe_print(f"[{file_id}] Failed to process chunk after {max_retries} attempts. Using original content.")
+                                processed_chunks.append(chunk)  # Use original chunk on failure
+            
+            # Combine processed chunks
+            polished_md = "\n\n".join(processed_chunks)
+            
+            # Save the polished content
+            save_polished_markdown(polished_md_path, polished_md)
+            
+            safe_print(f"[{file_id}] Polishing successful! Saved as '{polished_md_path}'")
+            return True
+                
+        except Exception as e:
+            safe_print(f"[{file_id}] Error: {e}")
+            return False
+    
+    # Process multiple files in parallel with ThreadPoolExecutor
+    # Each thread will coordinate API access using the semaphores
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_file = {
+            executor.submit(process_with_semaphores, pdf_file, i): i 
+            for i, pdf_file in enumerate(pdf_files)
+        }
+        
+        # Wait for all tasks to complete
+        for future in future_to_file:
+            result = future.result()
+            results.append(result)
     
     # Count successful operations
     successfully_processed = sum(1 for result in results if result)
@@ -242,5 +345,5 @@ async def main():
     print(f"Polished markdown files saved to: {POLISHED_MD_DIR}")
 
 if __name__ == "__main__":
-    # Run the async main function
-    asyncio.run(main())
+    # Run the main function
+    main()
