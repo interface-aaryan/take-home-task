@@ -24,6 +24,8 @@ Interface is all about the product thinking.
   - **Responsive Layout:** Ensure the application works seamlessly across devices and screen sizes.
   - **Animations & Transitions:** Utilize subtle animations or transitions (e.g., for state changes or notifications) to enrich the user experience.
   - **Accessibility:** Keep accessibility in mind by using appropriate color contrasts, clear typography, and ensuring keyboard navigability.
+ 
+- **Ensure functionality across browsers, Chrome/Safari/Arc/Internet Explorer**
 
 ## Project Setup
 
