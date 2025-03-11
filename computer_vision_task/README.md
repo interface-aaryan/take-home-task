@@ -46,6 +46,7 @@ In this assignment, you will build a system that leverages computer vision techn
 ## Help
 
 If you want help/guidance, please reach out to me: aaryan@getinterface.ai.
+Also, if you are confused by what components in the documents represent, feel free to check out this [reference guide](https://kimray.com/sites/default/files/uploads/training-demos/Kimray%20How%20to%20Read%20an%20Oil%20%26%20Gas%20P%26ID%20Reference%20Guide.pdf)
 
 ## Bonus (Optional)
 
